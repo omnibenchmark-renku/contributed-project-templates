@@ -2,39 +2,26 @@
 {% if description %}
 {{ description }}
 {% endif %}
-## Introduction
+## Dataset template
 
-This is a Renku project - basically a git repository with some
-bells and whistles. You'll find we have already created some
-useful things like `data` and `notebooks` directories and
-a `Dockerfile`.
+Template to add a dataset to an omnibenchmark project. For each dataset that you have, **one dedicated repository** has to be created from this template to upload the data on the renku system. 
 
-## Working with the project
+## Steps to add your own data to the own omnibenchmark project on Renku
 
-The simplest way to start your project is right from the Renku
-platform - just click on the `Environments` tab and start a new session.
-This will start an interactive environment right in your browser.
+### 1. Initialize your new project
 
-To work with the project anywhere outside the Renku platform,
-click the `Settings` tab where you will find the
-git repo URLs - use `git` to clone the project on whichever machine you want.
+I. On the Renku page, click *new project*. 
 
-### Changing interactive environment dependencies
+II. In `Namespace`, select [omni_data](https://renkulab.io/gitlab/omnibenchmark/omni_data) or a similar *omnibenchmark* project group.
 
-Initially we install a very minimal set of packages to keep the images small.
-However, you can add python and conda packages in `requirements.txt` and
-`environment.yml` to your heart's content. If you need more fine-grained
-control over your environment, please see [the documentation](https://renku.readthedocs.io/en/latest/user/advanced_interfaces.html#dockerfile-modifications).
+II. In `Template Source` select `Custom`.
 
-## Project configuration
+III. In `Repository URL`, paste `https://github.com/ansonrel/contributed-project-templates` , pass `master` in the `Repository Reference` and `Custom - Basic omnibenchmark dataset` as a template. 
 
-Project options can be found in `.renku/renku.ini`. In this
-project there is currently only one option, which specifies
-the default type of environment to open, in this case `/lab` for
-JupyterLab. You may also choose `/tree` to get to the "classic" Jupyter
-interface.
+IV. Start a new environment in the `Environments` tab of your Renku project.
 
-## Moving forward
+### 2. Process data
 
-Once you feel at home with your project, we recommend that you replace
-this README file with your own project documentation! Happy data wrangling!
+I. In your interactive environment, download and process your data with `src/data.R` by completing the code. You can check how the data can look like using the `dummy_data()` function (included in the code). Please not that **any processing steps (filtering, doublets removal) that will not be evaluated in the benchmark should be done in this script**. Likewise, if you want to assess the effect of processing, don't include these steps yet.
+
+II. Fill in the metadata in the `load_data.sh` and in the R script. 

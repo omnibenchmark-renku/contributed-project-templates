@@ -35,9 +35,11 @@ info_list <- list(
 # YOUR CODE #
 #############
 
-# Example of how the data can look like
+# Example of how the data can look like:
 source("src/utils/r_utils.R")
 sce <- dummy_data()
+# you can also check how the data files should look like: 
+sce <- dummy_data(write_data = TRUE)
 
 # Check that the data are in the correct form
 check_input_data(dat_counts = counts(sce), 
