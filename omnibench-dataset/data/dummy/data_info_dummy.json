@@ -1,0 +1,1 @@
+{"link":["link to study"],"tissue":["tissue"],"description":["A complete description about the experimental design,\n\n                     for e.g. the treatment, condition, specificities, etc."],"note":["Any comment on the importance of this dataset for the benchmark,\n\n              e.g., 'example of unbalanced sample sizes'."],"n_cells":[200],"n_genes":[100]}

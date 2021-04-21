@@ -9,3 +9,9 @@
   description: Streamlit template based on a basic Python (3.7) project.
   variables:
     description: Describe your project
+- folder: omnibench-dataset
+  name: Basic omnibenchmark dataset
+  description: A simple R-based 4.0.4 renku project with a basic directory structure to add a dataset to an omnibenchmark project.
+  variables:
+    description: short description added at the beginning of the readme file
+
