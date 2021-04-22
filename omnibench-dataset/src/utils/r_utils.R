@@ -10,6 +10,7 @@ suppressPackageStartupMessages({
 
 dummy_data <- function(ncells = 200, write_data = FALSE, out_path = "data/dummy", dataset_name = "dummy" ){
   
+  dir.create(out_path, showWarnings = FALSE )
   colData <- data.frame(barcodes = paste0("BC-", 1:ncells), 
                         sample = rep(c("A", "B"), each = ncells/2), 
                         row.names = paste0("BC-", 1:ncells))
@@ -34,6 +35,7 @@ dummy_data <- function(ncells = 200, write_data = FALSE, out_path = "data/dummy"
     
     jsonlite::write_json(as.data.frame(colData(sce)),  paste0(out_path, "/meta_", dataset_name, ".json"), 
                          matrix = "columnmajor")
+    message("Dummy data saved in ", out_path)
   } 
   return(sce)
 
@@ -57,7 +59,6 @@ check_input_data <- function(dat_counts, meta_features, meta_cells){
   
 
 }
-
 
 
 

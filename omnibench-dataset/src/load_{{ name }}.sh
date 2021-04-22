@@ -4,7 +4,7 @@
 #####################################################
 ###############  loading dataset     ################
 #####################################################
-source src/utils/dataset_utils
+source src/utils/dataset_utils.sh
 
 ### -------------------------------------------- ###
 ## ----- Define tags and dataset attributes ----- ##
@@ -31,7 +31,7 @@ out_path="data/${dataset_name}"
 ### -------------------------------------------- ###
 
 #inputs
-data_script="src/${dataset_name}.R"
+data_script="src/${PWD##*/}.R"
 
 #command
 renku_command=(R CMD BATCH --no-restore --no-save \
@@ -39,25 +39,27 @@ renku_command=(R CMD BATCH --no-restore --no-save \
                "${data_script}" \
                "log/generate_${dataset_name}.Rout")
 
-
 #run renku
+renku save
 renku run --name ${dataset_name} --input ${data_script} "${renku_command[@]}" 
-
 
 ### -------------------------------------------- ###
 ## ------------ Add files to dataset ------------ ##
 ### -------------------------------------------- ###
 
-blob_url="https://renkulab.io/gitlab/$OMNI_DATA_PATH/$CI_PROJECT/~/blob/master"
-data_files=("${blob_url}/data/${dataset_name}/counts_${dataset_name}.mtx.gz"
-            "${blob_url}/data/${dataset_name}/feature_${dataset_name}.json"
-            "${blob_url}/data/${dataset_name}/meta_${dataset_name}.json" 
-            "${blob_url}/data/${dataset_name}/data_info_${dataset_name}.json" )
-
-for one_file in ${data_files[@]}
-do 
-renku dataset add ${dataset_name} -e ${one_file} 
-done
+# Not uploading if working with dummy dataset
+if [[ ! " ${dataset_name} " =~ "dummy" ]]; then
+    blob_url="https://renkulab.io/gitlab/$OMNI_DATA_PATH/$CI_PROJECT/~/blob/master"
+    data_files=("${blob_url}/data/${dataset_name}/counts_${dataset_name}.mtx.gz"
+                "${blob_url}/data/${dataset_name}/feature_${dataset_name}.json"
+                "${blob_url}/data/${dataset_name}/meta_${dataset_name}.json" 
+                "${blob_url}/data/${dataset_name}/data_info_${dataset_name}.json" )
+    
+    for one_file in ${data_files[@]}
+    do 
+    renku dataset add ${dataset_name} -e ${one_file} 
+    done
+fi
 
 
 
