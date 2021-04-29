@@ -1,0 +1,3 @@
+[submodule "omnibench-dataset/src/utils"]
+	path = omnibench-dataset/src/utils
+	url = https://renkulab.io/gitlab/omnibenchmark/utils
