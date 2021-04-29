@@ -19,7 +19,7 @@ suppressPackageStartupMessages({
   library('Matrix')
   library("R.utils")
 })
-source("src/utils/r_utils.R")
+source("src/r_utils.R")
 
 if (interactive()){
   dataset_name <- gsub("\\/work\\/", "", getwd())
