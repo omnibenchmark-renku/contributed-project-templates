@@ -4,6 +4,8 @@ variables:
   GIT_STRATEGY: fetch
   GIT_SSL_NO_VERIFY: "true"
   GIT_LFS_SKIP_SMUDGE: 1
+  GIT_SUBMODULE_STRATEGY: recursive 
+  GIT_SUBMODULE_REMOTE_STRATEGY: "true"
 
 stages:
   - build
@@ -19,3 +21,14 @@ image_build:
     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA_7
   tags:
     - image-build
+
+default: 
+  tags:
+    - image-build
+  before_script:
+    - git submodule sync --recursive
+    - git submodule update --init --recursive --remote
+    - git add -A
+    - git commit -m 'Update utils.'
+    - git push
+
