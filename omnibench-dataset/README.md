@@ -32,7 +32,7 @@ I. In your interactive environment, download and process your data with `src/{{ 
 
 - `feature_{{ name }}.json`: a JSON file created from the features metadata of your dataset (e.g. `rowData`) with the first column containing non-duplicated ENSEMBL IDs of the genes. Other columns can optionally be added for example gene symbols etc. 
 
-- `meta_{{ name }}.json`: a JSON file created from the cells metadata of your dataset (e.g. `cowData`) with the first column containing non-duplicated barcodes assigned to the cells. Other columns can optionally be added for example sample, condition, patient, etc. 
+- `meta_{{ name }}.json`: a JSON file created from the cells metadata of your dataset (e.g. `colData`) with the first column containing non-duplicated barcodes assigned to the cells. Other columns can optionally be added for example sample, condition, patient, etc. 
 
 - `data:info_{{ name }}.json`: a dataset metadata file with at least, a *link*, *tissue*, *description* and *note* fields (see the first lines of `{{ name }}.R`).
 
