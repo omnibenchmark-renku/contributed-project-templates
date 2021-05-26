@@ -25,7 +25,7 @@ renku save
 ## ---------- Data generation workflow ---------- ##
 ### -------------------------------------------- ###
 
-workflow_exists=(`list_plan_by_string`)
+workflow_exists=(`list_plan_inputs .renku/provenance.json ${IN_FILE['data_generation_script']}`)
 
 if [ -z "$workflow_exists" ]
 then
