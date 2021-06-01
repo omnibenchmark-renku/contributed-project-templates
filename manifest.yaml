@@ -14,4 +14,13 @@
   description: A simple R-based 4.0.4 renku project with a basic directory structure to add a dataset to an omnibenchmark project.
   variables:
     description: short description added at the beginning of the readme file
+- folder: omnibench-processing
+  name: Basic omnibenchmark processing
+  description: A simple R-based 4.0.4 renku project with a basic directory structure to process datasets from an omnibenchmark project.
+  variables:
+    description: short description added at the beginning of the readme file
+    OMNI_DATA_RAW: tag of datasets to query for the processing
+    OMNI_DATA_PROCESSED: tag that will be given to the processed datasets
+    OMNI_DATA_NAMESPACE: namespace of the datasets
+
 
