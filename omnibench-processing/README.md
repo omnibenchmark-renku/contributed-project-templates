@@ -4,9 +4,11 @@
 {% endif %}
 ## Dataset template
 
-Template to add a dataset to an omnibenchmark project. For each dataset that you have, **one dedicated repository** has to be created from this template to upload the data on the renku system. 
+Template to process raw dataset from omnibenchmark projects. The template assumes that you uploaded dataset to Renku using the [`omnibench_dataset`](https://github.com/ansonrel/contributed-project-templates/tree/main/omnibench-dataset) template or similar project. 
 
-## Steps to add your own data to omnibenchmark on Renku
+This template explains how to import the desired datasets and process them uniformly before passing them to the methods. As an example, this template shows how to perform normalization, HVG, PCA, TSNE, UMAP on a dummy dataset of the same style as for the `omnibench_dataset`. 
+
+## Steps to process your omnibenchmark data
 
 ### 1. Initialize your new project
 
@@ -14,13 +16,13 @@ I. On the Renku page, click *new project*.
 
 II. In the fields, paste: 
 
-- [omni_data](https://renkulab.io/gitlab/omnibenchmark/omni_data) or a similar *omnibenchmark* project group in `Namespace`,
+- [omni_data](https://renkulab.io/gitlab/omnibenchmark/omni_data), a similar *omnibenchmark* project group, or your own namespace in `Namespace`,
 
 - `https://github.com/ansonrel/contributed-project-templates` in `Repository URL`,
 
 -  `main` in the `Repository Reference`,
 
--  `Custom - Basic omnibenchmark dataset` as a template. 
+-  `Custom - Basic omnibenchmark processing` as a template. 
 
 III. Start a new environment in the `Environments` tab of your Renku project.
 
