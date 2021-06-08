@@ -5,4 +5,5 @@ git add src/utils
 git commit -m 'Update utils.'
 
 echo '.renku/cache/' > .gitignore
+git add .gitignore
 git commit -m 'add gitignore'
