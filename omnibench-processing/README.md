@@ -4,7 +4,7 @@
 {% endif %}
 ## Dataset template
 
-Template to process raw dataset from omnibenchmark projects. The template assumes that you uploaded dataset to Renku using the [`omnibench_dataset`](https://github.com/ansonrel/contributed-project-templates/tree/main/omnibench-dataset) template or similar project. 
+Template to process raw dataset from omnibenchmark projects. The template assumes that you uploaded datasets to Renku using the [`omnibench_dataset`](https://github.com/ansonrel/contributed-project-templates/tree/main/omnibench-dataset) template or a similar project. 
 
 This template explains how to import the desired datasets and process them uniformly before passing them to the methods. As an example, this template shows how to perform normalization, HVG, PCA, TSNE, UMAP on a dummy dataset of the same style as for the `omnibench_dataset`. 
 
@@ -22,9 +22,11 @@ II. In the fields, paste:
 
 -  `main` in the `Repository Reference`,
 
+-  `fetch templates`
+
 -  `Custom - Basic omnibenchmark processing` as a template. 
 
-- Some description of your project that will be passed at the begining of this readme. 
+-  Some description of your project that will be passed at the begining of this readme. 
 
 III. Start a new environment in the `Environments` tab of your Renku project.
 
@@ -38,7 +40,7 @@ I. If needed, **modify the `process_data.R`** script that processes the data by 
 
 - Dimension reduction (`runPCA`, `runUMAP`)
 
-II. Fill in the fields in the `src/config.sh`. The most important fields are
+II. **Fill in the fields in the `src/config.sh`**. The most important fields are
 
 - `OMNI_DATA_RAW`, a keyword that should match the tag that you defined in your renku data project(s). We encourage you to check your keyword by passing it to this link: `https://renkulab.io/knowledge-graph/datasets?query=` and check that the desired datasets are retrieved with your query. 
 
