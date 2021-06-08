@@ -16,13 +16,15 @@ I. On the Renku page, click *new project*.
 
 II. In the fields, paste: 
 
-- [omni_data](https://renkulab.io/gitlab/omnibenchmark/omni_data), a similar *omnibenchmark* project group, or your own namespace in `Namespace`,
+- an *omnibenchmark* project group, or your own namespace (default) in `Namespace`,
 
 - `https://github.com/ansonrel/contributed-project-templates` in `Repository URL`,
 
 -  `main` in the `Repository Reference`,
 
 -  `Custom - Basic omnibenchmark processing` as a template. 
+
+- Some description of your project that will be passed at the begining of this readme. 
 
 III. Start a new environment in the `Environments` tab of your Renku project.
 
@@ -38,11 +40,11 @@ I. If needed, **modify the `process_data.R`** script that processes the data by 
 
 II. Fill in the fields in the `src/config.sh`. The most important fields are
 
-- `OMNI_DATA_RAW`, a keyword that should match the tag that you defined in your renku data project(s). 
+- `OMNI_DATA_RAW`, a keyword that should match the tag that you defined in your renku data project(s). We encourage you to check your keyword by passing it to this link: `https://renkulab.io/knowledge-graph/datasets?query=` and check that the desired datasets are retrieved with your query. 
 
-- `OMNI_DATA_PROCESSED`, the keyword that will be used by the methods to query the processed data. 
+- `OMNI_DATA_PROCESSED`, the keyword that will be latter used by the methods to query the processed data. 
 
-III. Run `bash src/process_data.sh`. Once finished, your processed data are uploaded to renku and available for the next step. 
+III. Run `bash src/process_data.sh`. Once finished, your processed data are uploaded to renku and available for the next step of omnibenchmark. 
 
 ### 3. Running the methods. 
 
