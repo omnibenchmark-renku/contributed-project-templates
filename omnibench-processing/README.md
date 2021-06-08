@@ -26,11 +26,27 @@ II. In the fields, paste:
 
 III. Start a new environment in the `Environments` tab of your Renku project.
 
-### 2. Process data
+### 2. Process the data
 
-I. TBD
+I. If needed, **modify the `process_data.R`** script that processes the data by default with: 
 
-### 3. Load in downstream workflows.
+- normalization (`logNormCounts`)
+
+- Identification of top highly variable genes (`getTopHVGs`) 
+
+- Dimension reduction (`runPCA`, `runUMAP`)
+
+II. Fill in the fields in the `src/config.sh`. The most important fields are
+
+- `OMNI_DATA_RAW`, a keyword that should match the tag that you defined in your renku data project(s). 
+
+- `OMNI_DATA_PROCESSED`, the keyword that will be used by the methods to query the processed data. 
+
+III. Run `bash src/process_data.sh`. Once finished, your processed data are uploaded to renku and available for the next step. 
+
+### 3. Running the methods. 
+
+COMING SOON. 
 
 
 

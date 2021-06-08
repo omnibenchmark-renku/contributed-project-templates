@@ -6,11 +6,33 @@
 ## -------- Define Inputs ----------- ##
 ###---------------------------------####
 
-# setup OMNIBENCHMARK  variables
+## setup OMNIBENCHMARK  variables
+# keyword/ string to query the raw data to process. Can be checked via: 
+# https://renkulab.io/knowledge-graph/datasets?query=YOUR_QUERY
 OMNI_DATA_RAW=""
+# the tag to pass to the processed data
 OMNI_DATA_PROCESSED=""
+# if working in a group project, the namespace of the group
 OMNI_DATA_NAMESPACE=""
 
+###----------------------------------###
+## ---- Define Dataset variables ---- ##
+###---------------------------------####
+
+declare -A DATA_VARS
+
+# name to be attributed to the processed data
+DATA_VARS['name']="" 
+# description of the processing step that will be performed
+DATA_VARS['description']="" 
+# human readable title for the processed data
+DATA_VARS['title']="" 
+
+
+###----------------------------------###
+## --------- General variables ------ ##
+## ----------- DO NOT MODIFY ---------##
+###---------------------------------####
 
 declare -A IN_PREFIX
 IN_PREFIX['count_file']="counts"
@@ -34,16 +56,8 @@ do
 done
 
 
-###----------------------------------###
-## ---- Define Dataset variables ---- ##
-###---------------------------------####
 
-declare -A DATA_VARS
-DATA_VARS['name']="omni_batch_processed"
-DATA_VARS['description']="Normalized counts, reduced dimensions and hvg of omni_batch datasets."
-DATA_VARS['title']="processed omni_batch data - omni_batch_processed"
-
-TAG_LIST=("omni_batch_processed")
+TAG_LIST=$OMNI_DATA_PROCESSED #"omni_batch_processed")
 
 ###----------------------------------###
 ## --------- General variables ------ ##

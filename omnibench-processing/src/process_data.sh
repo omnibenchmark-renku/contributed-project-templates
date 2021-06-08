@@ -27,7 +27,7 @@ renku save
 #-------- Update / import datasets ---------#
 #-------------------------------------------#
 
-import_datasets_by_keyword $OMNI_DATA_RAW
+import_datasets_by_string $OMNI_DATA_RAW
 
 #-------------------------------------------#
 # Create workflows for unprocessed datasets #

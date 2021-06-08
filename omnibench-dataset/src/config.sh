@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
+# Author: Oksana Riba Grognuz, Almut Luetge, Anthony Sonrel
 
 ########################################
 ######## Project configuration #########
 ########################################
-
 
 ###----------------------------------###
 ## -------- Define inputs ----------- ##

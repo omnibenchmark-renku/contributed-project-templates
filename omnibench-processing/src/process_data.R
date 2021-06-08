@@ -1,6 +1,9 @@
 
 # Author: Almut Luetge, Anthony Sonrel
 
+## Instructions: 
+# Modify here the steps of processing that will be applied to the raw data
+
 ### ---------- Normalization and preprocessing ----------- #### 
   
 args <- (commandArgs(trailingOnly = TRUE))
@@ -11,9 +14,13 @@ for (i in seq_len(length(args))) {
 set.seed(1234)
 
 ## Input Arguments
+# counts in mtx format
 print(count_file)
+# cells metadata in json format
 print(meta_file)
+# dataset name used to naming the outputs
 print(dataset_name)
+# output path
 print(out_path)
 
 ## Libraries
