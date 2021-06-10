@@ -43,7 +43,7 @@ outfiles="--output data/${dataset_name}/counts_${dataset_name}.mtx.gz --output d
 #---------------------------------------#      
 #---- Create workflow for a dataset ----#
 #---------------------------------------#
-renku run --name $dataset_name --input ${data_script} ${outfiles} -- "${command[@]}"
+renku run --name $dataset_name --input ${data_script} --input src/r_utils.R ${outfiles} -- "${command[@]}"
 
 
 exit 0

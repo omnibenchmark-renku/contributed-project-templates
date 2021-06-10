@@ -26,7 +26,7 @@ III. Start a new environment in the `Environments` tab of your Renku project.
 
 ### 2. Format data
 
-I. In your interactive environment, download and process your data with `src/{{ name }}.R` by completing the code. You can check how the data can look like using the `dummy_data()` function (included in the code), namely: 
+I. In your interactive environment, download and process your data with `src/{{ name }}.R` by completing the code. You can check how the data can look like using the `dummy_data()` function (included in the code) and run `dummy_data(write_data=TRUE)` if you want to see how the output files should look like, namely: 
 
 - `counts_{{ name }}.mtx.gz`: a sparse matrix of the count data (genes x cells)
 
@@ -38,7 +38,11 @@ I. In your interactive environment, download and process your data with `src/{{ 
 
 Please note that **any processing steps (filtering, doublets removal) that will not be evaluated in the benchmark should be done in this repo**. Likewise, if you want to assess the effect of processing later on, don't include these steps yet.
 
-II. Fill in the metadata in the `config.sh` and in the R script. 
+II. Fill in the metadata in the `config.sh` and in the R script. Be especially aware of: 
+
+- `IN_PREFIX['data_generation_script']` : which **should match your data generation script**. It will allow to track any changes to it and rerun the workflow should it be modified. 
+
+- `TAG_LIST=("")`: this is the keyword(s) defining your dataset. There is typically 1 keyword per omnibenchmark pipeline (e.g. "normalization_benchmark"), which allows any of its components to query all data with this keyword. 
 
 ### 3. Load your data in Renku
 
