@@ -48,7 +48,7 @@ print(dataset_name)
 # Example of how the data can look like:
 sce <- dummy_data()
 # you can also check how the data files should look like: 
-sce <- dummy_data(write_data = TRUE)
+# sce <- dummy_data(write_data = TRUE)
 
 ### -------------------------------------------- ###
 ## --------- Control and save data -------------- ##

@@ -8,9 +8,9 @@ suppressPackageStartupMessages({
   library("R.utils")
 })
 
-dummy_data <- function(ncells = 200, write_data = FALSE, out_path = "data/dummy", dataset_name = "dummy" ){
+dummy_data <- function(ncells = 200, write_data = FALSE, out_path = "data/dummy", dataset_name = "dummy", seed = 1234 ){
   
-  dir.create(out_path, showWarnings = FALSE )
+  set.seed(seed)
   colData <- data.frame(barcodes = paste0("BC-", 1:ncells), 
                         sample = rep(c("A", "B"), each = ncells/2), 
                         row.names = paste0("BC-", 1:ncells))
@@ -21,7 +21,7 @@ dummy_data <- function(ncells = 200, write_data = FALSE, out_path = "data/dummy"
   
   
   if (write_data == TRUE) {
-    
+    dir.create(out_path, showWarnings = FALSE )
     mtx <- as.matrix(counts(sce))
     sparse_mtx <- Matrix(mtx , sparse = T)
     

@@ -4,8 +4,12 @@
 ################### Omni dataset  ###################
 #####################################################
 
-source /work/$CI_PROJECT/src/utils/import.sh
-source /work/$CI_PROJECT/src/config.sh
+#####################
+## DO NOT MODIFIY ###
+#####################
+
+source src/utils/import.sh
+source src/config.sh
 
 ### -------------------------------------------- ###
 ## --------------- Define dataset --------------- ##
@@ -29,14 +33,14 @@ workflow_exists=(`list_plan_inputs .renku/provenance.json ${IN_FILE['data_genera
 
 if [ -z "$workflow_exists" ]
 then
-    bash /work/$CI_PROJECT/src/workflow/define_workflow.sh $dataset_name
+    bash src/workflow/define_workflow.sh $dataset_name
 fi
 
 ### -------------------------------------------- ###
 ## ----------- Update workflow outputs ---------- ##
 ### -------------------------------------------- ###
 
-renku update --with-siblings /work/$CI_PROJECT/data/${dataset_name}/*
+renku update --with-siblings data/${dataset_name}/*
 renku save
 
 

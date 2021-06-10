@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 # author: Almut Lütge
 
-source /work/$CI_PROJECT/src/utils/import.sh
-source /work/$CI_PROJECT/src/config.sh
+#####################
+## DO NOT MODIFIY ###
+#####################
+
+source src/utils/import.sh
+source src/config.sh
 
 #---------------------------------------#
 #----------- Define arguments ----------#
@@ -15,6 +19,7 @@ declare -A R_args
 
 # argument name - value
 R_args['out_path']="data/${dataset_name}"
+R_args['dataset_name']="${dataset_name}"
 
 # parse arguments for R CMD
 R_args_parsed=`parse_r_arguments R_args`
@@ -31,11 +36,14 @@ mkdir -p log
 #---------------------------------------#
 command=(R CMD BATCH --no-restore --no-save "$R_args_parsed" 
          $data_script log/generate_${dataset_name}.Rout)
-            
+ 
+# outputs
+outfiles="--output data/${dataset_name}/counts_${dataset_name}.mtx.gz --output data/${dataset_name}/data_info_${dataset_name}.json --output data/${dataset_name}/feature_${dataset_name}.json --output data/${dataset_name}/meta_${dataset_name}.json"
+
 #---------------------------------------#      
 #---- Create workflow for a dataset ----#
 #---------------------------------------#
-renku run --name $dataset_name --input ${data_script} -- "${command[@]}"
+renku run --name $dataset_name --input ${data_script} ${outfiles} -- "${command[@]}"
 
 
 exit 0
