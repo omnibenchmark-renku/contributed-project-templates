@@ -48,6 +48,14 @@ II. Fill in the metadata in the `config.sh` and in the R script. Be especially a
 
 Simply run `bash src/load_dataset.sh` once you have correctly formated the data and filled in the metadata fields. The origin of your dataset is now tracked by Renku and you can use it for the next steps. 
 
+### 3B. Update your data
+
+In the case where you need to update your data (e.g. updated source data, corrections, etc), simply run: 
+
+`bash src/load_dataset.sh`
+
+after your changes to update the desired files. 
+
 ### 4. Process the dataset
 
 If you have added all dataset that you need for your benchmark, continue with the next step of omnibenchmark: [the processing of your data](https://github.com/ansonrel/contributed-project-templates/tree/main/omnibench-processing)

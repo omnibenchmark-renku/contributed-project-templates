@@ -11,9 +11,8 @@
 # https://renkulab.io/knowledge-graph/datasets?query=YOUR_QUERY
 OMNI_DATA_RAW=""
 # the tag to pass to the processed data
-OMNI_DATA_PROCESSED=""
-# if working in a group project, the namespace of the group
-OMNI_DATA_NAMESPACE=""
+TAG_LIST=""
+
 
 ###----------------------------------###
 ## ---- Define Dataset variables ---- ##
@@ -55,9 +54,6 @@ do
     IN_FILE[$i]=`echo ${IN_PATH[$i]}${IN_PREFIX[$i]}*.${IN_EXT[$i]}`
 done
 
-
-
-TAG_LIST=$OMNI_DATA_PROCESSED #"omni_batch_processed")
 
 ###----------------------------------###
 ## --------- General variables ------ ##
