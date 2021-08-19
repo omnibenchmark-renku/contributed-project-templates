@@ -6,13 +6,18 @@ variables:
   GIT_LFS_SKIP_SMUDGE: 1
   GIT_SUBMODULE_STRATEGY: recursive 
   GIT_SUBMODULE_REMOTE_STRATEGY: "true"
+  PROJECT_SCRIPT: src/load_dataset.sh 
 
 stages:
   - build
+  - update
 
 image_build:
   stage: build
   image: docker:stable
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "pipeline" && $CI_UPSTREAM_PROJECT == "omnibenchmark/orchestrator"'
+      when: never
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN http://$CI_REGISTRY
   script:
@@ -32,3 +37,26 @@ default:
     - git commit -m 'Update utils.'
     - git push
 
+    
+run_udpate:
+  stage: update
+  image: 
+    name: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+    entrypoint: [""]
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "pipeline" && $CI_UPSTREAM_PROJECT == "omnibenchmark/orchestrator"'
+  before_script:
+    - git config --global user.name "Anthony Sonrel"
+    - git config --global user.email "anthony.sonrel@uzh.ch"
+    - url_host=`git remote get-url origin | sed -e "s/https:\/\/gitlab-ci-token:.*@//g"`
+    - cd /tmp/
+    - git clone "https://oauth2:${CI_PUSH_TOKEN}@${url_host}"
+    - cd ${CI_PROJECT_NAME}
+    - chmod +x ./$PROJECT_SCRIPT
+    - git lfs install --local
+  script:
+    - cd src
+    - git clone https://renkulab.io/gitlab/omnibenchmark/utils.git
+    - cd ..
+    - renku save -m  'Clone submodule'
+    - ./$PROJECT_SCRIPT

@@ -10,6 +10,8 @@ Template to add a dataset to an omnibenchmark project. For each dataset that you
 
 ### 1. Initialize your new project
 
+**Ignore this step if you are reading this from your project on Renku.**
+
 I. On the Renku page, click *new project*. 
 
 II. In the fields, paste: 
