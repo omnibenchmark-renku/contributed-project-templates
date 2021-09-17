@@ -32,13 +32,15 @@ RUN pip3 install -r /tmp/requirements.txt
 # RENKU_VERSION determines the version of the renku CLI
 # that will be used in this image. To find the latest version,
 # visit https://pypi.org/project/renku/#history.
-ARG RENKU_VERSION=0.15.1
+ARG RENKU_VERSION=0.16.0
 
 ########################################################
 # Do not edit this section and do not add anything below
 
+
 RUN if [ -n "$RENKU_VERSION" ] ; then \
     pipx uninstall renku && \
+    /home/rstudio/.local/pipx/shared/bin/pip install setuptools==57.5.0; \
     pipx install --force renku==${RENKU_VERSION} \
     ; fi
 

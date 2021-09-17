@@ -34,6 +34,7 @@ workflow_exists=(`list_plan_inputs .renku/provenance.json ${IN_FILE['data_genera
 if [ -z "$workflow_exists" ]
 then
     bash src/workflow/define_workflow.sh $dataset_name
+    schema_check_dataset $dataset_name "${TAG_LIST[@]}"
 fi
 
 ### -------------------------------------------- ###
@@ -50,5 +51,5 @@ renku save
 
 data_files="data/${dataset_name}/*"
 add_files_to_dataset_by_name ${dataset_name} ${data_files[@]}
-
+renku save
 

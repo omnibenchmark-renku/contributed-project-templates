@@ -9,7 +9,8 @@
 ## -------- Define inputs ----------- ##
 ###---------------------------------####
 
-# Pass here the name of your dataset !! It should also correspond to your data script name!!
+# Pass here the name of your dataset 
+# !! It should also correspond to your data script name !!
 declare -A IN_PREFIX
 IN_PREFIX['data_generation_script']="" 
 
