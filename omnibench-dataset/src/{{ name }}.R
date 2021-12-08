@@ -8,6 +8,8 @@ info_list <- list(
   "tissue" = "tissue",
   "description" = "A complete description about the experimental design,\n
                      for e.g. the treatment, condition, specificities, etc.", 
+  "n_cluster" = "The number of cell-types or clusters in the data.", 
+  "n_batches" = "The number of batches in the data (patient, experimental batch, technology, etc.)."
   "note" = "Any comment on the importance of this dataset for the benchmark,\n
               e.g., 'example of unbalanced sample sizes'."
 )

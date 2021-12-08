@@ -22,8 +22,7 @@ create_dataset
 ## ---- Serialise project's knowledge graph ----- ##
 ### -------------------------------------------- ###
 
-renku graph generate -f
-renku save
+get_project_graph
 
 ### -------------------------------------------- ###
 ## ---------- Data generation workflow ---------- ##
@@ -52,4 +51,5 @@ renku save
 data_files="data/${dataset_name}/*"
 add_files_to_dataset_by_name ${dataset_name} ${data_files[@]}
 renku save
+
 

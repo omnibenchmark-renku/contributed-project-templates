@@ -36,14 +36,11 @@ mkdir -p log
 #---------------------------------------#
 command=(R CMD BATCH --no-restore --no-save "$R_args_parsed" 
          $data_script log/generate_${dataset_name}.Rout)
- 
-# outputs
-outfiles="--output data/${dataset_name}/counts_${dataset_name}.mtx.gz --output data/${dataset_name}/data_info_${dataset_name}.json --output data/${dataset_name}/feature_${dataset_name}.json --output data/${dataset_name}/meta_${dataset_name}.json"
-
+            
 #---------------------------------------#      
 #---- Create workflow for a dataset ----#
 #---------------------------------------#
-renku run --name $dataset_name --input ${data_script} --input src/r_utils.R ${outfiles} -- "${command[@]}"
+renku run --name $dataset_name --input ${data_script} -- "${command[@]}"
 
 
 exit 0

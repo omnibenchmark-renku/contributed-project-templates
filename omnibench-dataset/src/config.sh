@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Author: Oksana Riba Grognuz, Almut Luetge, Anthony Sonrel
+# Authors: Oksana Riba Grognuz, Almut Luetge, Anthony Sonrel
 
 ########################################
 ######## Project configuration #########
@@ -31,6 +31,8 @@ DATA_VARS['description']=""
 DATA_VARS['title']=""
 
 TAG_LIST=("")
+
+
 
 
 #####################
