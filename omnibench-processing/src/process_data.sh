@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# Author: Oksana Riba Grognuz, Almut Luetge, Anthony Sonrel
 
 #####################
 ## DO NOT MODIFIY ###
@@ -20,14 +19,13 @@ create_dataset
 #--- Serialise project's knowledge graph ---#
 #-------------------------------------------#
 
-renku graph generate -f
-renku save
+get_project_graph
 
 #-------------------------------------------#
 #-------- Update / import datasets ---------#
 #-------------------------------------------#
 
-import_datasets_by_string $OMNI_DATA_RAW
+import_datasets_by_keyword $OMNI_DATA_RAW
 
 #-------------------------------------------#
 # Create workflows for unprocessed datasets #
@@ -39,13 +37,14 @@ datasets=(`find_datasets_to_process`)
 for dataset in ${datasets[@]}
 do
     bash src/workflow/define_workflow.sh $dataset
+    schema_check_processed $dataset "${TAG_LIST[@]}"
 done
 
 #-------------------------------------------#
 #---------- Update workflow outputs --------#
 #-------------------------------------------#
 
-renku update --with-siblings ${OUT_PATH}/*
+renku update --with-siblings /work/$CI_PROJECT/${OUT_PATH}/*
 renku save
 
 data_files="${OUT_PATH}/*"

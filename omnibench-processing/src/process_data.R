@@ -1,8 +1,8 @@
 
-# Author: Almut Luetge, Anthony Sonrel
 
 ## Instructions: 
 # Modify here the steps of processing that will be applied to the raw data
+# as an example here
 
 ### ---------- Normalization and preprocessing ----------- #### 
   
@@ -40,8 +40,9 @@ colnames(counts) <- meta$cell_id
 
 ## Generate sce
 sce <- SingleCellExperiment(list(counts = counts),
-                                 colData = DataFrame(meta))
-
+                                 colData = DataFrame(meta), 
+                                 rowData = DataFrame(feat))
+rownames(sce) <- rowData(sce)$gene_id
 
 ## Normalize 
 clusters <- quickCluster(sce, use.ranks=FALSE)
@@ -52,13 +53,13 @@ sce <-  logNormCounts(sce)
 
 ## Select highly variable genes
 dec <- modelGeneVar(sce)
-dec <- dec[order(dec$bio, decreasing = TRUE),] 
 hvg_sig <- getTopHVGs(dec, fdr.threshold=0.05)
 hvg <- getTopHVGs(dec, var.threshold = 0)
 length(hvg)
 length(hvg_sig)
-hvg_tab <- data.frame("all" = hvg,
-                      "sig" = hvg %in% hvg_sig)
+hvg_tab <- data.frame("gene_id" = rownames(sce), 
+                      "all" = rownames(sce) %in% hvg,
+                      "sig" = rownames(sce) %in% hvg_sig)
 
 
 ## Run dimensional reduction
@@ -77,6 +78,7 @@ gzip(matrix_out, overwrite=TRUE)
 
 
 ## Save reduced Dimensions as gziped mtx
+## TODO: save colnames of dimred in a separate file to retrieve origin of dimred.
 colnames(reducedDims(sce)[["UMAP"]]) <- c("UMAP1", "UMAP2")
 red_tab <- cbind(reducedDims(sce)[["PCA"]], reducedDims(sce)[["UMAP"]])
 red_mtx <- as.matrix(red_tab)

@@ -2,7 +2,8 @@
 {% if description %}
 {{ description }}
 {% endif %}
-## Dataset template
+
+## Processed dataset template
 
 Template to process raw dataset from omnibenchmark projects. The template assumes that you uploaded datasets to Renku using the [`omnibench_dataset`](https://github.com/ansonrel/contributed-project-templates/tree/main/omnibench-dataset) template or a similar project. 
 
@@ -12,7 +13,7 @@ This template explains how to import the desired datasets and process them unifo
 
 ### 1. Initialize your new project
 
-**Ignore this step if you are reading this from your project on Renku.**
+**Ignore this step if you have already imported this template on Renku.**
 
 I. On the Renku page, click *new project*. 
 
@@ -46,7 +47,7 @@ II. **Fill in the fields in the `src/config.sh`**. The most important fields are
 
 - `OMNI_DATA_RAW`, a keyword that should match the tag that you defined in your renku data project(s). We encourage you to check your keyword by passing it to this link: `https://renkulab.io/knowledge-graph/datasets?query=` and check that the desired datasets are retrieved with your query. 
 
-- `OMNI_DATA_PROCESSED`, the keyword that will be latter used by the methods to query the processed data. 
+- `OMNI_DATA_PROCESSED`, the keyword that will be latter used by the methods to query the processed data. Typically it is the tag that you used for your raw data, followed by `_processed`.
 
 III. Run `bash src/process_data.sh`. Once finished, your processed data are uploaded to renku and available for the next step of omnibenchmark. 
 

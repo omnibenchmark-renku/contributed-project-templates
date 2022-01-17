@@ -7,10 +7,14 @@ variables:
 stages:
   - build
   - update
+  - check
 
-image_build:
+
+_build:
   stage: build
   image: docker:stable
+  except:
+    - schedules 
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN http://$CI_REGISTRY
   script: |
@@ -41,13 +45,35 @@ run_udpate:
     - git config --global user.email "anthony.sonrel@uzh.ch"
     - url_host=`git remote get-url origin | sed -e "s/https:\/\/gitlab-ci-token:.*@//g"`
     - cd /tmp/
-    - git clone "https://oauth2:${CI_PUSH_TOKEN}@${url_host}"
+    - git clone "https://oauth2:${CI_PUSH_TOKEN}@${url_host}" --recursive
     - cd ${CI_PROJECT_NAME}
     - chmod +x ./$PROJECT_SCRIPT
     - git lfs install --local
   script:
-    - cd src
-    - git clone https://renkulab.io/gitlab/omnibenchmark/utils.git
-    - cd ..
-    - renku save -m  'Clone submodule'
+    - git submodule foreach "git fetch && git reset --hard origin/master" 
     - ./$PROJECT_SCRIPT
+
+run_check:
+  stage: check
+  image: 
+    name: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+    entrypoint: [""]
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "pipeline" && $CI_UPSTREAM_PROJECT == "omnibenchmark/orchestrator"'
+  before_script:
+    - git config --global user.name "Anthony Sonrel"
+    - git config --global user.email "anthony.sonrel@uzh.ch"
+    - url_host=`git remote get-url origin | sed -e "s/https:\/\/gitlab-ci-token:.*@//g"`
+    - cd /tmp/
+    - git clone "https://oauth2:${CI_PUSH_TOKEN}@${url_host}" --recursive
+    - cd ${CI_PROJECT_NAME}
+    - git lfs install --local
+  script:
+    - git submodule foreach "git fetch && git reset --hard origin/master" 
+    - source src/config.sh
+    - source src/utils/import.sh
+    - dataset_name=${DATA_VARS['name']}
+    - datasets=`ls data`
+    - datasets=${datasets[@]/$TAG_LIST}
+    - git lfs pull -I data/
+    - for dataset in ${datasets[@]}; do schema_check_processed $dataset "${TAG_LIST[@]}"; done

@@ -10,7 +10,8 @@
 # keyword/ string to query the raw data to process. Can be checked via: 
 # https://renkulab.io/knowledge-graph/datasets?query=YOUR_QUERY
 OMNI_DATA_RAW=""
-# the tag to pass to the processed data
+# the tag to pass to the processed data, typically the tag that you used for raw data followed by "_processed"
+# if the processed data are used in multiple benchmarks, can also be a list of tags. 
 TAG_LIST=""
 
 
@@ -36,16 +37,19 @@ DATA_VARS['title']=""
 declare -A IN_PREFIX
 IN_PREFIX['count_file']="counts"
 IN_PREFIX['meta_file']="meta"
+IN_PREFIX['feature_file']="feature"
 IN_PREFIX['data_generation_script']="process_data"
 
 declare -A IN_EXT
 IN_EXT['count_file']="mtx.gz"
 IN_EXT['meta_file']="json"
+IN_EXT['feature_file']="json"
 IN_EXT['data_generation_script']="R"
 
 declare -A IN_PATH
 IN_PATH['count_file']="data/*/"
 IN_PATH['meta_file']="data/*/"
+IN_PATH['feature_file']="data/*/"
 IN_PATH['data_generation_script']="src/"
 
 declare -A IN_FILE

@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# Author: Oksana Riba Grognuz, Almut Luetge, Anthony Sonrel
 
 #####################
 ## DO NOT MODIFIY ###
@@ -24,6 +23,7 @@ declare -A R_args
 # argument name - value
 R_args['dataset_name']=$dataset_name
 R_args['count_file']=`get_input_file_path $dataset_name count_file`
+R_args['feature_file']=`get_input_file_path $dataset_name feature_file`
 R_args['meta_file']=`get_input_file_path $dataset_name meta_file`
 R_args['out_path']=${OUT_PATH}
 
