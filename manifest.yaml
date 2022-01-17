@@ -19,6 +19,12 @@
   description: A simple R-based 4.0.4 renku project with a basic directory structure to process datasets from an omnibenchmark project.
   variables:
     description: short description added at the beginning of the readme file
+- folder: omnibench-param
+  name: Basic omnibenchmark parameters
+  description: A simple R-based 4.0.4 renku project with a basic directory structure to define parameter space for an omnibenchmark project.
+  variables:
+    description: short description added at the beginning of the readme file
+    param_name: a name to give to the parameters. 
 
 
 
