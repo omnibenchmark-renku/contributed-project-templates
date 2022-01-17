@@ -14,6 +14,7 @@ info_list <- list(
               e.g., 'example of unbalanced sample sizes'."
 )
 
+# Add here any packages needed to load your dataset. 
 suppressPackageStartupMessages({
   library("BiocManager")
   library('SingleCellExperiment')
@@ -48,7 +49,7 @@ print(dataset_name)
 #############
 
 # Example of how the data can look like:
-sce <- dummy_data()
+(sce <- dummy_data())
 # you can also check how the data files should look like: 
 # sce <- dummy_data(write_data = TRUE)
 
@@ -56,10 +57,17 @@ sce <- dummy_data()
 ## --------- Control and save data -------------- ##
 ### -------------------------------------------- ###
 
-# Check that the data are in the correct form
+# Once you added your code, check that the data are in the correct form:
 check_input_data(dat_counts = counts(sce), 
                  meta_features = as.data.frame(rowData(sce)), 
                  meta_cells = as.data.frame(colData(sce)))
+
+
+
+
+#####################
+## DO NOT MODIFIY ###
+#####################
 
 ## The lasts steps should always be in this form:
 # Save counts as gziped mtx

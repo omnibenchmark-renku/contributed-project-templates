@@ -16,7 +16,9 @@ source src/config.sh
 ### -------------------------------------------- ###
 
 dataset_name=${DATA_VARS['name']}
+renkus status
 create_dataset 
+
 
 ### -------------------------------------------- ###
 ## ---- Serialise project's knowledge graph ----- ##
