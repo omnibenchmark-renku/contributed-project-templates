@@ -51,9 +51,9 @@ II. **Fill in the fields in the `src/config.sh`**. The most important fields are
 
 III. Run `bash src/process_data.sh`. Once finished, your processed data are uploaded to renku and available for the next step of omnibenchmark. 
 
-### 3. Running the methods. 
+### 3. Next: defining parameters and methods
 
-COMING SOON. 
+Go to the [`parameters template`](https://github.com/ansonrel/contributed-project-templates/tree/main/omnibench-param) to define the parameter space and to the [`methods template`](https://github.com/ansonrel/contributed-project-templates/tree/main/omnibench-method) to add your method's wrappers. 
 
 
 
