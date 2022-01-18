@@ -31,7 +31,7 @@ DATA_VARS['title']=""
 # The tag that will be used by the methods to import the parameters. 
 # Typically, the name of the benchmark followed by "_param". 
 {% if parameters_tags %}
-TAG_LIST=("")=("{{ parameters_tags }}")
+TAG_LIST=("{{ parameters_tags }}")
 {% else %}
 TAG_LIST=("")
 {% endif %}

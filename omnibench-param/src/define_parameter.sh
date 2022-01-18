@@ -10,6 +10,7 @@ set -eo pipefail
 ############### Parameter omni batch ################
 #####################################################
 
+renku save
 source src/utils/import.sh
 source src/config.sh
 
