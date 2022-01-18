@@ -11,7 +11,7 @@
 
 declare -A DATA_VARS
 # Define the name of these parameters, no space or special characters. 
-{% if param_name %}
+{% if parameters_name %}
 DATA_VARS['name']="{{ parameters_name }}"
 {% else %}
 DATA_VARS['name']=""
@@ -30,10 +30,10 @@ DATA_VARS['title']=""
 {% endif %}
 # The tag that will be used by the methods to import the parameters. 
 # Typically, the name of the benchmark followed by "_param". 
-{% if parameters_title %}
+{% if parameters_tags %}
 TAG_LIST=("")=("{{ parameters_tags }}")
 {% else %}
-TAG_LIST=("")=("")
+TAG_LIST=("")
 {% endif %}
 
 ###----------------------------------###
