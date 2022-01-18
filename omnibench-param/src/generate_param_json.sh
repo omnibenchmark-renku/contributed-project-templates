@@ -7,7 +7,6 @@
 
 set -eo pipefail
 
-# TODO: remove this
 source src/config.sh
 
 ### -------------------------------------------- ###
