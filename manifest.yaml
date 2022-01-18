@@ -22,9 +22,16 @@
 - folder: omnibench-param
   name: Basic omnibenchmark parameters
   description: A simple R-based 4.0.4 renku project with a basic directory structure to define parameter space for an omnibenchmark project.
+  allow_template_update: true
+  immutable_template_files:
+    - src/define_parameter.sh
+    - generate_param_json.sh
   variables:
     description: short description added at the beginning of the readme file
-    param_name: a name to give to the parameters. 
+    parameters_name: A name to give to the parameters JSON file. Please don't use space or special characters. 
+    parameters_description: A description of the parameters, will be kept in the metadata of the parameters.
+    parameters_title: A title for the parameters, will be kept in the metadata of the parameters. 
+    parameters_tags: The tag that will be used by the methods to recognize and import the parameters. Typically, the name of the benchmark followed by "_param". Please don't use space or special characters. 
 
 
 
