@@ -53,7 +53,11 @@ III. Run `bash src/process_data.sh`. Once finished, your processed data are uplo
 
 ### 3. Next: defining parameters and methods
 
-Go to the [`parameters template`](https://github.com/ansonrel/contributed-project-templates/tree/main/omnibench-param) to define the parameter space and to the [`methods template`](https://github.com/ansonrel/contributed-project-templates/tree/main/omnibench-method) to add your method's wrappers. 
+Go to: 
+
+- the [`parameters template`](https://github.com/ansonrel/contributed-project-templates/tree/main/omnibench-param) to define the parameter space. You can create a new project from a template [here](https://renkulab.io/projects/new?data=eyJ1cmwiOiJodHRwczovL2dpdGh1Yi5jb20vYW5zb25yZWwvY29udHJpYnV0ZWQtcHJvamVjdC10ZW1wbGF0ZXMiLCJyZWYiOiJtYWluIiwidGVtcGxhdGUiOiJDdXN0b20vb21uaWJlbmNoLXBhcmFtIn0%3D)
+
+- the [`methods template`](https://github.com/ansonrel/contributed-project-templates/tree/main/omnibench-method) to add your method's wrappers. 
 
 
 

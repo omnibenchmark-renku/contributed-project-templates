@@ -42,8 +42,6 @@ TAG_LIST=("")
 
 # Declare here your parameters. 
 # As shown, you can use integers, characters, etc.
-declare -A PARAM_AR=(['param1']="1 2 3" ['param2']="a b c")
-
 {% if parameters_list %}
 declare -A PARAM_AR=({{ parameters_list }})
 {% else %}
