@@ -9,16 +9,30 @@
   description: Streamlit template based on a basic Python (3.7) project.
   variables:
     description: Describe your project
+
+
 - folder: omnibench-dataset
   name: Basic omnibenchmark dataset
   description: A simple R-based 4.0.4 renku project with a basic directory structure to add a dataset to an omnibenchmark project.
   variables:
-    description: short description added at the beginning of the readme file
+    description: short description added at the beginning of the readme file.
+    project_name: short name of the project, without special characters. E.g. "my_awesome_data".
+    script_language: script language extension used to import/ create the data. E.g. "R", "py".
+    metadata_description: A complete description that will be added to the metadata of the dataset; experimental design, type of dataset, technology, treatment etc.  
+    tag: add here the tag of the benchmark. Each omnibenchmark has components that are linked together using a common tag. Use the same tag for all related benchmarks. Can be a list of tags (separated by space). No special characters. 
+    study_link: if any, link to the original study (zenodo, GEO,...).
+    study_tissue: tissue of the data. 
+    study_nclusters: number of clusters (or cell-types) that were found in the study. 
+    study_nbatches: the number of batches in the study (patient, experimental batch, technology, etc).
+    study_note: any random notes about the dataset. 
+
+
 - folder: omnibench-processing
   name: Basic omnibenchmark processing
   description: A simple R-based 4.0.4 renku project with a basic directory structure to process datasets from an omnibenchmark project.
   variables:
     description: short description added at the beginning of the readme file
+
 - folder: omnibench-param
   name: Basic omnibenchmark parameters
   description: A simple R-based 4.0.4 renku project with a basic directory structure to define parameter space for an omnibenchmark project.
@@ -32,4 +46,16 @@
     parameters_tags: The tag that will be used by the methods to recognize and import the parameters. Typically, the name of the benchmark followed by "_param". Please don't use space or special characters. 
     parameters_list: You can give here your list of parameters (modifiable latter). It should be in the form ['param1']='1 2 3' ['param2']='a b c'.
 
-
+- folder: omnibench-method
+  name: Basic omnibenchmark method
+  description: A simple R-based 4.0.4 renku project with a basic directory structure to add a method's wrapper for an omnibenchmark project.
+  allow_template_update: true
+  immutable_template_files: [src/run_method.sh, src/define_workflow.sh]
+  variables:
+    description: short description added at the beginning of the readme file
+    title: A title for the method, will be kept in the metadata of the parameters. 
+    input_data: Tag of the *processed* input data project. This will import these datasets in the method. 
+    input_param: Tag used in the parameter project. This will apply these parameters (when applicable) to the method.
+    meth_name: Method name, without space or special characters.  
+    script_suffix: extension of the main script that will contain your wrapper. E.g. "R" or "py"
+    method_tag: The tag that will be used by the metrics to recognize and import the method's output. Typically, the name of the benchmark followed by "_method". Please don't use space or special characters. 

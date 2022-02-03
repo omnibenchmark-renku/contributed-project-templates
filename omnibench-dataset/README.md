@@ -2,6 +2,7 @@
 {% if description %}
 {{ description }}
 {% endif %}
+
 ## Dataset template
 
 Template to add a dataset to an omnibenchmark project. For each dataset that you have, **one dedicated repository** has to be created from this template to upload the data on the renku system. 
@@ -10,37 +11,33 @@ Template to add a dataset to an omnibenchmark project. For each dataset that you
 
 ### 1. Initialize your new project
 
-**Ignore this step if you have already set up this project on Renku.**
+**Ignore this step if you have already imported this template on Renku.**
 
-I. On the Renku page, click *new project*. 
+I. Log in to [Renku](https://renkulab.io)
 
-II. In the fields, paste: 
+II. Create a new omnibenchmark dataset project using [this link](https://renkulab.io/projects/new?data=eyJ1cmwiOiJodHRwczovL2dpdGh1Yi5jb20vYW5zb25yZWwvY29udHJpYnV0ZWQtcHJvamVjdC10ZW1wbGF0ZXMiLCJyZWYiOiJtYWluIiwidGVtcGxhdGUiOiJDdXN0b20vb21uaWJlbmNoLWRhdGFzZXQifQ%3D%3D).
 
-- [omni_data](https://renkulab.io/gitlab/omnibenchmark/omni_data) or a similar *omnibenchmark* project group in `Namespace`,
+III. Fill in the empty fields. Some description of your project that will be passed at the begining of this readme and the metadata of your data. If needed, you can change them latter in the `src/config.sh`  and `src/{{ project_name }}` file. 
 
-- `https://github.com/ansonrel/contributed-project-templates` in `Repository URL`,
-
--  `main` in the `Repository Reference`,
-
--  `Custom - Basic omnibenchmark dataset` as a template. 
-
-III. Start a new environment in the `Environments` tab of your Renku project.
+IV. Start a new environment in the `Environments` tab of your Renku project.
 
 ### 2. Format data
 
-I. In your interactive environment, download and process your data with `src/{{ name }}.R` by completing the code. You can check how the data can look like using the `dummy_data()` function (included in the code) and run `dummy_data(write_data=TRUE)` if you want to see how the output files should look like, namely: 
+I. In your interactive environment, download and process your data with `src/{{ project_name }}.{{ script_language }}` by completing the code. If multiple files are needed, `src/{{ project_name }}.{{ script_language }}` should be the main script that executes all of them.  
 
-- `counts_{{ name }}.mtx.gz`: a sparse matrix of the count data (genes x cells)
+You can check how the data can look like using the `dummy_data()` function (included in the R code) and run `dummy_data(write_data=TRUE)` if you want to see how the output files should look like, namely: 
 
-- `feature_{{ name }}.json`: a JSON file created from the features metadata of your dataset (e.g. `rowData`) with the first column containing non-duplicated ENSEMBL IDs of the genes. Other columns can optionally be added for example gene symbols etc. 
+- `counts_{{ project_name }}.mtx.gz`: a sparse matrix of the count data (genes x cells)
 
-- `meta_{{ name }}.json`: a JSON file created from the cells metadata of your dataset (e.g. `colData`) with the first column containing non-duplicated barcodes assigned to the cells. Other columns can optionally be added for example sample, condition, patient, etc. 
+- `feature_{{ project_name }}.json`: a JSON file created from the features metadata of your dataset (e.g. `rowData`) with the first column containing non-duplicated ENSEMBL IDs of the genes. Other columns can optionally be added for example gene symbols etc. 
 
-- `data:info_{{ name }}.json`: a dataset metadata file with at least, a *link*, *tissue*, *description* and *note* fields (see the first lines of `{{ name }}.R`).
+- `meta_{{ project_name }}.json`: a JSON file created from the cells metadata of your dataset (e.g. `colData`) with the first column containing non-duplicated barcodes assigned to the cells. Other columns can optionally be added for example sample, condition, patient, etc. 
+
+- `data:info_{{ project_name }}.json`: a dataset metadata file with at least, a *link*, *tissue*, *description* and *note* fields (see the first lines of `{{ project_name }}.R`).
 
 Please note that **any processing steps (filtering, doublets removal) that will not be evaluated in the benchmark should be done in this repo**. Likewise, if you want to assess the effect of processing later on, don't include these steps yet.
 
-II. Fill in the metadata in the `config.sh` and in the R script. Be especially aware of: 
+II. If you haven't provided the metadata during the creation of the project or if you want to modify them: check the `src/config.sh` file. Be especially aware of: 
 
 - `IN_PREFIX['data_generation_script']` : which **should match your data generation script**. It will allow to track any changes to it and rerun the workflow should it be modified. 
 
@@ -48,11 +45,11 @@ II. Fill in the metadata in the `config.sh` and in the R script. Be especially a
 
 ### 3. Load your data in Renku
 
-Simply run `bash src/load_dataset.sh` once you have correctly formated the data and filled in the metadata fields. The origin of your dataset is now tracked by Renku and you can use it for the next steps. 
+Simply run `bash src/load_dataset.sh` in a terminal once you have correctly formated the data and filled in the metadata fields. The origin of your dataset is now tracked by Renku and you can use it for the next steps. 
 
 ### 3B. Update your data
 
-In the case where you need to update your data (e.g. updated source data, corrections, etc), simply run: 
+In the case where you need to update your data (e.g. updated source data, metadata, etc), simply run: 
 
 `bash src/load_dataset.sh`
 

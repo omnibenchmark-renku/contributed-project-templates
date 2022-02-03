@@ -29,11 +29,10 @@ RUN R -f /tmp/install.R
 COPY requirements.txt /tmp/
 RUN pip3 install -r /tmp/requirements.txt
 
-
 # RENKU_VERSION determines the version of the renku CLI
 # that will be used in this image. To find the latest version,
 # visit https://pypi.org/project/renku/#history.
-ARG RENKU_VERSION=1.0.2
+ARG RENKU_VERSION=0.16.1.post1
 
 ########################################################
 # Do not edit this section and do not add anything below

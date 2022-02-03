@@ -4,25 +4,44 @@
 # The dataset json file should have AT LEAST the following information
 # link, tissue, n_cells, n_genes (added automatically latter), description
 info_list <- list(
+  {% if study_link %}
+   "link" = "{{ study_link }}", 
+  {% else %}
   "link" = "link to study",
+  {% endif %}
+
+  {% if study_tissue %}
+  "tissue" = "{{ study_tissue }}",
+  {% else %}
   "tissue" = "tissue",
-  "description" = "A complete description about the experimental design,\n
-                     for e.g. the treatment, condition, specificities, etc.", 
+  {% endif %}
+
+  {% if metadata_description %}
+  "description" = "{{ metadata_description }}",
+  {% else %}
+  "description" = "A complete description of the experimental design, for e.g. the treatment, condition, specificities, etc.",
+  {% endif %}
+
+  {% if study_nclusters %}
+  "n_cluster" = "{{ study_nclusters }}",
+  {% else %}
   "n_cluster" = "The number of cell-types or clusters in the data.", 
-  "n_batches" = "The number of batches in the data (patient, experimental batch, technology, etc.)."
-  "note" = "Any comment on the importance of this dataset for the benchmark,\n
-              e.g., 'example of unbalanced sample sizes'."
+  {% endif %}
+
+  {% if study_nbatches %}
+  "n_batches" = "{{ study_nbatches }}",
+  {% else %}
+  "n_batches" = "The number of batches in the data (patient, experimental batch, technology, etc.).",
+  {% endif %}
+
+  {% if study_note %}
+  "note" = "{{ study_note }}",
+  {% else %}
+  "note" = "Any comment on the importance of this dataset for the benchmark,e.g., 'example of unbalanced sample sizes'."
+  {% endif %}
+
 )
 
-# Add here any packages needed to load your dataset. 
-suppressPackageStartupMessages({
-  library("BiocManager")
-  library('SingleCellExperiment')
-  library('jsonlite')
-  library('Matrix')
-  library("R.utils")
-})
-source("src/r_utils.R")
 
 if (interactive()){
   dataset_name <- gsub("\\/work\\/", "", getwd())
@@ -47,6 +66,17 @@ print(dataset_name)
 #############
 # YOUR CODE #
 #############
+
+# Add here any packages needed to load your dataset. 
+# These are standard packages to load/ save scRNAseq datasets. 
+suppressPackageStartupMessages({
+  library("BiocManager")
+  library('SingleCellExperiment')
+  library('jsonlite')
+  library('Matrix')
+  library("R.utils")
+})
+source("src/r_utils.R")
 
 # Example of how the data can look like:
 (sce <- dummy_data())
