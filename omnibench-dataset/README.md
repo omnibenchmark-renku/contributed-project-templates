@@ -23,9 +23,9 @@ IV. Start a new environment in the `Environments` tab of your Renku project.
 
 ### 2. Format data
 
-I. In your interactive environment, download and process your data with `src/{{ project_name }}.{{ script_language }}` by completing the code. If multiple files are needed, `src/{{ project_name }}.{{ script_language }}` should be the main script that executes all of them.  
+I. In your interactive environment, download and process your data with `src/{{ project_name }}.{{ script_language }}` by completing the code. If multiple scripts are needed, `src/{{ project_name }}.{{ script_language }}` should be the main script executing them. Also, it should accept a `--dataset_name` argument for the naming of the output. 
 
-You can check how the data can look like using the `dummy_data()` function (included in the R code) and run `dummy_data(write_data=TRUE)` if you want to see how the output files should look like, namely: 
+You can check how the data can look like using the `dummy_data()` function (included in the `src/{{ project_name }}.R` code) and run `dummy_data(write_data=TRUE)` if you want to see how the output files should look like, namely: 
 
 - `counts_{{ project_name }}.mtx.gz`: a sparse matrix of the count data (genes x cells)
 

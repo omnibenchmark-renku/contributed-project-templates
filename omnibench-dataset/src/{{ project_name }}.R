@@ -35,7 +35,7 @@ info_list <- list(
   {% endif %}
 
   {% if study_note %}
-  "note" = "{{ study_note }}",
+  "note" = "{{ study_note }}"
   {% else %}
   "note" = "Any comment on the importance of this dataset for the benchmark,e.g., 'example of unbalanced sample sizes'."
   {% endif %}
@@ -44,7 +44,7 @@ info_list <- list(
 
 
 if (interactive()){
-  dataset_name <- gsub("\\/work\\/", "", getwd())
+  dataset_name <- gsub("\\/home\\/.*\\/work\\/", "", getwd())
   out_path <- paste0("data/", dataset_name)
   dir.create(out_path, showWarnings = FALSE )
 } else {
