@@ -52,6 +52,7 @@ if (interactive()){
   for (i in seq_len(length(args))) {
     eval(parse(text = args[[i]]))
   }
+  dataset_name <- gsub("data\\/", "", out_path)
 }
 
 print(out_path)

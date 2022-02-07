@@ -16,7 +16,9 @@ source src/config.sh
 ### -------------------------------------------- ###
 
 dataset_name=${DATA_VARS['name']}
-renkus status
+renku save
+renku migrate
+renku status
 create_dataset 
 
 
@@ -41,7 +43,7 @@ fi
 ## ----------- Update workflow outputs ---------- ##
 ### -------------------------------------------- ###
 
-renku update --with-siblings data/${dataset_name}/*
+renku update data/${dataset_name}/*
 renku save
 
 
