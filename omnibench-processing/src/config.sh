@@ -9,10 +9,19 @@
 ## setup OMNIBENCHMARK  variables
 # keyword/ string to query the raw data to process. Can be checked via: 
 # https://renkulab.io/knowledge-graph/datasets?query=YOUR_QUERY
-OMNI_DATA_RAW=""
+{% if omnibench_tag %}
+OMNI_DATA_RAW="{{ omnibench_tag }}"
+{% else %}
+OMNI_DATA_RAW="" 
+{% endif %}
+
 # the tag to pass to the processed data, typically the tag that you used for raw data followed by "_processed"
 # if the processed data are used in multiple benchmarks, can also be a list of tags. 
-TAG_LIST=""
+{% if omnibench_tag %}
+OMNI_DATA_PROCESS="${OMNI_DATA_RAW}_processed"
+{% else %}
+OMNI_DATA_PROCESS="" 
+{% endif %}
 
 
 ###----------------------------------###
@@ -22,12 +31,11 @@ TAG_LIST=""
 declare -A DATA_VARS
 
 # name to be attributed to the processed data
+{% if project_name %}
+DATA_VARS['name']="{{ project_name }}"
+{% else %}
 DATA_VARS['name']="" 
-# description of the processing step that will be performed
-DATA_VARS['description']="" 
-# human readable title for the processed data
-DATA_VARS['title']="" 
-
+{% endif %}
 
 ###----------------------------------###
 ## --------- General variables ------ ##

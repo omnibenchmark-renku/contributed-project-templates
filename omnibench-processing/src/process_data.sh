@@ -12,6 +12,9 @@ source src/config.sh
 #------------------------------------------#
 
 dataset_name=${DATA_VARS['name']}
+renku save
+renku migrate
+renku status
 create_dataset 
 
 
@@ -37,14 +40,14 @@ datasets=(`find_datasets_to_process`)
 for dataset in ${datasets[@]}
 do
     bash src/workflow/define_workflow.sh $dataset
-    schema_check_processed $dataset "${TAG_LIST[@]}"
+    schema_check_processed $dataset "${OMNI_DATA_PROCESS[@]}"
 done
 
 #-------------------------------------------#
 #---------- Update workflow outputs --------#
 #-------------------------------------------#
 
-renku update --with-siblings /work/$CI_PROJECT/${OUT_PATH}/*
+renku update /work/$CI_PROJECT/${OUT_PATH}/*
 renku save
 
 data_files="${OUT_PATH}/*"

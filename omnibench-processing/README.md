@@ -7,7 +7,7 @@
 
 Template to process raw dataset from omnibenchmark projects. The template assumes that you uploaded datasets to Renku using the [`omnibench_dataset`](https://github.com/ansonrel/contributed-project-templates/tree/main/omnibench-dataset) template or a similar project. 
 
-This template explains how to import the desired datasets and process them uniformly before passing them to the methods. As an example, this template shows how to perform normalization, HVG, PCA, TSNE, UMAP on a dummy dataset of the same style as for the `omnibench_dataset`. 
+This template explains how to import the desired datasets and process them uniformly before passing them to  methods. As an example, this template shows how to perform normalization, HVG, PCA, TSNE, UMAP on a dummy dataset of the same style as for the `omnibench_dataset`. 
 
 ## Steps to process your omnibenchmark data
 
@@ -15,27 +15,19 @@ This template explains how to import the desired datasets and process them unifo
 
 **Ignore this step if you have already imported this template on Renku.**
 
-I. On the Renku page, click *new project*. 
+**Ignore this step if you have already imported this template on Renku.**
 
-II. In the fields, paste: 
+I. Log in to [Renku](https://renkulab.io)
 
-- an *omnibenchmark* project group, or your own namespace (default) in `Namespace`,
+II. Create a new omnibenchmark dataset project using [this link](https://renkulab.io/projects/new?data=eyJ1cmwiOiJodHRwczovL2dpdGh1Yi5jb20vYW5zb25yZWwvY29udHJpYnV0ZWQtcHJvamVjdC10ZW1wbGF0ZXMiLCJyZWYiOiJtYWluIiwidGVtcGxhdGUiOiJDdXN0b20vb21uaWJlbmNoLXByb2Nlc3NpbmcifQ%3D%3D).
 
-- `https://github.com/ansonrel/contributed-project-templates` in `Repository URL`,
+III. Fill in the empty fields. Some description of your project that will be passed at the begining of this readme and the tag of the raw data to fetch. If needed, you can change them latter in the `src/config.sh`  file. 
 
--  `main` in the `Repository Reference`,
-
--  `fetch templates`
-
--  `Custom - Basic omnibenchmark processing` as a template. 
-
--  Some description of your project that will be passed at the begining of this readme. 
-
-III. Start a new environment in the `Environments` tab of your Renku project.
+IV. Start a new environment in the `Environments` tab of your Renku project.
 
 ### 2. Process the data
 
-I. If needed, **modify the `process_data.R`** script that processes the data by default with: 
+I. If needed, **modify the `process_data.R`** script. By default, the provided script processes the data with: 
 
 - normalization (`logNormCounts`)
 
@@ -43,11 +35,11 @@ I. If needed, **modify the `process_data.R`** script that processes the data by 
 
 - Dimension reduction (`runPCA`, `runUMAP`)
 
-II. **Fill in the fields in the `src/config.sh`**. The most important fields are
+II. If you haven't provided the metadata during the creation of the project or if you want to modify them: check the `src/config.sh` file. Be especially aware of: 
 
 - `OMNI_DATA_RAW`, a keyword that should match the tag that you defined in your renku data project(s). We encourage you to check your keyword by passing it to this link: `https://renkulab.io/knowledge-graph/datasets?query=` and check that the desired datasets are retrieved with your query. 
 
-- `OMNI_DATA_PROCESSED`, the keyword that will be latter used by the methods to query the processed data. Typically it is the tag that you used for your raw data, followed by `_processed`.
+- `OMNI_DATA_PROCESS`, the keyword that will be latter used by the methods to query the processed data. Typically it is the tag that you used for your raw data, followed by `_processed`.
 
 III. Run `bash src/process_data.sh`. Once finished, your processed data are uploaded to renku and available for the next step of omnibenchmark. 
 

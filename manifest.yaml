@@ -33,6 +33,9 @@
   description: A simple R-based 4.0.4 renku project with a basic directory structure to process datasets from an omnibenchmark project.
   variables:
     description: short description added at the beginning of the readme file
+    project_name: short name of the project, without special characters. E.g. "my_awesome_processing".
+
+
 
 - folder: omnibench-param
   name: Basic omnibenchmark parameters
@@ -46,6 +49,7 @@
     parameters_title: A title for the parameters, will be kept in the metadata of the parameters. 
     parameters_tags: The tag that will be used by the methods to recognize and import the parameters. Typically, the name of the benchmark followed by "_param". Please don't use space or special characters. 
     parameters_list: You can give here your list of parameters (modifiable latter). It should be in the form ['param1']='1 2 3' ['param2']='a b c'.
+
 
 - folder: omnibench-method
   name: Basic omnibenchmark method
