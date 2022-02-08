@@ -34,6 +34,7 @@
   variables:
     description: short description added at the beginning of the readme file
     project_name: short name of the project, without special characters. E.g. "my_awesome_processing".
+    omnibench_tag: tag of the benchmark. Should correspond to the tag assigned to the datasets that should be processed here. 
 
 
 
