@@ -18,7 +18,7 @@ OMNI_DATA_RAW=""
 # the tag to pass to the processed data, typically the tag that you used for raw data followed by "_processed"
 # if the processed data are used in multiple benchmarks, can also be a list of tags. 
 {% if omnibench_tag %}
-OMNI_DATA_PROCESS="${OMNI_DATA_RAW}_processed"
+OMNI_DATA_PROCESS="{{ omnibench_tag }}_processed"
 {% else %}
 OMNI_DATA_PROCESS="" 
 {% endif %}

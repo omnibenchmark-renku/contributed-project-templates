@@ -11,7 +11,8 @@ FROM ${RENKU_BASE_IMAGE}
 # except for the last end with backslash '\' to continue the RUN line
 #
 USER root
-RUN apt-get update && \
+RUN apt-get update ; apt-get install ca-certificates && \
+    apt-get update && \
     apt-get install -y --no-install-recommends \
     apt-utils \
     jq && \

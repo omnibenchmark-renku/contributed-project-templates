@@ -31,6 +31,8 @@
 - folder: omnibench-processing
   name: Basic omnibenchmark processing
   description: A simple R-based 4.0.4 renku project with a basic directory structure to process datasets from an omnibenchmark project.
+  allow_template_update: true
+  immutable_template_files: [src/process_data.sh, src/workflow/define_workflow.sh]
   variables:
     description: short description added at the beginning of the readme file
     project_name: short name of the project, without special characters. E.g. "my_awesome_processing".
