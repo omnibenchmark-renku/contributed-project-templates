@@ -10,7 +10,7 @@ stages:
   - check
 
 
-_build:
+image_build:
   stage: build
   image: docker:stable
   except:

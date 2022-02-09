@@ -19,6 +19,7 @@ RUN apt-get update ; apt-get install ca-certificates && \
     apt-get -y clean && \
     apt-get -y autoclean  && \
     apt-get -y autoremove
+RUN apt-get update && apt-get upgrade -y curl
 USER ${NB_USER}
 
 # install the R dependencies
