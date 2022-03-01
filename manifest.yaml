@@ -45,7 +45,7 @@
   immutable_template_files: [src/define_parameter.sh, src/generate_param_json.sh]
   variables:
     parameters_name: A name to give to the parameters JSON file. Please don't use space or special characters. 
-    parameters_tags: The tag that will be used by the methods to recognize and import the parameters. Typically, the name of the benchmark followed by "_param". Please don't use space or special characters. 
+    omnibench_tag: tag of the benchmark. Should correspond to the tag assigned previously for data and processing. 
     parameters_list: You can give here your list of parameters (modifiable latter). It should be in the form ['param1']='1 2 3' ['param2']='a b c'.
 
 
@@ -55,9 +55,6 @@
   allow_template_update: true
   immutable_template_files: [src/run_method.sh, src/define_workflow.sh]
   variables:
-    title: A title for the method, will be kept in the metadata of the parameters. 
-    input_data: Tag of the *processed* input data project. This will import these datasets in the method. 
-    input_param: Tag used in the parameter project. This will apply these parameters (when applicable) to the method.
     meth_name: Method name, without space or special characters.  
     script_suffix: extension of the main script that will contain your wrapper. E.g. "R" or "py"
-    method_tag: The tag that will be used by the metrics to recognize and import the method's output. Typically, the name of the benchmark followed by "_method". Please don't use space or special characters. 
+    omnibench_tag: tag of the benchmark. Should correspond to the tag assigned previously for data, processing and parameters. 

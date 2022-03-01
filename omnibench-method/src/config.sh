@@ -9,14 +9,14 @@
 ###-------------------------------------###
 # Define variables describing the input dataset name (OMNI_TYPE), the input parameters dataset name (OMNI_PARAM), the methods name (METH) 
 
-{% if input_data %}
-OMNI_TYPE="{{ input_data }}"
+{% if omnibench_tag %}
+OMNI_TYPE="{{ omnibench_tag }}_processed"
 {% else %}
 OMNI_TYPE=""
 {% endif %}
 
-{% if input_param %}
-OMNI_PARAM="{{ input_param }}"
+{% if omnibench_tag %}
+OMNI_PARAM="{{ omnibench_tag }}_param"
 {% else %}
 OMNI_PARAM=""
 {% endif %}
@@ -61,20 +61,8 @@ PARAM_AR["k"]="10"
 # Define array that contains output dataset features (name, description and title)
 DATA_VARS['name']="${METH}"
 
-{% if description %}
-DATA_VARS['description']="{{ description }}"
-{% else %}
-DATA_VARS['description']=""
-{% endif %}
-
-{% if title %}
-DATA_VARS['title']="{{ title }}"
-{% else %}
-DATA_VARS['title']=""
-{% endif %}
-
-{% if title %}
-TAG_LIST="{{ method_tag }}"
+{% if omnibench_tag %}
+TAG_LIST="{{ omnibench_tag }}_method"
 {% else %}
 TAG_LIST=""
 {% endif %}

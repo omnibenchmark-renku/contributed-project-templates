@@ -51,7 +51,7 @@ renku save
 #---------- Update workflow outputs --------#
 #-------------------------------------------#
 
-renku update ${OUT_PATH}/*
+renku update --all
 renku save
 
 data_files="${OUT_PATH}/*"
