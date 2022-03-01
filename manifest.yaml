@@ -45,8 +45,6 @@
   immutable_template_files: [src/define_parameter.sh, src/generate_param_json.sh]
   variables:
     parameters_name: A name to give to the parameters JSON file. Please don't use space or special characters. 
-    parameters_description: A description of the parameters, will be kept in the metadata of the parameters.
-    parameters_title: A title for the parameters, will be kept in the metadata of the parameters. 
     parameters_tags: The tag that will be used by the methods to recognize and import the parameters. Typically, the name of the benchmark followed by "_param". Please don't use space or special characters. 
     parameters_list: You can give here your list of parameters (modifiable latter). It should be in the form ['param1']='1 2 3' ['param2']='a b c'.
 
