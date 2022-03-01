@@ -15,8 +15,6 @@ This template explains how to import the desired datasets and process them unifo
 
 **Ignore this step if you have already imported this template on Renku.**
 
-**Ignore this step if you have already imported this template on Renku.**
-
 I. Log in to [Renku](https://renkulab.io)
 
 II. Create a new omnibenchmark dataset project using [this link](https://renkulab.io/projects/new?data=eyJ1cmwiOiJodHRwczovL2dpdGh1Yi5jb20vYW5zb25yZWwvY29udHJpYnV0ZWQtcHJvamVjdC10ZW1wbGF0ZXMiLCJyZWYiOiJtYWluIiwidGVtcGxhdGUiOiJDdXN0b20vb21uaWJlbmNoLXByb2Nlc3NpbmcifQ%3D%3D).

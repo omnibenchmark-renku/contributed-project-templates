@@ -16,6 +16,8 @@ set.seed(1234)
 ## Input Arguments
 # counts in mtx format
 print(count_file)
+# feature files with gene name
+print(feature_file)
 # cells metadata in json format
 print(meta_file)
 # dataset name used to naming the outputs
@@ -36,6 +38,7 @@ library(uwot)
 ## Load data
 counts <- readMM(count_file)
 meta <- fromJSON(meta_file)
+feat <- fromJSON(feature_file)
 colnames(counts) <- meta$cell_id 
 
 ## Generate sce
