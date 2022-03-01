@@ -4,8 +4,6 @@
 ## DO NOT MODIFIY ###
 #####################
 
-set -eo pipefail
-
 #####################################################
 ############### Parameter omni batch ################
 #####################################################
@@ -41,7 +39,7 @@ fi
 ## ----------- Update workflow outputs ---------- ##
 ### -------------------------------------------- ###
 
-renku update --with-siblings $out_file
+renku update $out_file
 renku save
 
 

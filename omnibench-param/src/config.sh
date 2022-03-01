@@ -16,25 +16,14 @@ DATA_VARS['name']="{{ parameters_name }}"
 {% else %}
 DATA_VARS['name']=""
 {% endif %}
-# A description of this parameters. 
-{% if parameters_description %}
-DATA_VARS['description']="{{ parameters_description }}"
-{% else %}
-DATA_VARS['description']=""
-{% endif %}
-# A title
-{% if parameters_title %}
-DATA_VARS['title']="{{ parameters_title }}"
-{% else %}
-DATA_VARS['title']=""
-{% endif %}
 # The tag that will be used by the methods to import the parameters. 
 # Typically, the name of the benchmark followed by "_param". 
-{% if parameters_tags %}
-TAG_LIST=("{{ parameters_tags }}")
+{% if omnibench_tag %}
+TAG_LIST="{{ omnibench_tag }}_param"
 {% else %}
-TAG_LIST=("")
+TAG_LIST=""
 {% endif %}
+
 
 ###----------------------------------###
 ## ----- Define Parameter space ----- ##
