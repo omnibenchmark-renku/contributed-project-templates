@@ -21,7 +21,8 @@ create_dataset
 #--- Serialise project's knowledge graph ---#
 #-------------------------------------------#
 
-get_project_graph
+# potentially to remove
+get_project_graph 
 
 #-------------------------------------------#
 #-------- Update / import datasets ---------#
@@ -44,6 +45,7 @@ do
     schema_check_processed $dataset "${OMNI_DATA_PROCESS[@]}"
     {% endif %}
 done
+renku save
 
 #-------------------------------------------#
 #---------- Update workflow outputs --------#
@@ -55,7 +57,6 @@ renku save
 data_files="${OUT_PATH}/*"
 meta_files=${IN_FILE['meta_file']}
 
-add_files_to_dataset_by_name ${dataset_name} ${meta_files[@]}
 add_files_to_dataset_by_name ${dataset_name} ${data_files[@]}
 renku save
 
