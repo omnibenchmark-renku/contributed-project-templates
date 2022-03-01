@@ -36,13 +36,13 @@ import_datasets_by_keyword -f $OMNI_DATA_RAW
 declare -a datasets
 datasets=(`find_datasets_to_process`)
 
+renku save
 for dataset in ${datasets[@]}
 do
     bash src/workflow/define_workflow.sh $dataset
     {% if omnibench_tag=="omni_batch" %}
     schema_check_processed $dataset "${OMNI_DATA_PROCESS[@]}"
     {% endif %}
-    
 done
 
 #-------------------------------------------#
