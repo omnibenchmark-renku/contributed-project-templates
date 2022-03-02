@@ -17,7 +17,6 @@
   allow_template_update: true
   immutable_template_files: [src/load_dataset.sh, src/workflow/define_workflow.sh]
   variables:
-    project_name: short name of the project, without special characters. E.g. "my_awesome_data".
     script_language: script language extension used to import/ create the data. E.g. "R", "py".
     tag: add here the tag of the benchmark. Each omnibenchmark has components that are linked together using a common tag. Use the same tag for all related benchmarks. Can be a list of tags (separated by space). No special characters. 
     study_link: if any, link to the original study (zenodo, GEO,...).
