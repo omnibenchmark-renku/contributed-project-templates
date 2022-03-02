@@ -31,7 +31,8 @@ II. Run `bash src/define_parameter.sh`. Once finished, this will add a `JSON` fi
 
 ### 3. Next: add methods 
 
-COMING SOON. 
+Add the wrappers of the methods you would like to evaluate in new project(s) using this template: 
 
+https://github.com/ansonrel/contributed-project-templates/tree/main/omnibench-method
 
 
