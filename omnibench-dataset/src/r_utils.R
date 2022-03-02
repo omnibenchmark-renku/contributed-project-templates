@@ -12,7 +12,7 @@ dummy_data <- function(ncells = 200, ngenes = 200, write_data = FALSE, out_path 
   
   set.seed(seed)
   colData <- data.frame(barcodes = paste0("BC-", 1:ncells), 
-                        sample = rep(c("A", "B"), each = ncells/2), 
+                        sample = sample(c("A", "B"), ncells, replace = TRUE), 
                         row.names = paste0("BC-", 1:ncells))
   sce <- SingleCellExperiment(assays=list(counts= Matrix(matrix(rpois(ncells * ngenes, 1), ncol=ncells), sparse =TRUE)), 
                               colData = colData, 
@@ -60,5 +60,4 @@ check_input_data <- function(dat_counts, meta_features, meta_cells){
   print("Data seem OK ! ")
 
 }
-
 

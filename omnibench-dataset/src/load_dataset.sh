@@ -17,8 +17,6 @@ source src/config.sh
 
 dataset_name=${DATA_VARS['name']}
 renku save
-renku migrate
-renku status
 create_dataset 
 
 
