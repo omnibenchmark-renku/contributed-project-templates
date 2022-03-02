@@ -13,11 +13,7 @@
 # !! It should also correspond to your data script name !!
 # don't use space or special characters
 declare -A IN_PREFIX
-{% if project_name %}
-IN_PREFIX['data_generation_script']="{{ project_name }}"
-{% else %}
-IN_PREFIX['data_generation_script']="" 
-{% endif %}
+IN_PREFIX['data_generation_script']="{{ __sanitized_project_name__ }}"
 
 # Define the type of script you are using to dl/transform the data, e.g "R", "py",...
 declare -A IN_EXT

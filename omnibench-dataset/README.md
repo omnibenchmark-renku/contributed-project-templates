@@ -17,23 +17,23 @@ I. Log in to [Renku](https://renkulab.io)
 
 II. Create a new omnibenchmark dataset project using [this link](https://renkulab.io/projects/new?data=eyJ1cmwiOiJodHRwczovL2dpdGh1Yi5jb20vYW5zb25yZWwvY29udHJpYnV0ZWQtcHJvamVjdC10ZW1wbGF0ZXMiLCJyZWYiOiJtYWluIiwidGVtcGxhdGUiOiJDdXN0b20vb21uaWJlbmNoLWRhdGFzZXQifQ%3D%3D).
 
-III. Fill in the empty fields. Some description of your project that will be passed at the begining of this readme and the metadata of your data. If needed, you can change them latter in the `src/config.sh`  and `src/{{ project_name }}` file. 
+III. Fill in the empty fields. Some description of your project that will be passed at the begining of this readme and the metadata of your data. If needed, you can change them latter in the `src/config.sh`  and `src/{{ __sanitized_project_name__ }}` file. 
 
 IV. Start a new environment in the `Environments` tab of your Renku project.
 
 ### 2. Format data
 
-I. In your interactive environment, download and process your data with `src/{{ project_name }}.{{ script_language }}` by completing the code. If multiple scripts are needed, `src/{{ project_name }}.{{ script_language }}` should be the main script executing them. Also, it should accept a `--dataset_name` argument for the naming of the output. 
+I. In your interactive environment, download and process your data with `src/{{ __sanitized_project_name__ }}.{{ script_language }}` by completing the code. If multiple scripts are needed, `src/{{ project_name }}.{{ script_language }}` should be the main script executing them. Also, it should accept a `--dataset_name` argument for the naming of the output. 
 
-You can check how the data can look like using the `dummy_data()` function (included in the `src/{{ project_name }}.R` code) and run `dummy_data(write_data=TRUE)` if you want to see how the output files should look like, namely: 
+You can check how the data can look like using the `dummy_data()` function (included in the `src/{{ __sanitized_project_name__ }}.R` code) and run `dummy_data(write_data=TRUE)` if you want to see how the output files should look like, namely: 
 
-- `counts_{{ project_name }}.mtx.gz`: a sparse matrix of the count data (genes x cells)
+- `counts_{{ __sanitized_project_name__ }}.mtx.gz`: a sparse matrix of the count data (genes x cells)
 
-- `feature_{{ project_name }}.json`: a JSON file created from the features metadata of your dataset (e.g. `rowData`) with the first column containing non-duplicated ENSEMBL IDs of the genes. Other columns can optionally be added for example gene symbols etc. 
+- `feature_{{ __sanitized_project_name__ }}.json`: a JSON file created from the features metadata of your dataset (e.g. `rowData`) with the first column containing non-duplicated ENSEMBL IDs of the genes. Other columns can optionally be added for example gene symbols etc. 
 
-- `meta_{{ project_name }}.json`: a JSON file created from the cells metadata of your dataset (e.g. `colData`) with the first column containing non-duplicated barcodes assigned to the cells. Other columns can optionally be added for example sample, condition, patient, etc. 
+- `meta_{{ __sanitized_project_name__ }}.json`: a JSON file created from the cells metadata of your dataset (e.g. `colData`) with the first column containing non-duplicated barcodes assigned to the cells. Other columns can optionally be added for example sample, condition, patient, etc. 
 
-- `data:info_{{ project_name }}.json`: a dataset metadata file with at least, a *link*, *tissue*, *description* and *note* fields (see the first lines of `{{ project_name }}.R`).
+- `data:info_{{ __sanitized_project_name__ }}.json`: a dataset metadata file with at least, a *link*, *tissue*, *description* and *note* fields (see the first lines of `{{ __sanitized_project_name__ }}.R`).
 
 Please note that **any processing steps (filtering, doublets removal) that will not be evaluated in the benchmark should be done in this repo**. Likewise, if you want to assess the effect of processing later on, don't include these steps yet.
 
