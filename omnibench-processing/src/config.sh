@@ -31,11 +31,8 @@ OMNI_DATA_PROCESS=""
 declare -A DATA_VARS
 
 # name to be attributed to the processed data
-{% if project_name %}
-DATA_VARS['name']="{{ project_name }}"
-{% else %}
-DATA_VARS['name']="" 
-{% endif %}
+DATA_VARS['name']="{{ __sanitized_project_name__ }}"
+
 
 ###----------------------------------###
 ## --------- General variables ------ ##

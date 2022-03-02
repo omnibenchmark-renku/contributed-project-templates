@@ -32,7 +32,6 @@
   allow_template_update: true
   immutable_template_files: [src/process_data.sh, src/workflow/define_workflow.sh]
   variables:
-    project_name: short name of the project, without special characters. E.g. "my_awesome_processing".
     omnibench_tag: tag of the benchmark. Should correspond to the tag assigned to the datasets that should be processed here. 
 
 
