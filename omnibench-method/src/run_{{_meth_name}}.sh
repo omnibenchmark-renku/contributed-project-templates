@@ -16,7 +16,7 @@ source src/config.sh
 ### -------------------------------------------- ###
 
 dataset_name=${DATA_VARS['name']}
-renku status
+renku save
 create_dataset 
 
 
@@ -31,8 +31,8 @@ get_project_graph
 ## --------- Update / import datasets ----------- ##
 ### -------------------------------------------- ###
 
-import_datasets_by_keyword $OMNI_TYPE
-import_datasets_by_keyword $OMNI_PARAM 
+import_datasets_by_keyword -f $OMNI_TYPE
+import_datasets_by_keyword -f $OMNI_PARAM 
 
 
 ### -------------------------------------------- ###

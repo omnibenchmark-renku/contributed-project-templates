@@ -15,6 +15,7 @@ RUN apt-get update ; apt-get install ca-certificates && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
     apt-utils \
+    yq \
     jq && \
     apt-get -y clean && \
     apt-get -y autoclean  && \

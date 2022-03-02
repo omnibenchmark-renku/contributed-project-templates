@@ -7,25 +7,41 @@
 ###-------------------------------------###
 ## ------ Define general variables ----- ##
 ###-------------------------------------###
-# Define variables describing the input dataset name (OMNI_TYPE), the input parameters dataset name (OMNI_PARAM), the methods name (METH) 
 
+# Define variables describing the input dataset name (OMNI_TYPE), ..
 {% if omnibench_tag %}
 OMNI_TYPE="{{ omnibench_tag }}_processed"
 {% else %}
 OMNI_TYPE=""
 {% endif %}
-
+#the input parameters dataset name (OMNI_PARAM),..
 {% if omnibench_tag %}
 OMNI_PARAM="{{ omnibench_tag }}_param"
 {% else %}
 OMNI_PARAM=""
 {% endif %}
-
+#the methods name (METH) ,...
 {% if meth_name %}
 METH="{{ meth_name }}"
 {% else %}
 METH=""
 {% endif %}
+# and the tag for the method.
+{% if omnibench_tag %}
+TAG_LIST="{{ omnibench_tag }}_method"
+{% else %}
+TAG_LIST=""
+{% endif %}
+
+###-------------------------------------###
+## ------ Define parameter space ------- ##
+###-------------------------------------###
+
+# Define array with all valid parameter names as keys and their corresponding defaults as values
+declare -A PARAM_AR
+PARAM_AR["lambda"]="1"
+PARAM_AR["d"]="20"
+PARAM_AR["k"]="10"
 
 
 ###-------------------------------------###
@@ -43,15 +59,11 @@ IN_EXT['method_script']="{{ script_suffix }}"
 IN_EXT['method_script']=""
 {% endif %}
 
-###-------------------------------------###
-## ------ Define parameter space ------- ##
-###-------------------------------------###
 
-# Define array with all valid parameter as keys and their corresponding defaults as values
-declare -A PARAM_AR
-PARAM_AR["lambda"]="1"
-PARAM_AR["d"]="20"
-PARAM_AR["k"]="10"
+
+#####################
+## DO NOT MODIFIY ###
+#####################
 
 
 ###-------------------------------------###
@@ -61,19 +73,7 @@ PARAM_AR["k"]="10"
 # Define array that contains output dataset features (name, description and title)
 DATA_VARS['name']="${METH}"
 
-{% if omnibench_tag %}
-TAG_LIST="{{ omnibench_tag }}_method"
-{% else %}
-TAG_LIST=""
-{% endif %}
-
-
-#####################
-## DO NOT MODIFIY ###
-#####################
-
 IN_PREFIX['method_script']=$METH
-
 
 # Define all general neccessary method input file features (name prefix, file extension, path)
 IN_PREFIX['count_file']="norm_counts"
