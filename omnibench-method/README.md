@@ -29,7 +29,7 @@ I. If not done previously, fill in the metadata fields in the `src/config.sh` or
 
 Also add the parameter names that were defined in your parameter project and that could be used with this method. For each one, define the default values (used latter for visualization purposes).
 
-II. Run `bash src/run_{{ meth_name }}.sh`. Once finished, this will result files in a new folder in your `data/`.
+II. Run `bash src/run_project.sh`. Once finished, this will result files in a new folder in your `data/`.
 
 ### 3. Next: add metrics.  
 

@@ -21,7 +21,7 @@ II. Create a new omnibenchmark dataset project using [this link](https://renkula
 
 III. Fill in the empty fields. Some description of your project that will be passed at the begining of this readme and the tag of the raw data to fetch. If needed, you can change them latter in the `src/config.sh`  file. 
 
-IV. Start a new environment in the `Environments` tab of your Renku project.
+IV. Go to the `Environments` tab of your new Renku project and launch a new session when the Docker image has been built. 
 
 ### 2. Process the data
 
@@ -39,7 +39,7 @@ II. If you haven't provided the metadata during the creation of the project or i
 
 - `OMNI_DATA_PROCESS`, the keyword that will be latter used by the methods to query the processed data. Typically it is the tag that you used for your raw data, followed by `_processed`.
 
-III. Run `bash src/process_data.sh`. Once finished, your processed data are uploaded to renku and available for the next step of omnibenchmark. 
+III. Run `bash src/run_project.sh`. Once finished, your processed data are uploaded to renku and available for the next step of omnibenchmark. 
 
 ### 3. Next: defining parameters and methods
 

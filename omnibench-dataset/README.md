@@ -19,7 +19,7 @@ II. Create a new omnibenchmark dataset project using [this link](https://renkula
 
 III. Fill in the empty fields. Some description of your project that will be passed at the begining of this readme and the metadata of your data. If needed, you can change them latter in the `src/config.sh`  and `src/{{ __sanitized_project_name__ }}` file. 
 
-IV. Start a new environment in the `Environments` tab of your Renku project.
+IV. Go to the `Environments` tab of your new Renku project and launch a new session when the Docker image has been built. 
 
 ### 2. Format data
 
@@ -45,13 +45,13 @@ II. If you haven't provided the metadata during the creation of the project or i
 
 ### 3. Load your data in Renku
 
-Simply run `bash src/load_dataset.sh` in a terminal once you have correctly formated the data and filled in the metadata fields. The origin of your dataset is now tracked by Renku and you can use it for the next steps. 
+Simply run `bash src/run_project.sh` in a terminal once you have correctly formated the data and filled in the metadata fields. The origin of your dataset is now tracked by Renku and you can use it for the next steps. 
 
 ### 3B. Update your data
 
 In the case where you need to update your data (e.g. updated source data, metadata, etc), simply run: 
 
-`bash src/load_dataset.sh`
+`bash src/run_project.sh`
 
 after your changes to update the desired files. 
 

@@ -27,7 +27,7 @@ IV. Start a new environment in the `Environments` tab of your Renku project.
 
 I. If not done previously, fill in the metadata fields in the `src/config.sh` or proofread the fields that you indicated. The most sensible fields are the **tags**, that you will have to pass in the methods and the **parameters** list itself.
 
-II. Run `bash src/define_parameter.sh`. Once finished, this will add a `JSON` file in your `data` folder with all parameters that will be used by the methods. 
+II. Run `bash src/run_project.sh`. Once finished, this will add a `JSON` file in your `data` folder with all parameters that will be used by the methods. 
 
 ### 3. Next: add methods 
 
