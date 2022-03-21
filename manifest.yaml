@@ -15,7 +15,7 @@
   name: Basic omnibenchmark dataset
   description: A simple R-based 4.0.4 renku project with a basic directory structure to add a dataset to an omnibenchmark project.
   allow_template_update: true
-  immutable_template_files: [src/load_dataset.sh, src/workflow/define_workflow.sh]
+  immutable_template_files: [src/run_project.sh, src/workflow/define_workflow.sh]
   variables:
     script_language: script language extension used to import/ create the data. E.g. "R", "py".
     tag: add here the tag of the benchmark. Each omnibenchmark has components that are linked together using a common tag. Use the same tag for all related benchmarks. Can be a list of tags (separated by space). No special characters. 
@@ -40,7 +40,7 @@
   name: Basic omnibenchmark parameters
   description: A simple R-based 4.0.4 renku project with a basic directory structure to define parameter space for an omnibenchmark project.
   allow_template_update: true
-  immutable_template_files: [src/define_parameter.sh, src/generate_param_json.sh]
+  immutable_template_files: [src/run_project.sh, src/generate_param_json.sh]
   variables:
     parameters_name: A name to give to the parameters JSON file. Please don't use space or special characters. 
     omnibench_tag: tag of the benchmark. Should correspond to the tag assigned previously for data and processing. 
@@ -51,7 +51,7 @@
   name: Basic omnibenchmark method
   description: A simple R-based 4.0.4 renku project with a basic directory structure to add a method's wrapper for an omnibenchmark project.
   allow_template_update: true
-  immutable_template_files: [src/run_method.sh, src/define_workflow.sh]
+  immutable_template_files: [src/run_project.sh, src/define_workflow.sh]
   variables:
     meth_name: Method name, without space or special characters.  
     script_suffix: extension of the main script that will contain your wrapper. E.g. "R" or "py"
