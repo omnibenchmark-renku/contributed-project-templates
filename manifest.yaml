@@ -30,7 +30,7 @@
   name: Basic omnibenchmark processing
   description: A simple R-based 4.0.4 renku project with a basic directory structure to process datasets from an omnibenchmark project.
   allow_template_update: true
-  immutable_template_files: [src/process_data.sh, src/workflow/define_workflow.sh]
+  immutable_template_files: [src/run_project.sh, src/workflow/define_workflow.sh]
   variables:
     omnibench_tag: tag of the benchmark. Should correspond to the tag assigned to the datasets that should be processed here. 
 

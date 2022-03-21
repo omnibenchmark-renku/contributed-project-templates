@@ -3,7 +3,7 @@
 {{ description }}
 {% endif %}
 
-## Processed dataset template
+## Processed dataset template (new version)
 
 Template to process raw dataset from omnibenchmark projects. The template assumes that you uploaded datasets to Renku using the [`omnibench_dataset`](https://github.com/ansonrel/contributed-project-templates/tree/main/omnibench-dataset) template or a similar project. 
 
