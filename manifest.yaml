@@ -56,3 +56,22 @@
     meth_name: Method name, without space or special characters.  
     script_suffix: extension of the main script that will contain your wrapper. E.g. "R" or "py"
     omnibench_tag: tag of the benchmark. Should correspond to the tag assigned previously for data, processing and parameters. 
+
+- folder: omni-data-py
+  name: Basic omnibenchmark dataset
+  description: A simple R-based renku project with a basic directory structure to add a dataset to an omnibenchmark project.
+  allow_template_update: true
+  immutable_template_files: [src/r_utils.R]
+  variables:
+    username: full username, first name and last name. 
+    mail_address: mail adress related to the account that is being used. 
+    benchmark_name: name of the omnibenchmark to link this project with.
+    project_title: long, human readable project title
+    project_description: a description of the project
+    dataset_keyword: Dataset keyword(s) to make this dataset reachable for other projects/benhcmark components
+    study_link: (optional) if any, link to the original study (zenodo, GEO,...).
+    study_tissue: (optional) tissue of the data. 
+    metadata_description: (optional) A complete description of the experimental design, for e.g. the treatment, condition, specificities, etc.
+    study_nclusters: (optional) number of clusters (or cell-types) that were found in the study. 
+    study_nbatches: (optional) the number of batches in the study (patient, experimental batch, technology, etc).
+    study_note: (optional) any random notes about the dataset. 

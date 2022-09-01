@@ -1,0 +1,19 @@
+---
+data:
+    name: "{{__sanitized_project_name__}}"
+    title: "{{ project_name }}"
+    description: "{{ project_description }}"
+    keywords: ["{{ dataset_keyword }}"]
+script: "src/{{__sanitized_project_name__}}.R"
+outputs:
+    template: "data/${name}/${name}_${out_name}.${out_end}"
+    files:
+        counts: 
+            end: "mtx.gz"
+        data_info:
+            end: "json"
+        meta:
+            end: "json"
+        feature:
+            end: "json"
+benchmark_name: "{{ benchmark_name }}"
