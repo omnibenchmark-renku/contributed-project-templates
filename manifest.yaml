@@ -87,8 +87,10 @@
     benchmark_name: name of the omnibenchmark to link this project with.
     input_files: 
       description: input file(s)
+      type: list
     input_keywords: 
       description: keyword(s) of the processed data to import.
+      type: list
     project_title: long, human readable project title
     project_description: a description of the project
     dataset_keyword: Dataset keyword(s) to make this dataset reachable for other projects/benhcmark components
