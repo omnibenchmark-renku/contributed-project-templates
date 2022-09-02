@@ -6,12 +6,15 @@ data:
     keywords: ["{{ dataset_keyword }}"]
 script: "src/{{__sanitized_project_name__}}.R"
 inputs:
-  keywords: ["{{ project_title }}"]
-  {% if input_file.length == 1 %}
-  files: ["{{ input_file }}"]
-  {% else %}
-  files: [
-    {% for infil in input_file %} "{{ input_file }}"{{ "," if not loop.last else "" }} {% endfor %}
+  keywords: ["{{ input_keyword }}"]
+  {% if input_keyword.length == 1 %} keywords: ["{{ input_keyword }}"]
+  {% else %} keywords: [
+    {% for inkey in input_keyword %} "{{ inkey }}"{{ "," if not loop.last else "" }} {% endfor %}
+    ]
+  {% endif %}
+  {% if input_file.length == 1 %} files: ["{{ input_file }}"]
+  {% else %} files: [
+    {% for infil in input_file %} "{{ infil }}"{{ "," if not loop.last else "" }} {% endfor %}
     ]
   {% endif %}
   files: ["count_file", "meta_file", "hvg_file"]

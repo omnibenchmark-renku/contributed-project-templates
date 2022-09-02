@@ -85,8 +85,8 @@
         optional: False 
     mail_address: mail adress related to the account that is being used. 
     benchmark_name: name of the omnibenchmark to link this project with.
-    input_keyword: keyword of the processed data to import.
-    input_file: input file(s)
+    input_files: input file(s)
+    input_keywords: keyword(s) of the processed data to import.
     project_title: long, human readable project title
     project_description: a description of the project
     dataset_keyword: Dataset keyword(s) to make this dataset reachable for other projects/benhcmark components
