@@ -85,14 +85,12 @@
         optional: False 
     mail_address: mail adress related to the account that is being used. 
     benchmark_name: name of the omnibenchmark to link this project with.
-    input_files: input file(s)
-    input_keywords: keyword(s) of the processed data to import.
+    input_files: 
+      description: input file(s)
+      type: list
+    input_keywords: 
+      description: keyword(s) of the processed data to import.
+      type: list
     project_title: long, human readable project title
     project_description: a description of the project
     dataset_keyword: Dataset keyword(s) to make this dataset reachable for other projects/benhcmark components
-    study_link: (optional) if any, link to the original study (zenodo, GEO,...).
-    study_tissue: (optional) tissue of the data. 
-    metadata_description: (optional) A complete description of the experimental design, for e.g. the treatment, condition, specificities, etc.
-    study_nclusters: (optional) number of clusters (or cell-types) that were found in the study. 
-    study_nbatches: (optional) the number of batches in the study (patient, experimental batch, technology, etc).
-    study_note: (optional) any random notes about the dataset. 
