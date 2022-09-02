@@ -1,3 +1,7 @@
+    {% set keywords_parse = [] %}
+    {% for i in keywords_parse.split(' ') %}
+        {% set keywords_parse = keywords_parse + i[0] %}
+    {% endfor %}
 ---
 data:
     name: "{{__sanitized_project_name__}}"
@@ -7,10 +11,10 @@ data:
 script: "src/{{__sanitized_project_name__}}.R"
 inputs:
   keywords: ["{{ input_keywords }}"]
-  {% if input_keywords.length == 1 %} 
-  keywords: ["{{ input_keywords }}"]
+  {% if keywords_parse.length == 1 %} 
+  keywords: ["{{ keywords_parse }}"]
   {% else %} keywords: [
-    {% for inkey in input_keywords %} 
+    {% for inkey in keywords_parse %} 
     "{{ inkey }}"{{ "," if not loop.last else "" }} 
     {% endfor %}
     ]
