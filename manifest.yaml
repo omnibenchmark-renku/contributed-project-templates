@@ -81,8 +81,8 @@
   description: A simple R-based renku project with a basic directory structure to add a method to an omnibenchmark project.
   variables:
     username: 
-        description: full username, first name and last name.
-        optional: False 
+      description: full username, first name and last name.
+      optional: False 
     mail_address: mail adress related to the account that is being used. 
     benchmark_name: name of the omnibenchmark to link this project with.
     input_files: 
