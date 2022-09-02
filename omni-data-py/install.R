@@ -1,4 +1,3 @@
-# R packages to generate csf patient dataset
 
 install.packages("BiocManager")
 install.packages("https://cran.rstudio.com/src/contrib/matrixStats_0.58.0.tar.gz", repo=NULL, type="source")
