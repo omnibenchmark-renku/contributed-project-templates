@@ -77,8 +77,8 @@
     study_note: (optional) any random notes about the dataset. 
 
 - folder: omni-method-py
-  name: Basic python omnibenchmark dataset
-  description: A simple R-based renku project with a basic directory structure to add a dataset to an omnibenchmark project.
+  name: Basic python omnibenchmark method
+  description: A simple R-based renku project with a basic directory structure to add a method to an omnibenchmark project.
   variables:
     username: 
         description: full username, first name and last name.
@@ -86,7 +86,7 @@
       mail_address: mail adress related to the account that is being used. 
       benchmark_name: name of the omnibenchmark to link this project with.
       input_keyword: keyword of the processed data to import.
-      input_file: 
+      input_file: input file(s)
       project_title: long, human readable project title
       project_description: a description of the project
       dataset_keyword: Dataset keyword(s) to make this dataset reachable for other projects/benhcmark components
