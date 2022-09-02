@@ -1,5 +1,5 @@
     {% set keywords_parse = [] %}
-    {% for i in keywords_parse.split(' ') %}
+    {% for i in input_keywords.split(' ') %}
         {% set keywords_parse = keywords_parse + i[0] %}
     {% endfor %}
 ---
