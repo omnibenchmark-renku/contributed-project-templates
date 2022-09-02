@@ -1,0 +1,42 @@
+---
+data:
+    name: "{{__sanitized_project_name__}}"
+    title: "{{ project_title }}"
+    description: "{{ project_description }}"
+    keywords: ["{{ dataset_keyword }}"]
+script: "src/{{__sanitized_project_name__}}.R"
+inputs:
+  keywords: ["{{ project_title }}"]
+  {% if input_file.length == 1 %}
+  files: ["{{ input_file }}"]
+  {% else %}
+  files: [
+    {% for infil in input_file %}
+    "{{ input_file }}"{{ "," if loop.last else "" }}
+    {% endfor %}
+    ]
+  {% endif %}
+  files: ["count_file", "meta_file", "hvg_file"]
+  prefix:
+    count_file: "_norm_counts"
+    meta_file: "_meta"
+    hvg_file: "_hvg_out"
+outputs:
+  template: "data/${name}/${name}_${unique_values}_${out_name}.${out_end}"
+  files:
+    corrected_counts: 
+        end: ".mtx.gz"
+    corrected_dim_file:
+        end: "mtx.gz"
+outputs:
+    template: "data/${name}/${name}_${out_name}.${out_end}"
+    files:
+        counts: 
+            end: "mtx.gz"
+        data_info:
+            end: "json"
+        meta:
+            end: "json"
+        feature:
+            end: "json"
+benchmark_name: "{{ benchmark_name }}"
