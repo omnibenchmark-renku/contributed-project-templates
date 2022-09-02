@@ -11,9 +11,7 @@ inputs:
   files: ["{{ input_file }}"]
   {% else %}
   files: [
-    {% for infil in input_file %}
-    "{{ input_file }}"{{ "," if loop.last else "" }}
-    {% endfor %}
+    {% for infil in input_file %} "{{ input_file }}"{{ "," if not loop.last else "" }} {% endfor %}
     ]
   {% endif %}
   files: ["count_file", "meta_file", "hvg_file"]
