@@ -6,20 +6,20 @@ data:
     keywords: ["{{ dataset_keyword }}"]
 script: "src/{{__sanitized_project_name__}}.R"
 inputs:
-  keywords: ["{{ input_keyword }}"]
-  {% if input_keyword.length == 1 %} 
-  keywords: ["{{ input_keyword }}"]
+  keywords: ["{{ input_keywords }}"]
+  {% if input_keywords.length == 1 %} 
+  keywords: ["{{ input_keywords }}"]
   {% else %} keywords: [
-    {% for inkey in input_keyword %} 
+    {% for inkey in input_keywords %} 
     "{{ inkey }}"{{ "," if not loop.last else "" }} 
     {% endfor %}
     ]
   {% endif %}
-  {% if input_file.length == 1 %} 
-  files: ["{{ input_file }}"]
+  {% if input_files.length == 1 %} 
+  files: ["{{ input_files }}"]
   {% else %} 
   files: [
-    {% for infil in input_file %} 
+    {% for infil in input_files %} 
     "{{ infil }}"{{ "," if not loop.last else "" }} 
     {% endfor %}
     ]
