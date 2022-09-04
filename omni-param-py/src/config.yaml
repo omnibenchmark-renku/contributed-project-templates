@@ -1,0 +1,18 @@
+---
+data:
+    name: "{{__sanitized_project_name__}}"
+    title: "{{ project_title }}"
+    description: "{{ project_description }}"
+    keywords: ["{{ parameter_keyword }}"]
+script: "src/generate_parameter_file.py"
+benchmark_name: "{{ benchmark_name }}"
+outputs:
+    files:
+        param_json:
+            end: ".json"
+    file_mapping:
+        mapping1:
+        output_files:
+            param_json: "data/{{ __sanitized_project_name__ }}/all_parameter.json"
+        input_files: 
+        parameter: 

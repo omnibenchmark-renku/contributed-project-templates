@@ -86,3 +86,16 @@
     project_title: long, human readable project title
     project_description: a description of the project
     method_keyword: Method keyword to make this dataset reachable for other projects/benhcmark components
+
+- folder: omni-param-py
+  name: Basic python omnibenchmark parameter space
+  description: A simple R-based renku project with a basic directory structure to add a method to an omnibenchmark project.
+  variables:
+    username: 
+      description: full username, first name and last name.
+      optional: False 
+    mail_address: mail adress related to the account that is being used. 
+    benchmark_name: name of the omnibenchmark to link this project with.
+    project_title: long, human readable project title
+    project_description: a description of the project
+    parameter_keyword: Parameter keyword to make this dataset reachable for other projects/benhcmark components
