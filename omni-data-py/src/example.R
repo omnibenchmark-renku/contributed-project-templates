@@ -22,6 +22,7 @@ set.seed(1000)
 ##  ------------------------- Options -------------------------------  ##
 ### ----------------------------------------------------------------- ###
 
+# These are example options. Feel free to modify it for your dataset. 
 option_list <- list(
     make_option(c("--data_info"), type = "character", default = NULL,
                 help = "Path to file with general information"),
@@ -73,16 +74,6 @@ info_list <- list(
   "description" = "{{ metadata_description }}",
   {% else %}
   "description" = "A complete description of the experimental design, for e.g. the treatment, condition, specificities, etc.",
-  {% endif %}
-  {% if study_nclusters %}
-  "n_cluster" = "{{ study_nclusters }}",
-  {% else %}
-  "n_cluster" = "The number of cell-types or clusters in the data.", 
-  {% endif %}
-  {% if study_nbatches %}
-  "n_batches" = "{{ study_nbatches }}",
-  {% else %}
-  "n_batches" = "The number of batches in the data (patient, experimental batch, technology, etc.).",
   {% endif %}
   {% if study_note %}
   "note" = "{{ study_note }}"
