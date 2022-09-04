@@ -1,0 +1,16 @@
+---
+data:
+    name: "{{__sanitized_project_name__}}"
+    title: "{{ project_title }}"
+    description: "{{ project_description }}"
+    keywords: ["{{ metric_keyword }}"]
+script: "src/generate_metric_info.py"
+benchmark_name: "{{ benchmark_name }}"
+outputs:
+    files:
+        metric_info: 
+            end: "json"
+    file_mapping:
+        mapping1:
+          output_files:
+            metric_info: "data/{{__sanitized_project_name__}}/{{__sanitized_project_name__}}_info.json"

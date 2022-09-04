@@ -99,3 +99,16 @@
     project_title: long, human readable project title
     project_description: a description of the project
     parameter_keyword: Parameter keyword to make this dataset reachable for other projects/benhcmark components
+
+- folder: omni-metric-py
+  name: Basic python omnibenchmark metric
+  description: A simple R-based renku project with a basic directory structure to add a metric to an omnibenchmark project.
+  variables:
+    username: 
+      description: full username, first name and last name.
+      optional: False 
+    mail_address: mail adress related to the account that is being used. 
+    benchmark_name: name of the omnibenchmark to link this project with.
+    project_title: long, human readable project title
+    project_description: a description of the project
+    metric_keyword: metric keyword to make this dataset reachable for other projects/benhcmark components

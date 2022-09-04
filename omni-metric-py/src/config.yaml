@@ -1,0 +1,19 @@
+---
+data:
+    name: "{{__sanitized_project_name__}}"
+    title: "{{ project_title }}"
+    description: "{{ project_description }}"
+    keywords: ["{{ metric_keyword }}"]
+script: "src/run_{{__sanitized_project_name__}}.R" ## change for .py if you are using a py script
+benchmark_name: "{{ benchmark_name }}"
+inputs:
+  keywords: ["INPUT_KEY1", "INPUT_KEY2"]
+    files: ["input_file_name1", "input_file_name2"]
+    prefix:
+        input_file_name1: "_INPUT1_"
+        input_file_name2: "_INPUT2_"
+outputs:
+  template: "data/${name}/${name}_${unique_values}_${out_name}.${out_end}"
+  files:
+    metric_res: 
+        end: "json"
