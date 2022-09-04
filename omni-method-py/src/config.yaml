@@ -13,6 +13,7 @@ inputs:
         input_file_name1: "_INPUT1_"
         input_file_name2: "_INPUT2_"
 outputs:
+    template: "data/${name}/${name}_${unique_values}_${out_name}.${out_end}"
     files:
         method_result1: 
             end: "FILE1_END"

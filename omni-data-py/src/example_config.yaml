@@ -4,13 +4,16 @@ data:
     title: "{{ project_title }}"
     description: "{{ project_description }}"
     keywords: ["{{ dataset_keyword }}"]
-script: "src/{{__sanitized_project_name__}}.R"
+script: "src/example.R"
 outputs:
     template: "data/${name}/${name}_${out_name}.${out_end}"
     files:
-        data_file1: 
-            end: "FILE1_END"
-        data_file2:
-            end: "FILE2_END"
-        #...
+        counts: 
+            end: "mtx.gz"
+        data_info:
+            end: "json"
+        meta:
+            end: "json"
+        feature:
+            end: "json"
 benchmark_name: "{{ benchmark_name }}"

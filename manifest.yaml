@@ -68,7 +68,7 @@
     benchmark_name: name of the omnibenchmark to link this project with.
     project_title: long, human readable project title
     project_description: a description of the project
-    dataset_keyword: Dataset keyword(s) to make this dataset reachable for other projects/benhcmark components
+    dataset_keyword: Dataset keyword to make this dataset reachable for other projects/benchmark components
     study_link: (optional) if any, link to the original study (zenodo, GEO,...).
     study_tissue: (optional) tissue of the data. 
     metadata_description: (optional) A complete description of the experimental design, for e.g. the treatment, condition, specificities, etc.
@@ -85,7 +85,7 @@
     benchmark_name: name of the omnibenchmark to link this project with.
     project_title: long, human readable project title
     project_description: a description of the project
-    processed_keyword: processed data keyword to make this dataset reachable for other projects/benhcmark components
+    processed_keyword: processed data keyword to make this dataset reachable for other projects/benchmark components
 
 - folder: omni-method-py
   name: Basic python omnibenchmark method
@@ -98,7 +98,7 @@
     benchmark_name: name of the omnibenchmark to link this project with.
     project_title: long, human readable project title
     project_description: a description of the project
-    method_keyword: Method keyword to make this dataset reachable for other projects/benhcmark components
+    method_keyword: Method keyword to make this dataset reachable for other projects/benchmark components
 
 - folder: omni-param-py
   name: Basic python omnibenchmark parameter space
@@ -111,7 +111,7 @@
     benchmark_name: name of the omnibenchmark to link this project with.
     project_title: long, human readable project title
     project_description: a description of the project
-    parameter_keyword: Parameter keyword to make this dataset reachable for other projects/benhcmark components
+    parameter_keyword: Parameter keyword to make this dataset reachable for other projects/benchmark components
 
 - folder: omni-metric-py
   name: Basic python omnibenchmark metric
@@ -124,4 +124,4 @@
     benchmark_name: name of the omnibenchmark to link this project with.
     project_title: long, human readable project title
     project_description: a description of the project
-    metric_keyword: metric keyword to make this dataset reachable for other projects/benhcmark components
+    metric_keyword: metric keyword to make this dataset reachable for other projects/benchmark components
