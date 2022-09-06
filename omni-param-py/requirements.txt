@@ -1,1 +1,1 @@
-omnibenchmark==0.0.20
+omnibenchmark==0.0.21
