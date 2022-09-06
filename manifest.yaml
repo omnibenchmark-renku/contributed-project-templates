@@ -3,10 +3,6 @@
   name: Basic python omnibenchmark dataset
   description: A simple R-based renku project with a basic directory structure to add a dataset to an omnibenchmark project.
   variables:
-    username: 
-      description: full username, first name and last name.
-      optional: False 
-    mail_address: mail adress related to the account that is being used. 
     benchmark_name: name of the omnibenchmark to link this project with.
     project_title: long, human readable project title
     project_description: a description of the project
@@ -20,10 +16,6 @@
   name: Basic python omnibenchmark processing
   description: A simple R-based renku project with a basic directory structure to add a data processing to an omnibenchmark project.
   variables:
-    username: 
-      description: full username, first name and last name.
-      optional: False 
-    mail_address: mail adress related to the account that is being used. 
     benchmark_name: name of the omnibenchmark to link this project with.
     project_title: long, human readable project title
     project_description: a description of the project
@@ -33,10 +25,6 @@
   name: Basic python omnibenchmark method
   description: A simple R-based renku project with a basic directory structure to add a method to an omnibenchmark project.
   variables:
-    username: 
-      description: full username, first name and last name.
-      optional: False 
-    mail_address: mail adress related to the account that is being used. 
     benchmark_name: name of the omnibenchmark to link this project with.
     project_title: long, human readable project title
     project_description: a description of the project
@@ -46,10 +34,6 @@
   name: Basic python omnibenchmark parameter space
   description: A simple R-based renku project with a basic directory structure to add a method to an omnibenchmark project.
   variables:
-    username: 
-      description: full username, first name and last name.
-      optional: False 
-    mail_address: mail adress related to the account that is being used. 
     benchmark_name: name of the omnibenchmark to link this project with.
     project_title: long, human readable project title
     project_description: a description of the project
@@ -59,10 +43,6 @@
   name: Basic python omnibenchmark metric
   description: A simple R-based renku project with a basic directory structure to add a metric to an omnibenchmark project.
   variables:
-    username: 
-      description: full username, first name and last name.
-      optional: False 
-    mail_address: mail adress related to the account that is being used. 
     benchmark_name: name of the omnibenchmark to link this project with.
     project_title: long, human readable project title
     project_description: a description of the project
