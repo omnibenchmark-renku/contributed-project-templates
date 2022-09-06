@@ -9,3 +9,4 @@ This template will help you to process datasets from an omnibenchmark project. O
 
 The configuration of a processing module is similar to the one of a method module, which has its dedicated instructions in the [Omnibenchmark documentation](https://omnibenchmark.readthedocs.io/en/latest/start/modules/02_method_module.html#).
 
+Once your module is completed and tested, you can integrate it in your Omnibenchmark by [submitting it](https://omnibenchmark.readthedocs.io/en/latest/start/modules/04_Add_module_to_omnibench.html) to our Orchestrator Gitlab CI/CD.
