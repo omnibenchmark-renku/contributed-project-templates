@@ -18,6 +18,7 @@ print(
 
 ## Create output dataset
 omni_obj.create_dataset()
+renku_save()
 
 ## Run workflow
 omni_obj.run_renku()

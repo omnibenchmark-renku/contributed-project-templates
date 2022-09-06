@@ -7,6 +7,12 @@
 
 This template will help you to add a dataset to an omnibenchmark project. For each dataset that you have, **one dedicated repository** has to be created from this template to upload the data on the renku system. 
 
+For an example of how the config file and the script can look like, see: 
+
+- `src/example_config.yaml` 
+
+- `src/example.R` 
+
 The configuration of a data module is explained in details in the [Omnibenchmark documentation](https://omnibenchmark.readthedocs.io/en/latest/start/modules/01_data_module.html)
 
 Once your module is completed and tested, you can integrate it in your Omnibenchmark by [submitting it](https://omnibenchmark.readthedocs.io/en/latest/start/modules/04_Add_module_to_omnibench.html) to our Orchestrator Gitlab CI/CD.
