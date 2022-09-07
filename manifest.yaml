@@ -1,7 +1,7 @@
 
 - folder: omni-data-py
-  name: Basic python omnibenchmark dataset
-  description: A simple R-based renku project with a basic directory structure to add a dataset to an omnibenchmark project.
+  name: Basic omnibenchmark dataset
+  description: A simple Renku project with a basic directory structure to add a dataset to an omnibenchmark project.
   variables:
     benchmark_name: name of the omnibenchmark to link this project with.
     project_title: long, human readable project title
@@ -13,8 +13,8 @@
     study_note: (optional) any random notes about the dataset. 
 
 - folder: omni-processed-py
-  name: Basic python omnibenchmark processing
-  description: A simple R-based renku project with a basic directory structure to add a data processing to an omnibenchmark project.
+  name: Basic omnibenchmark processing
+  description: A simple renku project with a basic directory structure to add a data processing to an omnibenchmark project.
   variables:
     benchmark_name: name of the omnibenchmark to link this project with.
     project_title: long, human readable project title
@@ -22,8 +22,8 @@
     processed_keyword: processed data keyword to make this dataset reachable for other projects/benchmark components
 
 - folder: omni-method-py
-  name: Basic python omnibenchmark method
-  description: A simple R-based renku project with a basic directory structure to add a method to an omnibenchmark project.
+  name: Basic omnibenchmark method
+  description: A simple renku project with a basic directory structure to add a method to an omnibenchmark project.
   variables:
     benchmark_name: name of the omnibenchmark to link this project with.
     project_title: long, human readable project title
@@ -31,8 +31,8 @@
     method_keyword: Method keyword to make this dataset reachable for other projects/benchmark components
 
 - folder: omni-param-py
-  name: Basic python omnibenchmark parameter space
-  description: A simple R-based renku project with a basic directory structure to add a method to an omnibenchmark project.
+  name: Basic omnibenchmark parameter space
+  description: A simple renku project with a basic directory structure to add a method to an omnibenchmark project.
   variables:
     benchmark_name: name of the omnibenchmark to link this project with.
     project_title: long, human readable project title
@@ -40,8 +40,8 @@
     parameter_keyword: Parameter keyword to make this dataset reachable for other projects/benchmark components
 
 - folder: omni-metric-py
-  name: Basic python omnibenchmark metric
-  description: A simple R-based renku project with a basic directory structure to add a metric to an omnibenchmark project.
+  name: Basic omnibenchmark metric
+  description: A simple renku project with a basic directory structure to add a metric to an omnibenchmark project.
   variables:
     benchmark_name: name of the omnibenchmark to link this project with.
     project_title: long, human readable project title
