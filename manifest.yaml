@@ -3,7 +3,10 @@
   name: Basic omnibenchmark dataset
   description: A simple Renku project with a basic directory structure to add a dataset to an omnibenchmark project.
   variables:
-    benchmark_name: name of the omnibenchmark to link this project with.
+    benchmark_name: 
+      description: name of the omnibenchmark to link this project with.
+      enum:
+      - folder
     project_title: long, human readable project title
     project_description: a description of the project
     dataset_keyword: Dataset keyword to make this dataset reachable for other projects/benchmark components
@@ -16,7 +19,10 @@
   name: Basic omnibenchmark processing
   description: A simple renku project with a basic directory structure to add a data processing to an omnibenchmark project.
   variables:
-    benchmark_name: name of the omnibenchmark to link this project with.
+    benchmark_name:
+      description: name of the omnibenchmark to link this project with.
+      enum:
+      - folder
     project_title: long, human readable project title
     project_description: a description of the project
     processed_keyword: processed data keyword to make this dataset reachable for other projects/benchmark components
@@ -25,7 +31,10 @@
   name: Basic omnibenchmark method
   description: A simple renku project with a basic directory structure to add a method to an omnibenchmark project.
   variables:
-    benchmark_name: name of the omnibenchmark to link this project with.
+    benchmark_name: 
+      description: name of the omnibenchmark to link this project with.
+      enum: 
+      - folder
     project_title: long, human readable project title
     project_description: a description of the project
     method_keyword: Method keyword to make this dataset reachable for other projects/benchmark components
@@ -34,7 +43,10 @@
   name: Basic omnibenchmark parameter space
   description: A simple renku project with a basic directory structure to add a method to an omnibenchmark project.
   variables:
-    benchmark_name: name of the omnibenchmark to link this project with.
+    benchmark_name: 
+      description: name of the omnibenchmark to link this project with.
+      enum: 
+      - folder
     project_title: long, human readable project title
     project_description: a description of the project
     parameter_keyword: Parameter keyword to make this dataset reachable for other projects/benchmark components
@@ -43,7 +55,10 @@
   name: Basic omnibenchmark metric
   description: A simple renku project with a basic directory structure to add a metric to an omnibenchmark project.
   variables:
-    benchmark_name: name of the omnibenchmark to link this project with.
+    benchmark_name: 
+      description: name of the omnibenchmark to link this project with.
+      enum:
+      - folder
     project_title: long, human readable project title
     project_description: a description of the project
     metric_keyword: metric keyword to make this dataset reachable for other projects/benchmark components

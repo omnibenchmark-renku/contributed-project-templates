@@ -13,6 +13,15 @@ For an example of how the config file and the script can look like, see:
 
 - `src/example.R` 
 
+To populate the project, modify: 
+
+- `src/{{__sanitized_project_name__}}.py` (if working with python) or 
+`src/{{__sanitized_project_name__}}.R` (if working with R) with your code to add a dataset
+
+- `src/config.yaml`, where you can add the parameters of the project.
+
+- `requirements.txt` or `install.R` if you need packages or modules isntalled. 
+
 The configuration of a data module is explained in details in the [Omnibenchmark documentation](https://omnibenchmark.readthedocs.io/en/latest/start/modules/01_data_module.html)
 
 Once your module is completed and tested, you can integrate it in your Omnibenchmark by [submitting it](https://omnibenchmark.readthedocs.io/en/latest/start/modules/04_Add_module_to_omnibench.html) to our Orchestrator Gitlab CI/CD.
