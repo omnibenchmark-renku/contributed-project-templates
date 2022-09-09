@@ -1,64 +1,85 @@
-
-- folder: omni-data-py
+- description: A simple Renku project with a basic directory structure to add a dataset
+    to an omnibenchmark project.
+  folder: omni-data-py
   name: Basic omnibenchmark dataset
-  description: A simple Renku project with a basic directory structure to add a dataset to an omnibenchmark project.
-  variables:
-    benchmark_name: 
-      description: name of the omnibenchmark to link this project with.
-      enum:
-      - folder
-    project_title: long, human readable project title
-    project_description: a description of the project
-    dataset_keyword: Dataset keyword to make this dataset reachable for other projects/benchmark components
-    study_link: (optional) if any, link to the original study (zenodo, GEO,...).
-    study_tissue: (optional) tissue of the data. 
-    metadata_description: (optional) A complete description of the experimental design, for e.g. the treatment, condition, specificities, etc.
-    study_note: (optional) any random notes about the dataset. 
-
-- folder: omni-processed-py
-  name: Basic omnibenchmark processing
-  description: A simple renku project with a basic directory structure to add a data processing to an omnibenchmark project.
   variables:
     benchmark_name:
+      default_value: omni-batch-py
       description: name of the omnibenchmark to link this project with.
       enum:
-      - folder
-    project_title: long, human readable project title
+      - omni_clustering
+      - omni-batch-py
+      type: enum
+    dataset_keyword: Dataset keyword to make this dataset reachable for other projects/benchmark
+      components
+    metadata_description: (optional) A complete description of the experimental design,
+      for e.g. the treatment, condition, specificities, etc.
     project_description: a description of the project
-    processed_keyword: processed data keyword to make this dataset reachable for other projects/benchmark components
-
-- folder: omni-method-py
+    project_title: long, human readable project title
+    study_link: (optional) if any, link to the original study (zenodo, GEO,...).
+    study_note: (optional) any random notes about the dataset.
+    study_tissue: (optional) tissue of the data.
+- description: A simple renku project with a basic directory structure to add a data
+    processing to an omnibenchmark project.
+  folder: omni-processed-py
+  name: Basic omnibenchmark processing
+  variables:
+    benchmark_name:
+      default_value: omni-batch-py
+      description: name of the omnibenchmark to link this project with.
+      enum:
+      - omni_clustering
+      - omni-batch-py
+      type: enum
+    processed_keyword: processed data keyword to make this dataset reachable for other
+      projects/benchmark components
+    project_description: a description of the project
+    project_title: long, human readable project title
+- description: A simple renku project with a basic directory structure to add a method
+    to an omnibenchmark project.
+  folder: omni-method-py
   name: Basic omnibenchmark method
-  description: A simple renku project with a basic directory structure to add a method to an omnibenchmark project.
   variables:
-    benchmark_name: 
-      description: name of the omnibenchmark to link this project with.
-      enum: 
-      - folder
-    project_title: long, human readable project title
-    project_description: a description of the project
-    method_keyword: Method keyword to make this dataset reachable for other projects/benchmark components
-
-- folder: omni-param-py
-  name: Basic omnibenchmark parameter space
-  description: A simple renku project with a basic directory structure to add a method to an omnibenchmark project.
-  variables:
-    benchmark_name: 
-      description: name of the omnibenchmark to link this project with.
-      enum: 
-      - folder
-    project_title: long, human readable project title
-    project_description: a description of the project
-    parameter_keyword: Parameter keyword to make this dataset reachable for other projects/benchmark components
-
-- folder: omni-metric-py
-  name: Basic omnibenchmark metric
-  description: A simple renku project with a basic directory structure to add a metric to an omnibenchmark project.
-  variables:
-    benchmark_name: 
+    benchmark_name:
+      default_value: omni-batch-py
       description: name of the omnibenchmark to link this project with.
       enum:
-      - folder
-    project_title: long, human readable project title
+      - omni_clustering
+      - omni-batch-py
+      type: enum
+    method_keyword: Method keyword to make this dataset reachable for other projects/benchmark
+      components
     project_description: a description of the project
-    metric_keyword: metric keyword to make this dataset reachable for other projects/benchmark components
+    project_title: long, human readable project title
+- description: A simple renku project with a basic directory structure to add a method
+    to an omnibenchmark project.
+  folder: omni-param-py
+  name: Basic omnibenchmark parameter space
+  variables:
+    benchmark_name:
+      default_value: omni-batch-py
+      description: name of the omnibenchmark to link this project with.
+      enum:
+      - omni_clustering
+      - omni-batch-py
+      type: enum
+    parameter_keyword: Parameter keyword to make this dataset reachable for other
+      projects/benchmark components
+    project_description: a description of the project
+    project_title: long, human readable project title
+- description: A simple renku project with a basic directory structure to add a metric
+    to an omnibenchmark project.
+  folder: omni-metric-py
+  name: Basic omnibenchmark metric
+  variables:
+    benchmark_name:
+      default_value: omni-batch-py
+      description: name of the omnibenchmark to link this project with.
+      enum:
+      - omni_clustering
+      - omni-batch-py
+      type: enum
+    metric_keyword: metric keyword to make this dataset reachable for other projects/benchmark
+      components
+    project_description: a description of the project
+    project_title: long, human readable project title
