@@ -10,15 +10,20 @@
       - omni_clustering
       - omni-batch-py
       type: enum
-    dataset_keyword: Dataset keyword to make this dataset reachable for other projects/benchmark
-      components
-    metadata_description: (optional) A complete description of the experimental design,
-      for e.g. the treatment, condition, specificities, etc.
-    project_description: a description of the project
-    project_title: long, human readable project title
-    study_link: (optional) if any, link to the original study (zenodo, GEO,...).
-    study_note: (optional) any random notes about the dataset.
-    study_tissue: (optional) tissue of the data.
+    dataset_keyword:
+      description: Dataset keyword to make this dataset reachable for other projects/benchmark components
+    metadata_description:
+      description: (optional) A complete description of the experimental design, for e.g. the treatment, condition, specificities, etc.
+    project_description:
+      description: a description of the project
+    project_title:
+      description: long, human readable project title
+    study_link:
+      description: (optional) if any, link to the original study (zenodo, GEO,...).
+    study_note:
+      description: (optional) any random notes about the dataset.
+    study_tissue:
+      description: (optional) tissue of the data.
 - description: A simple renku project with a basic directory structure to add a data
     processing to an omnibenchmark project.
   folder: omni-processed-py
@@ -31,10 +36,12 @@
       - omni_clustering
       - omni-batch-py
       type: enum
-    processed_keyword: processed data keyword to make this dataset reachable for other
-      projects/benchmark components
-    project_description: a description of the project
-    project_title: long, human readable project title
+    processed_keyword:
+      description: processed data keyword to make this dataset reachable for other projects/benchmark components
+    project_description:
+      description: a description of the project
+    project_title:
+      description: long, human readable project title
 - description: A simple renku project with a basic directory structure to add a method
     to an omnibenchmark project.
   folder: omni-method-py
@@ -47,10 +54,12 @@
       - omni_clustering
       - omni-batch-py
       type: enum
-    method_keyword: Method keyword to make this dataset reachable for other projects/benchmark
-      components
-    project_description: a description of the project
-    project_title: long, human readable project title
+    method_keyword:
+      description: Method keyword to make this dataset reachable for other projects/benchmark components
+    project_description:
+      description: a description of the project
+    project_title:
+      description: long, human readable project title
 - description: A simple renku project with a basic directory structure to add a method
     to an omnibenchmark project.
   folder: omni-param-py
@@ -63,10 +72,12 @@
       - omni_clustering
       - omni-batch-py
       type: enum
-    parameter_keyword: Parameter keyword to make this dataset reachable for other
-      projects/benchmark components
-    project_description: a description of the project
-    project_title: long, human readable project title
+    parameter_keyword:
+      description: Parameter keyword to make this dataset reachable for other projects/benchmark components
+    project_description:
+      description: a description of the project
+    project_title:
+      description: long, human readable project title
 - description: A simple renku project with a basic directory structure to add a metric
     to an omnibenchmark project.
   folder: omni-metric-py
@@ -79,7 +90,9 @@
       - omni_clustering
       - omni-batch-py
       type: enum
-    metric_keyword: metric keyword to make this dataset reachable for other projects/benchmark
-      components
-    project_description: a description of the project
-    project_title: long, human readable project title
+    metric_keyword:
+      description: metric keyword to make this dataset reachable for other projects/benchmark components
+    project_description:
+      description: a description of the project
+    project_title:
+      description: long, human readable project title
