@@ -1,6 +1,6 @@
 - description: A simple Renku project with a basic directory structure to add a dataset
     to an omnibenchmark project.
-  id: omni-data-py
+  folder: omni-data-py
   name: Omnibenchmark dataset
   variables:
     benchmark_name:
@@ -28,7 +28,7 @@
       description: (optional) Tissue/ cell line used to generate the data.
 - description: A simple renku project with a basic directory structure to add a data
     processing to an omnibenchmark project.
-  id: omni-processed-py
+  folder: omni-processed-py
   name: Omnibenchmark processing
   variables:
     benchmark_name:
@@ -47,7 +47,7 @@
       description: Long, human readable project title.
 - description: A simple renku project with a basic directory structure to add a method
     to an omnibenchmark project.
-  id: omni-method-py
+  folder: omni-method-py
   name: Omnibenchmark method
   variables:
     benchmark_name:
@@ -66,7 +66,7 @@
       description: Long, human readable project title.
 - description: A simple renku project with a basic directory structure to add a method
     to an omnibenchmark project.
-  id: omni-param-py
+  folder: omni-param-py
   name: Omnibenchmark parameter space
   variables:
     benchmark_name:
@@ -85,7 +85,7 @@
       description: Long, human readable project title.
 - description: A simple renku project with a basic directory structure to add a metric
     to an omnibenchmark project.
-  id: omni-metric-py
+  folder: omni-metric-py
   name: Omnibenchmark metric
   variables:
     benchmark_name:
