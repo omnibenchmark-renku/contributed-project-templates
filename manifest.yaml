@@ -26,6 +26,7 @@
       description: (optional) Any additional notes about the dataset.
     study_tissue:
       description: (optional) Tissue/ cell line used to generate the data.
+    icon: img/dataset.png
 - description: A simple renku project with a basic directory structure to add a data
     processing to an omnibenchmark project.
   id: omni-processed-py
@@ -45,6 +46,7 @@
       description: A description of the project.
     project_title:
       description: Long, human readable project title.
+    icon: img/processing.png
 - description: A simple renku project with a basic directory structure to add a method
     to an omnibenchmark project.
   id: omni-method-py
@@ -64,6 +66,7 @@
       description: A description of the project
     project_title:
       description: Long, human readable project title.
+    icon: img/method.png
 - description: A simple renku project with a basic directory structure to add a method
     to an omnibenchmark project.
   id: omni-param-py
@@ -83,6 +86,7 @@
       description: A description of the project.
     project_title:
       description: Long, human readable project title.
+    icon: img/parameter.png
 - description: A simple renku project with a basic directory structure to add a metric
     to an omnibenchmark project.
   id: omni-metric-py
@@ -102,3 +106,4 @@
       description: A description of the project.
     project_title:
       description: Long, human readable project title.
+    icon: img/metric.png
