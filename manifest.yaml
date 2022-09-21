@@ -3,14 +3,13 @@
   icon: img/dataset.png
   id: omni-data-py
   name: Omnibenchmark dataset
-  icon: img/dataset.png
   variables:
     benchmark_name:
       default_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni-batch-py
       - omni_clustering
+      - omni-batch-py
       type: enum
     dataset_keyword:
       description: Dataset keyword to make this dataset reachable for other projects/
@@ -33,14 +32,13 @@
   icon: img/processing.png
   id: omni-processed-py
   name: Omnibenchmark processing
-  icon: img/processing.png
   variables:
     benchmark_name:
       default_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni-batch-py
       - omni_clustering
+      - omni-batch-py
       type: enum
     processed_keyword:
       description: Processed data keyword to make this dataset reachable for other
@@ -54,14 +52,13 @@
   icon: img/method.png
   id: omni-method-py
   name: Omnibenchmark method
-  icon: img/method.png
   variables:
     benchmark_name:
       default_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni-batch-py
       - omni_clustering
+      - omni-batch-py
       type: enum
     method_keyword:
       description: Method keyword to make this dataset reachable for other projects/benchmark
@@ -75,14 +72,13 @@
   icon: img/parameter.png
   id: omni-param-py
   name: Omnibenchmark parameter space
-  icon: img/parameter.png
   variables:
     benchmark_name:
       default_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni-batch-py
       - omni_clustering
+      - omni-batch-py
       type: enum
     parameter_keyword:
       description: Parameter keyword to make this dataset reachable for other projects/benchmark
@@ -96,14 +92,13 @@
   icon: img/metric.png
   id: omni-metric-py
   name: Omnibenchmark metric
-  icon: img/metric.png
   variables:
     benchmark_name:
       default_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni-batch-py
       - omni_clustering
+      - omni-batch-py
       type: enum
     metric_keyword:
       description: Metric keyword to make this dataset reachable for other projects/benchmark
