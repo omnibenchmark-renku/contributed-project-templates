@@ -1,9 +1,7 @@
 - description: A simple Renku project with a basic directory structure to add a dataset
     to an omnibenchmark project.
-  icon: img/dataset.png
   id: omni-data-py
   name: Omnibenchmark dataset
-  icon: img/dataset.png
   variables:
     benchmark_name:
       default_value: omni-batch-py
@@ -30,10 +28,8 @@
       description: (optional) Tissue/ cell line used to generate the data.
 - description: A simple renku project with a basic directory structure to add a data
     processing to an omnibenchmark project.
-  icon: img/processing.png
   id: omni-processed-py
   name: Omnibenchmark processing
-  icon: img/processing.png
   variables:
     benchmark_name:
       default_value: omni-batch-py
@@ -51,10 +47,8 @@
       description: Long, human readable project title.
 - description: A simple renku project with a basic directory structure to add a method
     to an omnibenchmark project.
-  icon: img/method.png
   id: omni-method-py
   name: Omnibenchmark method
-  icon: img/method.png
   variables:
     benchmark_name:
       default_value: omni-batch-py
@@ -72,10 +66,8 @@
       description: Long, human readable project title.
 - description: A simple renku project with a basic directory structure to add a method
     to an omnibenchmark project.
-  icon: img/parameter.png
   id: omni-param-py
   name: Omnibenchmark parameter space
-  icon: img/parameter.png
   variables:
     benchmark_name:
       default_value: omni-batch-py
@@ -93,10 +85,8 @@
       description: Long, human readable project title.
 - description: A simple renku project with a basic directory structure to add a metric
     to an omnibenchmark project.
-  icon: img/metric.png
   id: omni-metric-py
   name: Omnibenchmark metric
-  icon: img/metric.png
   variables:
     benchmark_name:
       default_value: omni-batch-py
