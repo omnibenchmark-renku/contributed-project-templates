@@ -86,7 +86,7 @@
 - description: A simple renku project with a basic directory structure to add a metric
     to an omnibenchmark project.
   id: omni-metric-py
-  name: Basic omnibenchmark metric
+  name: Omnibenchmark metric
   variables:
     benchmark_name:
       default_value: omni-batch-py
