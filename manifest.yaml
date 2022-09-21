@@ -1,5 +1,6 @@
 - description: A simple Renku project with a basic directory structure to add a dataset
     to an omnibenchmark project.
+  icon: img/dataset.png
   id: omni-data-py
   name: Omnibenchmark dataset
   icon: img/dataset.png
@@ -8,8 +9,8 @@
       default_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni_clustering
       - omni-batch-py
+      - omni_clustering
       type: enum
     dataset_keyword:
       description: Dataset keyword to make this dataset reachable for other projects/
@@ -29,6 +30,7 @@
       description: (optional) Tissue/ cell line used to generate the data.
 - description: A simple renku project with a basic directory structure to add a data
     processing to an omnibenchmark project.
+  icon: img/processing.png
   id: omni-processed-py
   name: Omnibenchmark processing
   icon: img/processing.png
@@ -37,8 +39,8 @@
       default_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni_clustering
       - omni-batch-py
+      - omni_clustering
       type: enum
     processed_keyword:
       description: Processed data keyword to make this dataset reachable for other
@@ -49,6 +51,7 @@
       description: Long, human readable project title.
 - description: A simple renku project with a basic directory structure to add a method
     to an omnibenchmark project.
+  icon: img/method.png
   id: omni-method-py
   name: Omnibenchmark method
   icon: img/method.png
@@ -57,8 +60,8 @@
       default_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni_clustering
       - omni-batch-py
+      - omni_clustering
       type: enum
     method_keyword:
       description: Method keyword to make this dataset reachable for other projects/benchmark
@@ -69,6 +72,7 @@
       description: Long, human readable project title.
 - description: A simple renku project with a basic directory structure to add a method
     to an omnibenchmark project.
+  icon: img/parameter.png
   id: omni-param-py
   name: Omnibenchmark parameter space
   icon: img/parameter.png
@@ -77,8 +81,8 @@
       default_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni_clustering
       - omni-batch-py
+      - omni_clustering
       type: enum
     parameter_keyword:
       description: Parameter keyword to make this dataset reachable for other projects/benchmark
@@ -89,6 +93,7 @@
       description: Long, human readable project title.
 - description: A simple renku project with a basic directory structure to add a metric
     to an omnibenchmark project.
+  icon: img/metric.png
   id: omni-metric-py
   name: Omnibenchmark metric
   icon: img/metric.png
@@ -97,8 +102,8 @@
       default_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni_clustering
       - omni-batch-py
+      - omni_clustering
       type: enum
     metric_keyword:
       description: Metric keyword to make this dataset reachable for other projects/benchmark
