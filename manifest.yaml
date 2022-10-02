@@ -7,8 +7,8 @@
       default_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni-batch-py
       - omni_clustering
+      - omni-batch-py
       type: enum
     dataset_keyword:
       description: Dataset keyword to make this dataset reachable for other projects/
@@ -35,8 +35,8 @@
       default_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni-batch-py
       - omni_clustering
+      - omni-batch-py
       type: enum
     processed_keyword:
       description: Processed data keyword to make this dataset reachable for other
@@ -54,8 +54,8 @@
       default_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni-batch-py
       - omni_clustering
+      - omni-batch-py
       type: enum
     method_keyword:
       description: Method keyword to make this dataset reachable for other projects/benchmark
@@ -73,8 +73,8 @@
       default_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni-batch-py
       - omni_clustering
+      - omni-batch-py
       type: enum
     parameter_keyword:
       description: Parameter keyword to make this dataset reachable for other projects/benchmark
@@ -92,8 +92,8 @@
       default_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni-batch-py
       - omni_clustering
+      - omni-batch-py
       type: enum
     metric_keyword:
       description: Metric keyword to make this dataset reachable for other projects/benchmark
