@@ -3,21 +3,25 @@ data:
     name: "{{__sanitized_project_name__}}"
     title: "{{ project_title }}"
     description: "{{ project_description }}"
-    keywords: ["{{ processed_keyword }}"]
-script: "src/{{__sanitized_project_name__}}.R" ## change this to .py if you are using a py script
+    keywords: ["{{ processed_keyword }}"] ## Processed data keyword to make this dataset reachable for other projects/benchmark components.
+script: "src/{{__sanitized_project_name__}}.R" ## Change this to .py if you are using a py script
 inputs:
-    keywords: ["INPUT_KEY1", "INPUT_KEY2"]
-    files: ["input_file_name1", "input_file_name2"]
+    keywords: [" "] ## Input dataset keyword(s) to import. 
+    files: [" "] ## Input file type(s). Should correspond to next section, e.g. "input_file1"
     prefix:
-        input_file_name1: "_INPUT1_"
-        input_file_name2: "_INPUT2_"
+        ## File patterns to use for automatic detection. 
+        ## Example: 
+        # input_file1: "_INPUT1_"
+        # input_file2: "_INPUT2_"
         # ...
 outputs:
-    template: "data/${name}/${name}_${out_name}.${out_end}"
+    template: "data/${name}/${name}_${out_name}.${out_end}" ## Automatic. To change if you want specific output names. 
     files:
-        data_file1: 
-            end: "FILE1_END"
-        data_file2:
-            end: "FILE2_END"
+        ## File patterns to use for automatic detection. 
+        ## Example:
+        # data_file1: 
+        #     end: "FILE1_END"
+        # data_file2:
+        #     end: "FILE2_END"
         # ...
-benchmark_name: "{{ benchmark_name }}"
+benchmark_name: "{{ benchmark_name }}" ## Name of the omnibenchmark to link this project with.

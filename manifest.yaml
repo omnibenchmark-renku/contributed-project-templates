@@ -34,7 +34,7 @@
   name: Omnibenchmark processing
   variables:
     benchmark_name:
-      default_value: omni-batch-py
+      defaul_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
       enum:
       - omni-batch-py

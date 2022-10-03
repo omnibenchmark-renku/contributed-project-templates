@@ -3,14 +3,16 @@ data:
     name: "{{__sanitized_project_name__}}"
     title: "{{ project_title }}"
     description: "{{ project_description }}"
-    keywords: ["{{ dataset_keyword }}"]
+    keywords: ["{{ dataset_keyword }}"] ## Dataset keyword to make this dataset reachable for other projects/ benchmarks components.
 script: "src/{{__sanitized_project_name__}}.R"
 outputs:
     template: "data/${name}/${name}_${out_name}.${out_end}"
     files:
-        data_file1: 
-            end: "FILE1_END"
-        data_file2:
-            end: "FILE2_END"
+        ## File patterns to use for automatic detection. 
+        ## EXAMPLE:
+        # data_file1: 
+        #     end: "FILE1_END" 
+        # data_file2:
+        #     end: "FILE2_END"
         #...
-benchmark_name: "{{ benchmark_name }}"
+benchmark_name: "{{ benchmark_name }}" ## Name of the omnibenchmark to link this project with.

@@ -1,7 +1,7 @@
 import argparse
 import json
 
-parser=argparse.ArgumentParser()
+parser=argparse.ArgumentParser() 
 parser.add_argument('--metric_info', help='Path to the metric info json file')
 args=parser.parse_args()
 

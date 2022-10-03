@@ -7,18 +7,23 @@ data:
 script: "src/{{__sanitized_project_name__}}.R"
 benchmark_name: "{{ benchmark_name }}"
 inputs:
-    keywords: ["INPUT_KEY1", "INPUT_KEY2"]
-    files: ["input_file_name1", "input_file_name2"]
+    keywords: [" "] ## Keyword(s) for the input processed dataset to import. 
+    files: [" "]  ## Input file type(s). Should correspond to next section, e.g. "input_file1"
     prefix:
-        input_file_name1: "_INPUT1_"
-        input_file_name2: "_INPUT2_"
+        ## File patterns to use for automatic detection. 
+        ## Example: 
+        # input_file1: "_INPUT1_"
+        # input_file2: "_INPUT2_"
 outputs:
-    template: "data/${name}/${name}_${unique_values}_${out_name}.${out_end}"
+    template: "data/${name}/${name}_${unique_values}_${out_name}.${out_end}" ## Automatic. To change if you want specific output names. 
     files:
-        method_result1: 
-            end: "FILE1_END"
-        method_result2:
-            end: "FILE2_END"
+        ## File patterns to use for automatic detection. 
+        ## Example: 
+        # method_result1: 
+        #     end: "FILE1_END"
+        # method_result2:
+        #     end: "FILE2_END"
 parameter:
-    names: ["parameter1", "parameter2"]
-    keywords: ["PARAMETER_KEY"]
+    ## Section to describe the parameter dataset, values and filter. 
+    keywords: [" "] ## Keyword(s) of the parameters project(s) to import.
+    names: [" "] ## Name(s) of the parameter(s) to use from the parameter project that is imported.
