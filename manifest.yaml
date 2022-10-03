@@ -1,6 +1,7 @@
 - description: A simple Renku project with a basic directory structure to add a dataset
     to an omnibenchmark project.
   folder: omni-data-py
+  icon: img/dataset.png
   name: Omnibenchmark dataset
   variables:
     benchmark_name:
@@ -29,6 +30,7 @@
 - description: A simple renku project with a basic directory structure to add a data
     processing to an omnibenchmark project.
   folder: omni-processed-py
+  icon: img/processing.png
   name: Omnibenchmark processing
   variables:
     benchmark_name:
@@ -48,6 +50,7 @@
 - description: A simple renku project with a basic directory structure to add a method
     to an omnibenchmark project.
   folder: omni-method-py
+  icon: img/method.png
   name: Omnibenchmark method
   variables:
     benchmark_name:
@@ -67,6 +70,7 @@
 - description: A simple renku project with a basic directory structure to add a method
     to an omnibenchmark project.
   folder: omni-param-py
+  icon: img/parameter.png
   name: Omnibenchmark parameter space
   variables:
     benchmark_name:
@@ -86,6 +90,7 @@
 - description: A simple renku project with a basic directory structure to add a metric
     to an omnibenchmark project.
   folder: omni-metric-py
+  icon: img/metric.png
   name: Omnibenchmark metric
   variables:
     benchmark_name:
