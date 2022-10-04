@@ -54,7 +54,7 @@ check_input_data <- function(dat_counts, meta_features, meta_cells){
   if (!is(dat_counts, "dgCMatrix")) stop("The counts are not in a sparse matrix format.")
   
   # Naming
-  if (!all(grepl("^ENS", meta_features[,1]))) stop("The features metadata is not a data.frame.")
+  if (!all(grepl("^ENS", meta_features[,1]))) stop("The first column should contain ENSEMBL IDs")
   if (TRUE %in% duplicated(meta_features[,1])) stop("There are duplicated IDs in the features metadata.")
   if (TRUE %in% duplicated(meta_cells[,1])) stop("There are duplicated barcodes in the cell metadata.")
   

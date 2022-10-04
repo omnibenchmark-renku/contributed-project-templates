@@ -61,24 +61,24 @@ feature_file <- opt$feature
 # link, tissue, n_cells, n_genes (added automatically latter), description
 info_list <- list(
   {% if study_link %}
-   "link" = "{{ study_link }}", 
+   "study_link" = "{{ study_link }}", 
   {% else %}
-  "link" = "link to study",
+  "study_link" = "link to study",
   {% endif %}
   {% if study_tissue %}
-  "tissue" = "{{ study_tissue }}",
+  "study_tissue" = "{{ study_tissue }}",
   {% else %}
-  "tissue" = "tissue",
+  "study_tissue" = "tissue",
   {% endif %}
   {% if metadata_description %}
-  "description" = "{{ metadata_description }}",
+  "metadata_description" = "{{ metadata_description }}",
   {% else %}
-  "description" = "A complete description of the experimental design, for e.g. the treatment, condition, specificities, etc.",
+  "metadata_description" = "A complete description of the experimental design, for e.g. the treatment, condition, specificities, etc.",
   {% endif %}
   {% if study_note %}
-  "note" = "{{ study_note }}"
+  "study_note" = "{{ study_note }}"
   {% else %}
-  "note" = "Any comment on the importance of this dataset for the benchmark,e.g., 'example of unbalanced sample sizes'."
+  "study_note" = "Any comment on the importance of this dataset for the benchmark,e.g., 'example of unbalanced sample sizes'."
   {% endif %}
 )
 

@@ -1,10 +1,7 @@
 # To add a module to an orchestrator, follow the instructions from:
 # https://renkulab.io/gitlab/omnibenchmark/orchestrator 
-# And set the following values in this file: 
-# OMNIBENCHMARK_NAME: name of the omnibenchmark that hosts the orchestrator (should be in the 'omnibenchmark' namespace)
+# And check/ set the following values (highlighted with arrows): 
 # ORCHESTRATOR_NAME: name of the orchestrator 
-# USERNAME: renkulab/ gitlab username which has a valid $CI_PUSH_TOKEN (api scope) in the orchestrator
-# USERNAME_MAIL: mail of the above username
 # TRIPLESTORE_NAME: name of the triplestore on penticton to send the triples to
 #----------------------------------------------------------------------------------------------------------
 
@@ -22,7 +19,7 @@ image_build:
   stage: build
   image: docker:stable
   rules:
-    - if: '$CI_PIPELINE_SOURCE != "pipeline" && $CI_UPSTREAM_PROJECT != "omnibenchmark/OMNIBENCHMARK_NAME/ORCHESTRATOR_NAME"'
+    - if: '$CI_PIPELINE_SOURCE != "pipeline" && $CI_UPSTREAM_PROJECT != "omnibenchmark/{{ benchmark_name }}/ORCHESTRATOR_NAME"' ## <-----
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN http://$CI_REGISTRY
   script: |
@@ -34,7 +31,7 @@ update_build:
   stage: build
   image: docker:stable
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "pipeline" && $CI_UPSTREAM_PROJECT == "omnibenchmark/OMNIBENCHMARK_NAME/ORCHESTRATOR_NAME"'
+    - if: '$CI_PIPELINE_SOURCE == "pipeline" && $CI_UPSTREAM_PROJECT == "omnibenchmark/{{ benchmark_name }}/ORCHESTRATOR_NAME"' ## <-----
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN http://$CI_REGISTRY
   script: |
@@ -47,10 +44,10 @@ run_udpate:
     name: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
     entrypoint: [""]
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "pipeline" && $CI_UPSTREAM_PROJECT == "omnibenchmark/OMNIBENCHMARK_NAME/ORCHESTRATOR_NAME"'
+    - if: '$CI_PIPELINE_SOURCE == "pipeline" && $CI_UPSTREAM_PROJECT == "omnibenchmark/{{ benchmark_name }}/ORCHESTRATOR_NAME"' ## <-----
   before_script:
-    - git config --global user.name "USERNAME"
-    - git config --global user.email "USERNAME_MAIL"
+    - git config --global user.name "anthony.sonrel"
+    - git config --global user.email "anthony.sonrel@uzh.ch"
     - git config --global --add safe.directory /builds/gitlab/{{__namespace__}}/{{__sanitized_project_name__}}
     - url_host=`git remote get-url origin | sed -e "s/https:\/\/gitlab-ci-token:.*@//g"`
     - cd /tmp/
@@ -61,4 +58,4 @@ run_udpate:
   script:
     - python $PROJECT_SCRIPT
     - 'renku graph export --full --strict > graph.json'
-    - 'curl -u  "omni_update:${OMNI_UPDATE_TOKEN}" -i -X  POST "http://imlspenticton.uzh.ch/TRIPLESTORE_NAME" -H "Content-Type:application/ld+json" -d "@graph.json"'
+    - 'curl -u  "omni_update:${OMNI_UPDATE_TOKEN}" -i -X  POST "http://imlspenticton.uzh.ch/TRIPLESTORE_NAME" -H "Content-Type:application/ld+json" -d "@graph.json"' ## <-----
