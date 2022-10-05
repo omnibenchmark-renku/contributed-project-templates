@@ -2,7 +2,7 @@
 data:
     name: "{{__sanitized_project_name__}}" 
     title: "{{ project_title }}"
-    description: "{{ project_description }}" 
+    description: "{{ description }}" 
     keywords: ["{{ metric_keyword }}"]  ## Metric keyword to make this dataset reachable for other projects/benchmark components.
 script: "src/run_{{__sanitized_project_name__}}.R" ## change for .py if you are using a py script
 benchmark_name: "{{ benchmark_name }}" ## Name of the omnibenchmark to link this project with.

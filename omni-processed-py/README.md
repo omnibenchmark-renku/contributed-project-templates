@@ -1,6 +1,6 @@
 # {{ name }}
-{% if project_description %}
-{{ project_description }}
+{% if description %}
+{{ description }}
 {% endif %} 
 
 ## Processing template

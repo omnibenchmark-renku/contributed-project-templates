@@ -17,8 +17,6 @@
     metadata_description:
       description: (optional) A complete description of the experimental design, for
         e.g. the treatment, condition, specificities, etc.
-    project_description:
-      description: A description of the project.
     project_title:
       description: Long, human readable project title.
     study_link:
@@ -43,8 +41,6 @@
     processed_keyword:
       description: Processed data keyword to make this dataset reachable for other
         projects/benchmark components.
-    project_description:
-      description: A description of the project.
     project_title:
       description: Long, human readable project title.
 - description: A simple renku project with a basic directory structure to add a method
@@ -63,8 +59,6 @@
     method_keyword:
       description: Method keyword to make this dataset reachable for other projects/benchmark
         components.
-    project_description:
-      description: A description of the project
     project_title:
       description: Long, human readable project title.
 - description: A simple renku project with a basic directory structure to add a method
@@ -83,8 +77,6 @@
     parameter_keyword:
       description: Parameter keyword to make this dataset reachable for other projects/benchmark
         components.
-    project_description:
-      description: A description of the project.
     project_title:
       description: Long, human readable project title.
 - description: A simple renku project with a basic directory structure to add a metric
@@ -103,7 +95,5 @@
     metric_keyword:
       description: Metric keyword to make this dataset reachable for other projects/benchmark
         components.
-    project_description:
-      description: A description of the project.
     project_title:
       description: Long, human readable project title.

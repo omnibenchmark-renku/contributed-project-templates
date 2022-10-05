@@ -2,7 +2,7 @@
 data:
     name: "{{__sanitized_project_name__}}"
     title: "{{ project_title }}"
-    description: "{{ project_description }}"
+    description: "{{ description }}"
     keywords: ["{{ method_keyword }}"]
 script: "src/{{__sanitized_project_name__}}.R"
 benchmark_name: "{{ benchmark_name }}"

@@ -1,7 +1,6 @@
 # {{ name }}
-{% if project_description %}
-{{ project_description }}
-{% endif %}
+
+{% if description %} {{ description }} {% endif %}
 
 ## Dataset template
 

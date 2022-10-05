@@ -2,7 +2,7 @@
 data:
     name: "{{__sanitized_project_name__}}"
     title: "{{ project_title }}"
-    description: "{{ project_description }}"
+    description: "{{ description }}"
     keywords: ["{{ dataset_keyword }}"] ## Dataset keyword to make this dataset reachable for other projects/ benchmarks components.
 script: "src/{{__sanitized_project_name__}}.R"
 outputs:
