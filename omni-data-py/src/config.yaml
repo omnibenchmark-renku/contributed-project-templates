@@ -8,10 +8,11 @@ script: "src/{{__sanitized_project_name__}}.R"
 outputs:
     template: "data/${name}/${name}_${out_name}.${out_end}"
     files:
-        ## File patterns to use for automatic detection. 
+        ## File to use for automatic detection and the pattern to recognize them. 
+        ## Should correspond to the argument names in your script.
         ## EXAMPLE:
-        # data_file1: 
-        #     end: "FILE1_END" 
+        # data_file1:           ## same as your script's args
+        #     end: "FILE1_END"  ## file extension 
         # data_file2:
         #     end: "FILE2_END"
         #...
