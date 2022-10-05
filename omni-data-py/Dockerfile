@@ -31,7 +31,7 @@ RUN R -f /tmp/install.R
 # RENKU_VERSION determines the version of the renku CLI
 # that will be used in this image. To find the latest version,
 # visit https://pypi.org/project/renku/#history.
-ARG RENKU_VERSION=1.7.0
+ARG RENKU_VERSION=1.7.1
 
 ########################################################
 # Do not edit this section and do not add anything below
