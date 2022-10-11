@@ -7,7 +7,7 @@ renku_save()
 omni_obj = get_omni_object_from_yaml('src/config.yaml')
 
 ## Update object
-omni_obj = omni_obj.update_object()
+omni_obj.update_object() 
 renku_save()
 
 ## Check object
