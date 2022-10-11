@@ -13,7 +13,7 @@ outputs:
             end: ".json"
     file_mapping:
         mapping1:
-        output_files:
-            param_json: "data/{{ __sanitized_project_name__ }}/all_parameter.json"
-        input_files: 
-        parameter: 
+            output_files:
+                param_json: "data/{{ __sanitized_project_name__ }}/all_parameter.json"
+            input_files: 
+            parameter: 
