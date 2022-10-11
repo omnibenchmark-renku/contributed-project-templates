@@ -3,15 +3,19 @@ library(optparse)
 
 # Get list with command line arguments by name
 option_list = list(
-    make_option(c("--argument_name"), type="character", default=NULL, 
-              help="Description of the argument", metavar="character")
+    ## Insert here any argumen(s)) stated in `outputs:files:` of config.yaml
+    make_option(c("--argument_name"), 
+    type="character", 
+    default=NULL,
+    help="Description of the argument", 
+    metavar="character")
 ); 
  
 opt_parser = OptionParser(option_list=option_list);
 opt = parse_args(opt_parser);
 
 # An useful error if the argument is missing
-if (is.null(opt$argument_name)){
+if (is.null(opt$argument_name)){ ## <-- to be replaced with your argument names
   print_help(opt_parser)
   stop("Argument_name needs to be specified, but is missing.n", call.=FALSE)
 }
