@@ -15,7 +15,7 @@ inputs:
         # input_file2: "_INPUT2_"
         # ...
 outputs:
-    template: "data/${name}/${name}_${out_name}.${out_end}" ## Automatic. To change if you want specific output names. 
+    template: "data/${name}/${name}_${unique_values}_${out_name}.${out_end}" ## Automatic. To change if you want specific output names. 
     files:
         ## File patterns to use for automatic detection. 
         ## Example:
