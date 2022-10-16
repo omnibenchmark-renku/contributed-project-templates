@@ -143,7 +143,7 @@ def get_omni_groups(group_url: str) -> List[Dict]:
     return projects
 
 """"
-if __name__ == "__main__":
+if __name__ == "__dev__":
     group = 'https://renkulab.io/gitlab/omnibenchmark'
     forks = get_omni_projects(group)
     """

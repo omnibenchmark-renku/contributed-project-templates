@@ -3,11 +3,11 @@
 {{ description }}
 {% endif %} 
 
-## Processing template
+## Metrics summary template
 
-This template will help you to process datasets from an omnibenchmark project. Only **one processing repository** should be needed per omnibenchmark. 
+**Intended for omnibenchmark developpers only!**
 
-The configuration of a processing module is similar to the one of a method module, which has its dedicated instructions in the [Omnibenchmark documentation](https://omnibenchmark.readthedocs.io/en/latest/start/modules/02_method_module.html#).
+This template will help you to parse metrics from an omnibenchmark project for the bettr shiny app. Only **one metrics summary repository** is needed per omnibenchmark. 
 
 **To configure** the project, please modify: 
 

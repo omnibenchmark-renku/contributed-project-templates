@@ -1,0 +1,15 @@
+---
+data:
+    name: "{{__sanitized_project_name__}}"
+    title: "{{ project_title }}"
+    description: "{{ description }}"
+    keywords: ["{{ summary_keyword }}"] 
+benchmark_name: "{{ benchmark_name }}" ## Name of the omnibenchmark to link this project with.
+inputs:
+  keywords: [" "] ## Input metric keyword(s) to import. 
+  files: ["metric_res", "metric_info"]
+  prefix:
+    metric_res: "_metric_res"
+    metric_info: "_info"
+
+
