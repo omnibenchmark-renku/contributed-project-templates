@@ -10,11 +10,11 @@ inputs:
   keywords: [" "] ## Keyword(s) of the methods output to import for evaluation. 
   ## File types and patterns to use for automatic detection. 
   ## Example
-  #  files: ["input_file1", "input_file2"]
-  #  prefix:
-  #      input_file_name1: "_INPUT1_"
-  #      input_file_name2: "_INPUT2_"
-  #      ...
+  # files: ["input_file1", "input_file2"]
+  # prefix:
+  #   input_file_name1: "_INPUT1_"
+  #   input_file_name2: "_INPUT2_"
+  #   ...
 outputs:
   ## Automatically defined. To change only if you wish specific output names. 
   template: "data/${name}/${name}_${unique_values}_${out_name}.${out_end}" 
