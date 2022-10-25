@@ -1,4 +1,5 @@
-- description: Creates a Omnibenchmark project to summarize and parse the metrics results for the bettr app. Intended for omnibenchmark developpers. 
+- description: Creates a Omnibenchmark project to summarize and parse the metrics
+    results for the bettr app. Intended for omnibenchmark developpers.
   folder: metric_summary
   name: Metrics summary
   variables:
@@ -6,12 +7,11 @@
       default_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - iris_example
-      - omni_clustering
       - omni-batch-py
+      - omni_clustering
+      - iris_example
       type: enum
-    summary_keyword:
-      description: Keyword for the summary metric project
     project_title:
       description: Long, human readable project title.
-  
+    summary_keyword:
+      description: Keyword for the summary metric project
