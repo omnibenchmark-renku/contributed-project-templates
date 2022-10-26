@@ -14,7 +14,7 @@
       type: enum
     dataset_keyword:
       description: Dataset keyword to make this dataset reachable for other projects/
-        benchmarks components.
+        omnibenchmarks components.
     metadata_description:
       description: (optional) A complete description of the experimental design, for
         e.g. the treatment, condition, specificities, etc.
