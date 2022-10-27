@@ -11,15 +11,10 @@ This template will help you to parse metrics from an omnibenchmark project for t
 
 **To configure** the project, please modify: 
 
-- `src/{{__sanitized_project_name__}}.py` (if working with python) or 
-`src/{{__sanitized_project_name__}}.R` (if working with R) with your code to process a dataset
-
-- `src/config.yaml`, to configure the project and the dataset.
-
-- `requirements.txt` or `install.R` if you need packages or modules isntalled. 
+- `src/config.yaml`, to configure the project and the parsing.
 
 **To run the project**, please run
 
-`python ~/src/run_workflow.py`
+`python ~/src/generate_summary.py`
 
-Once your module is completed and tested, you can integrate it in your Omnibenchmark by [submitting it](https://omnibenchmark.readthedocs.io/en/latest/start/modules/04_Add_module_to_omnibench.html) to our Orchestrator Gitlab CI/CD.
+Once the summary project is ready and working, you can contact the development team to integrate it in a new bettr app. 
