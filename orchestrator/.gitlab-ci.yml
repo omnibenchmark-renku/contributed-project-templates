@@ -82,7 +82,7 @@ trigger_iris_preprocessing:
     strategy: depend
 
 
-trigger_iris_parameters
+trigger_iris_parameters:
   stage: parameter_run
   variables:
     CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
