@@ -9,6 +9,9 @@ renku_save()
 ## Load config
 omni_obj = get_omni_object_from_yaml('src/config.yaml')
 
+# endpoint from description
+endpoint = omni_obj.description
+
 ## Update object
 omni_obj.update_object()
 renku_save()
@@ -18,7 +21,6 @@ print(
     f"Object attributes: \n {omni_obj.__dict__}\n"
 )
 
-
 ## Create output dataset
 omni_obj.create_dataset()
 renku_save()
@@ -26,10 +28,10 @@ renku_save()
 ### Sparql script to get file infos
 res_files = [x["metric_res"] for x in list(omni_obj.inputs.input_files.values())]
 res_json =  "data/metric_result_file_sparql"
-endpoint = "http://imlspenticton.uzh.ch/omni_batch_py_sparql"
+
 subprocess.call(['python', 'src/generate_json_from_res_files.py', '--output_name' , res_json, '--endpoint', endpoint,  '--input', *res_files])
 
-### Run metric summary script here... (Rscript)
+### Run metric summary script 
 summary_script = "src/benchmark_summary.R"
 isExist = os.path.exists('log')
 if not isExist:
