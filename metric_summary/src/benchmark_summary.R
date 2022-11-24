@@ -46,24 +46,23 @@ sum_res <- function(metric_res_file){
         "metric_sum" = c(mean(unlist(metric_res))),
         "metric" = c(unlist(file_list[[metric_res_file]]$metric)),
         "dataset" = c(unlist(file_list[[metric_res_file]]$dataset)),
-        "method" = c(unlist(file_list[[metric_res_file]]$method)), 
-        "runtime" = c(unlist(file_list[[metric_res_file]]$runtime))
+        "method" = c(unlist(file_list[[metric_res_file]]$method)) 
     )
 }
 
 # Result summary
 summary_dat <- lapply(names(file_list), sum_res) %>% bind_rows() %>% mutate("filename"=names(file_list)) 
 summary_all <- full_join(summary_dat, parameter_dat)
-summary_runtime <- summary_all[summary_all$metric %in% summary_all$metric[1], ]
-summary_all <- rbind(select(summary_all, -runtime), 
-                     cbind(data.frame("metric_sum" = summary_runtime$runtime, 
-                                "metric" = "runtime"), 
-                           select(summary_runtime, -c("metric_sum", "metric", "runtime"))))
 
 # Transform into wide format
 summary_wide <- summary_all %>% 
                     unite("Method_Data_Param", c(method, dataset, contains("parameter")), remove = TRUE) %>%
-                    pivot_wider(id_cols=c(Method_Data_Param), names_from=metric, values_from=metric_sum)
+                    pivot_wider(id_cols=c(Method_Data_Param), names_from=metric, values_from=metric_sum) %>%                                   mutate(across(2:ncol(.), ~replace(., lengths(.) == 0, NA)))
+
+# remove duplicates
+summary_wide[,-1] <- apply(summary_wide[,-1], 2, function(x){
+    unlist(sapply(x,"[[",1))
+})
 
 # ID summary 
 summary_id <- summary_all %>% 
@@ -82,12 +81,13 @@ info_res <- function(info_fi){
 
 info_summary <- lapply(info_list, info_res) %>% bind_rows()
 # if discrpetency in naming between files, set default grouping
-if (!all(info_summary$Metric %in% colnames(summary_wide))){
-    info_summary <- data.frame("Metric" = colnames(summary_wide)[-c(1, ncol(summary_wide))],
-                              "Group" = "default")
-    message("Warning: because of discreptencies, setting metric names to:\n", info_summary$Metric)
-}
-info_summary <- rbind(info_summary, c("runtime", "secondary"))
+#if (!all(info_summary$Metric %in% colnames(summary_wide))){
+#    info_summary <- data.frame("Metric" = colnames(summary_wide)[-c(1, #ncol(summary_wide))],
+#                              "Group" = "default")
+#    message("Warning: because of discreptencies, setting metric names to:\n", #info_summary$Metric)
+#}
+
+info_summary$Metric = colnames(summary_wide)[-1]
 
 trans_res <- function(info_fi){
     metric_info <- jsonlite::read_json(info_fi)
@@ -97,7 +97,6 @@ trans_res <- function(info_fi){
 }
 
 trans_list <- lapply(info_list, trans_res) %>% set_names(info_summary$metric[-length(info_summary)])
-trans_list$runtime$flip = 'FALSE'
 
 bettr_list <- list(
   df = summary_wide,
