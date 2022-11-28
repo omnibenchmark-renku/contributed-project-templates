@@ -5,7 +5,7 @@
 #
 # 2. The following `trigger` blocks may need to be modified
 #  trigger:
-#    project: omnibenchmark/omni_project/iris-parameters
+#    project: omnibenchmark/omni_project/some-project
 #    project: domain/subdomain/module
 # .. according to whether the submitted projects exist
 #
@@ -69,7 +69,7 @@ trigger_dataset1:
 #    strategy: depend
 
 
-trigger_iris_preprocessing:
+trigger_data_preprocessing:
   stage: process_run
   variables:
     CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
@@ -82,7 +82,7 @@ trigger_iris_preprocessing:
     strategy: depend
 
 
-trigger_iris_parameters:
+trigger_parameters_module:
   stage: parameter_run
   variables:
     CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
@@ -95,7 +95,7 @@ trigger_iris_parameters:
     strategy: depend
     
 
-trigger_iris_method1:
+trigger_analysis_method1:
   stage: method_run
   variables:
     CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
@@ -107,7 +107,7 @@ trigger_iris_method1:
     project: omnibenchmark/omni_project/method1
     strategy: depend
 
-#trigger_iris_method2:
+#trigger_analysis_method2:
 #  stage: method_run
 #  variables:
 #    CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
@@ -119,7 +119,7 @@ trigger_iris_method1:
 #    project: omnibenchmark/omni_project/method2
 #    strategy: depend
 
-trigger_iris_metric1:
+trigger_metric1:
   stage: metric_run
   variables:
     CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
@@ -131,7 +131,7 @@ trigger_iris_metric1:
     project: omnibenchmark/omni_project/metric1
     strategy: depend
 
-#trigger_iris_metric2:
+#trigger_metric2:
 #  stage: metric_run
 #  variables:
 #    CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
