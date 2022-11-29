@@ -1,0 +1,147 @@
+### NOTES
+#
+# 1. For further documentation on the orchestrator, see:
+# [SOME-WEBLINK-HERE]
+#
+# 2. The following `trigger` blocks may need to be modified
+#  trigger:
+#    project: omnibenchmark/omni_project/some-project
+#    project: domain/subdomain/module
+# .. according to whether the submitted projects exist
+#
+# 3. Some stages may not exist for a given benchmark;
+# these can be commented out or removed from the `stages:` block
+#
+# 4. Some blocks are commented out below, but represent a template 
+# for what can be added and altered 
+#
+# 5. The blocks below _dataset1, _method1, _metric1 should be modified
+# according to the names of existing modules
+
+
+variables:
+  GIT_STRATEGY: fetch
+  GIT_SSL_NO_VERIFY: "true"
+  GIT_LFS_SKIP_SMUDGE: 1
+  OMNIBENCHMARK_NAME: {{OMNIBENCHMARK_NAME}}
+  TRIPLESTORE_URL: {{TRIPLESTORE_URL}}
+
+stages:
+  - build
+  - data_run
+  - process_run
+  - parameter_run
+  - method_run
+  - metric_run
+
+image_build:
+  stage: build
+  image: docker:stable
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN http://$CI_REGISTRY
+  script: |
+    CI_COMMIT_SHA_7=$(echo $CI_COMMIT_SHA | cut -c1-7)
+    docker build --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA_7 .
+    docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA_7
+
+
+trigger_dataset1:
+  stage: data_run
+  variables:
+    CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
+    OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
+    CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
+  only:
+    - schedules
+  trigger: 
+    project: omnibenchmark/omni_project/dataset1
+    strategy: depend
+
+
+#trigger_dataset2:
+#  stage: data_run
+#  variables:
+#    CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
+#    OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
+#    CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
+#  only:
+#    - schedules
+#  trigger: 
+#    project: omnibenchmark/omni_project/dataset2
+#    strategy: depend
+
+
+trigger_data_preprocessing:
+  stage: process_run
+  variables:
+    CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
+    OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
+    CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
+  only:
+    - schedules
+  trigger: 
+    project: omnibenchmark/omni_project/preprocessing
+    strategy: depend
+
+
+trigger_parameters_module:
+  stage: parameter_run
+  variables:
+    CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
+    OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
+    CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
+  only:
+    - schedules
+  trigger: 
+    project: omnibenchmark/omni_project/parameters
+    strategy: depend
+    
+
+trigger_analysis_method1:
+  stage: method_run
+  variables:
+    CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
+    OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
+    CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
+  only:
+    - schedules
+  trigger: 
+    project: omnibenchmark/omni_project/method1
+    strategy: depend
+
+#trigger_analysis_method2:
+#  stage: method_run
+#  variables:
+#    CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
+#    OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
+#    CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
+#  only:
+#    - schedules
+#  trigger: 
+#    project: omnibenchmark/omni_project/method2
+#    strategy: depend
+
+trigger_metric1:
+  stage: metric_run
+  variables:
+    CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
+    OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
+    CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
+  only:
+    - schedules
+  trigger: 
+    project: omnibenchmark/omni_project/metric1
+    strategy: depend
+
+#trigger_metric2:
+#  stage: metric_run
+#  variables:
+#    CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
+#    OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
+#    CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
+#  only:
+#    - schedules
+#  trigger: 
+#    project: omnibenchmark/omni_project/metric2
+#    strategy: depend
+
