@@ -19,15 +19,20 @@
   folder: orchestrator
   name: Orchestrator
   variables:
-    benchmark_name:
+    OMNIBENCHMARK_NAME:
       default_value: omni-batch-py
-      description: Name of the omnibenchmark to link this project with.
+      description: Name of the Omnibenchmark to link this project with.
       enum:
       - omni-batch-py
       - omni_clustering
       - iris_example
       type: enum
-    project_title:
-      description: Long, human readable project title.
-    summary_keyword:
-      description: Keyword for the orchestrator project
+    USERNAME:
+      default_value: Firstname Lastname
+      description: Name of the Orchestrator maintainer (who has valid $CI_PUSH_TOKEN)
+    USERNAME_MAIL:
+      default_value: first.last@my-email-address.com
+      description: Email address of the Orchestrator maintainer (USERNAME)
+    TRIPLESTORE_URL:
+      default_value: http://imlspenticton.uzh.ch/omni_name_here
+      description: URL of the triplestore to link this Orchestrator with.
