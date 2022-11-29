@@ -30,18 +30,3 @@
     TRIPLESTORE_URL:
       default_value: http://imlspenticton.uzh.ch/omni_name_here
       description: URL of the triplestore to link this Orchestrator with.
-- description: Creates a Omnibenchmark project representing the Orchestrator for a given benchmark. Intended for omnibenchmark developers.
-  folder: extra
-  name: Extra
-  variables:
-    OMNIBENCHMARK_NAME:
-      default_value: omni-batch-py
-      description: Name of the Omnibenchmark to link this project with.
-      enum:
-      - omni-batch-py
-      - omni_clustering
-      - iris_example
-      type: enum
-    TRIPLESTORE_URL:
-      default_value: http://imlspenticton.uzh.ch/omni_name_here
-      description: URL of the triplestore to link this Orchestrator with.
