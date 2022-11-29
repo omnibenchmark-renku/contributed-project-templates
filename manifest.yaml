@@ -27,12 +27,6 @@
       - omni_clustering
       - iris_example
       type: enum
-    USERNAME:
-      default_value: Firstname Lastname
-      description: Name of the Orchestrator maintainer (who has valid $CI_PUSH_TOKEN)
-    USERNAME_MAIL:
-      default_value: first.last@my-email-address.com
-      description: Email address of the Orchestrator maintainer (USERNAME)
     TRIPLESTORE_URL:
       default_value: http://imlspenticton.uzh.ch/omni_name_here
       description: URL of the triplestore to link this Orchestrator with.
