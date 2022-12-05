@@ -42,6 +42,7 @@ if not isExist:
 
 args = "--args"+" info_files='" +res_json+"_info.json'"+  " out_path='" + "data/"+omni_obj.name+ "' out_name='" + omni_obj.name+".json'"+ " res_files='" + res_json+".json'"
 os.system('R' + ' CMD' + ' BATCH'+ ' --no-restore'+ ' --no-save "'+ args + '" ' + summary_script + ' log/summarize_metrics.Rout')  
+renku_save()
 
 summary_file = "data/"+omni_obj.name + "/" + omni_obj.name+".json"
 update_dataset_files(urls=summary_file, dataset_name=omni_obj.name)
