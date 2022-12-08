@@ -36,6 +36,7 @@ stages:
   - parameter_run
   - method_run
   - metric_run
+  - summary_run
 
 image_build:
   stage: build
@@ -116,3 +117,10 @@ trigger_metric1:
 #    project: omnibenchmark/omni_project/metric2
 #    strategy: depend
 
+trigger_summary_metric:
+  stage: summary_run
+  only:
+    - schedules
+  trigger: 
+    project: omnibenchmark/omni_project/summary_project
+    strategy: depend
