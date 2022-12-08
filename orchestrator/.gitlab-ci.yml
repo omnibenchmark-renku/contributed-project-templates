@@ -25,6 +25,9 @@ variables:
   GIT_LFS_SKIP_SMUDGE: 1
   OMNIBENCHMARK_NAME: {{benchmark_name}}
   TRIPLESTORE_URL: {{triplestore_url}}
+  CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
+  OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
+  CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
 
 stages:
   - build
@@ -47,12 +50,6 @@ image_build:
 
 trigger_dataset1:
   stage: data_run
-  variables:
-    CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
-    OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
-    CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
-    OMNIBENCHMARK_NAME: ${OMNIBENCHMARK_NAME}
-    TRIPLESTORE_URL: ${TRIPLESTORE_URL}
   only:
     - schedules
   trigger: 
@@ -62,12 +59,6 @@ trigger_dataset1:
 
 #trigger_dataset2:
 #  stage: data_run
-#  variables:
-#    CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
-#    OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
-#    CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
-#    OMNIBENCHMARK_NAME: ${OMNIBENCHMARK_NAME}
-#    TRIPLESTORE_URL: ${TRIPLESTORE_URL}
 #  only:
 #    - schedules
 #  trigger: 
@@ -77,12 +68,6 @@ trigger_dataset1:
 
 trigger_data_preprocessing:
   stage: process_run
-  variables:
-    CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
-    OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
-    CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
-    OMNIBENCHMARK_NAME: ${OMNIBENCHMARK_NAME}
-    TRIPLESTORE_URL: ${TRIPLESTORE_URL}
   only:
     - schedules
   trigger: 
@@ -92,12 +77,6 @@ trigger_data_preprocessing:
 
 trigger_parameters_module:
   stage: parameter_run
-  variables:
-    CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
-    OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
-    CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
-    OMNIBENCHMARK_NAME: ${OMNIBENCHMARK_NAME}
-    TRIPLESTORE_URL: ${TRIPLESTORE_URL}
   only:
     - schedules
   trigger: 
@@ -107,12 +86,6 @@ trigger_parameters_module:
 
 trigger_analysis_method1:
   stage: method_run
-  variables:
-    CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
-    OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
-    CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
-    OMNIBENCHMARK_NAME: ${OMNIBENCHMARK_NAME}
-    TRIPLESTORE_URL: ${TRIPLESTORE_URL}
   only:
     - schedules
   trigger: 
@@ -121,12 +94,6 @@ trigger_analysis_method1:
 
 #trigger_analysis_method2:
 #  stage: method_run
-#  variables:
-#    CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
-#    OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
-#    CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
-#    OMNIBENCHMARK_NAME: ${OMNIBENCHMARK_NAME}
-#    TRIPLESTORE_URL: ${TRIPLESTORE_URL}
 #  only:
 #    - schedules
 #  trigger: 
@@ -135,12 +102,6 @@ trigger_analysis_method1:
 
 trigger_metric1:
   stage: metric_run
-  variables:
-    CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
-    OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
-    CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
-    OMNIBENCHMARK_NAME: ${OMNIBENCHMARK_NAME}
-    TRIPLESTORE_URL: ${TRIPLESTORE_URL}
   only:
     - schedules
   trigger: 
@@ -149,12 +110,6 @@ trigger_metric1:
 
 #trigger_metric2:
 #  stage: metric_run
-#  variables:
-#    CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
-#    OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
-#    CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
-#    OMNIBENCHMARK_NAME: ${OMNIBENCHMARK_NAME}
-#    TRIPLESTORE_URL: ${TRIPLESTORE_URL}
 #  only:
 #    - schedules
 #  trigger: 
