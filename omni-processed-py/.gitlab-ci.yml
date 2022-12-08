@@ -1,12 +1,3 @@
-# To add a module to an orchestrator, follow the instructions from:
-# https://renkulab.io/gitlab/omnibenchmark/orchestrator 
-# And set the following values in this file: 
-# OMNIBENCHMARK_NAME: name of the omnibenchmark that hosts the orchestrator (should be in the 'omnibenchmark' namespace)
-# ORCHESTRATOR_NAME: name of the orchestrator 
-# USERNAME: renkulab/ gitlab username which has a valid $CI_PUSH_TOKEN (api scope) in the orchestrator
-# USERNAME_MAIL: mail of the above username
-# TRIPLESTORE_NAME: name of the triplestore on penticton to send the triples to
-#----------------------------------------------------------------------------------------------------------
 
 variables:
   GIT_STRATEGY: fetch
@@ -22,36 +13,27 @@ image_build:
   stage: build
   image: docker:stable
   rules:
-    - if: '$CI_PIPELINE_SOURCE != "pipeline" && $CI_UPSTREAM_PROJECT != "omnibenchmark/OMNIBENCHMARK_NAME/ORCHESTRATOR_NAME"'
+    - if: '$CI_PIPELINE_SOURCE != "pipeline"' 
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN http://$CI_REGISTRY
   script: |
     CI_COMMIT_SHA_7=$(echo $CI_COMMIT_SHA | cut -c1-7)
     docker build --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA_7 .
     docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA_7
-
-update_build:
-  stage: build
-  image: docker:stable
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "pipeline" && $CI_UPSTREAM_PROJECT == "omnibenchmark/OMNIBENCHMARK_NAME/ORCHESTRATOR_NAME"'
-  before_script:
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN http://$CI_REGISTRY
-  script: |
-    docker build --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA .
-    docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+    docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA_7 $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+    docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA 
 
 run_udpate:
   stage: update
   image: 
-    name: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+    name: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
     entrypoint: [""]
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "pipeline" && $CI_UPSTREAM_PROJECT == "omnibenchmark/OMNIBENCHMARK_NAME/ORCHESTRATOR_NAME"'
+    - if: '$CI_PIPELINE_SOURCE == "pipeline"' 
   before_script:
-    - git config --global user.name "USERNAME"
-    - git config --global user.email "USERNAME_MAIL"
-    - git config --global --add safe.directory /builds/gitlab/{{__namespace__}}/{{__sanitized_project_name__}}
+    - git config --global user.name ${GITLAB_USER_NAME}
+    - git config --global user.email ${GITLAB_USER_EMAIL}
+    - git config --global --add safe.directory /builds/gitlab/${CI_PROJECT_PATH}
     - url_host=`git remote get-url origin | sed -e "s/https:\/\/gitlab-ci-token:.*@//g"`
     - cd /tmp/
     - git clone "https://oauth2:${CI_PUSH_TOKEN}@${url_host}"
@@ -61,4 +43,4 @@ run_udpate:
   script:
     - python $PROJECT_SCRIPT
     - 'renku graph export --full --strict > graph.json'
-    - 'curl -u  "omni_update:${OMNI_UPDATE_TOKEN}" -i -X  POST "http://imlspenticton.uzh.ch/TRIPLESTORE_NAME" -H "Content-Type:application/ld+json" -d "@graph.json"'
+    - 'curl -u  "omni_update:${OMNI_UPDATE_TOKEN}" -i -X  POST "${TRIPLESTORE_URL}" -H "Content-Type:application/ld+json" -d "@graph.json"'
