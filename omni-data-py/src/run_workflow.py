@@ -1,6 +1,6 @@
 from omnibenchmark.utils.build_omni_object import get_omni_object_from_yaml
 from omnibenchmark.renku_commands.general import renku_save
-
+import omniValidator as ov
 
 ## Load config
 omni_obj = get_omni_object_from_yaml('src/config.yaml')
@@ -21,6 +21,7 @@ omni_obj.create_dataset()
 renku_save()
 
 ## Run workflow
+ov.validate_requirements(omni_obj)
 omni_obj.run_renku()
 renku_save()
 
