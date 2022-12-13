@@ -23,7 +23,17 @@ This template will help you to add a dataset to an omnibenchmark project. For ea
 
 The configuration of a data module is explained in details in the [Omnibenchmark documentation](https://omnibenchmark.readthedocs.io/en/latest/start/modules/01_data_module.html)
 
-**To run the project**, please run
+You can **check the requirements** for this module by running: 
+
+```
+import omniValidator as ov
+ov.display_requirements(
+    benchmark = "{{benchmark_name}}", # <-- the name of this Omnibenchmark
+    keyword="{{dataset_keyword}}" # <-- the keyword of this module
+)
+```
+
+**To run the project**, then run
 
 `python ~/src/run_workflow.py`
 

@@ -18,7 +18,17 @@ The configuration of a processing module is similar to the one of a method modul
 
 - `requirements.txt` or `install.R` if you need packages or modules isntalled. 
 
-**To run the project**, please run
+You can **check the requirements** for this module by running: 
+
+```
+import omniValidator as ov
+ov.display_requirements(
+    benchmark = "{{benchmark_name}}", # <-- the name of this Omnibenchmark
+    keyword="{{processed_keyword}}" # <-- the keyword of this module
+)
+```
+
+**To run the project**, then run
 
 `python ~/src/run_workflow.py`
 

@@ -20,7 +20,17 @@ The configuration of a metric module is explained in details in the [Omnibenchma
 
 - (optional) `src/generate_metric_info.py`, if you would like to change the default appearance/ transformation of the metric in the `bettr` shiny app. 
 
-**To run the project**, please run
+You can **check the requirements** for this module by running: 
+
+```
+import omniValidator as ov
+ov.display_requirements(
+    benchmark = "{{benchmark_name}}", # <-- the name of this Omnibenchmark
+    keyword="{{metric_keyword}}" # <-- the keyword of this module
+)
+```
+
+**To run the project**, then run
 
 `python ~/src/run_workflow.py`
 

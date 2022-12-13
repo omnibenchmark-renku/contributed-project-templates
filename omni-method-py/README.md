@@ -18,7 +18,18 @@ The configuration of a method module is explained in details in the [Omnibenchma
 
 - `requirements.txt` or `install.R` if you need packages or modules installed. 
 
-**To run the project**, please run
+You can **check the requirements** for this module by running: 
+
+```
+import omniValidator as ov
+ov.display_requirements(
+    benchmark = "{{benchmark_name}}", # <-- the name of this Omnibenchmark
+    keyword="{{method_keyword}}" # <-- the keyword of this module
+)
+```
+
+**To run the project**, then run
+
 
 `python ~/src/run_workflow.py`
 
