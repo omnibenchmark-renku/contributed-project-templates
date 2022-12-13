@@ -26,7 +26,7 @@ omni_obj.create_dataset()
 
 ## Run workflow
 ov.validate_requirements(omni_obj)
-omni_obj.run_renku()
+omni_obj.run_renku(all=False)
 renku_save()
 
 ## Update Output dataset

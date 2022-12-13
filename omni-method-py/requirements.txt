@@ -1,2 +1,2 @@
-omnibenchmark==0.0.27
+omnibenchmark==0.0.35
 git+https://github.com/ansonrel/omniValidator@main
