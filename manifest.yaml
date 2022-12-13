@@ -8,7 +8,6 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni_batch_py
       - iris_example
       - omni_clustering
       - omni-batch-py
@@ -37,7 +36,6 @@
       defaul_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni_batch_py
       - iris_example
       - omni_clustering
       - omni-batch-py
@@ -57,7 +55,6 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni_batch_py
       - iris_example
       - omni_clustering
       - omni-batch-py
@@ -77,7 +74,6 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni_batch_py
       - iris_example
       - omni_clustering
       - omni-batch-py
@@ -97,7 +93,6 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni_batch_py
       - iris_example
       - omni_clustering
       - omni-batch-py
