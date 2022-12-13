@@ -5,10 +5,10 @@
   name: Omnibenchmark dataset
   variables:
     benchmark_name:
-      default_value: omni-batch-py
+      default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni-batch-py
+      - omni_batch_py
       - iris_example
       - omni_clustering
       type: enum
@@ -33,10 +33,10 @@
   name: Omnibenchmark processing
   variables:
     benchmark_name:
-      defaul_value: omni-batch-py
+      defaul_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni-batch-py
+      - omni_batch_py
       - iris_example
       - omni_clustering
       type: enum
@@ -52,10 +52,10 @@
   name: Omnibenchmark method
   variables:
     benchmark_name:
-      default_value: omni-batch-py
+      default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni-batch-py
+      - omni_batch_py
       - iris_example
       - omni_clustering
       type: enum
@@ -71,10 +71,10 @@
   name: Omnibenchmark parameter space
   variables:
     benchmark_name:
-      default_value: omni-batch-py
+      default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni-batch-py
+      - omni_batch_py
       - iris_example
       - omni_clustering
       type: enum
@@ -90,10 +90,10 @@
   name: Omnibenchmark metric
   variables:
     benchmark_name:
-      default_value: omni-batch-py
+      default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni-batch-py
+      - omni_batch_py
       - iris_example
       - omni_clustering
       type: enum
