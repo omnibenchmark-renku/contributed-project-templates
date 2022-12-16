@@ -5,7 +5,7 @@
 
 # {{ name }}
 
-{% if description %} {{ description }} {% endif %}
+{% if project_description %} {{ project_description }} {% endif %}
 
 ## Dataset template
 

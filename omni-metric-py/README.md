@@ -3,8 +3,8 @@
 <img align="right" width="100" height="100" src="https://github.com/ansonrel/contributed-project-templates/blob/main/img/metric.png?raw=true">
 
 # {{ name }} 
-{% if description %}
-{{ description }}
+{% if project_description %}
+{{ project_description }}
 {% endif %}
 
 ## Metric template

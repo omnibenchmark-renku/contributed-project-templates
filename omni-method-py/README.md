@@ -4,8 +4,8 @@
 
 
 # {{ name }}
-{% if description %}
-{{ description }}
+{% if project_description %}
+{{ project_description }}
 {% endif %}
 
 ## Method template 
