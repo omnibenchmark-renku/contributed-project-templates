@@ -155,6 +155,8 @@ blacklist = ["utils", "bettr-deployer", "metaanalysis-dashboard-v0",
 "utils-test", "omnibenchmark", "orchestrator", "omni_dashboard", "omnibench-docs", 
 "omni_batch", "omni_metric", "omni_data"]
 groupnames = list(set(groupnames) - set(blacklist))
+# replaces name for omni-batch-py
+groupnames = list(map(lambda x: x.replace('omni-batch-py', 'omni_batch_py'), groupnames))
 
 # load manif and set benchmark name
 with open('manifest.yaml') as inp:
