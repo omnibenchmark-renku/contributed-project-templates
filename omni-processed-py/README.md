@@ -5,9 +5,8 @@
 
 
 # {{ name }}
-{% if project_description %}
-{{ project_description }}
-{% endif %} 
+
+{% if __project_description__ %} {{ __project_description__ }} {% endif %}
 
 ## Processing template
 
