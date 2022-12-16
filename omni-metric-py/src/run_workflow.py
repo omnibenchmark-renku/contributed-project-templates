@@ -6,8 +6,8 @@ renku_save()
 ## Load config
 omni_obj = get_omni_object_from_yaml('src/config.yaml')
 
-## Update object
-omni_obj.update_object()
+## Update object and download input datasets
+omni_obj.update_object(all=True) # set to False if too many datasets are downloaded
 renku_save()
 
 ## Check object
