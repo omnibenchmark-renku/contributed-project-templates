@@ -3,11 +3,11 @@ data:
     name: "{{__sanitized_project_name__}}"
     title: "{{ project_title }}"
     description: "http://imlspenticton.uzh.ch/..." ## <--- define here the triplestore to use
-    keywords: ["{{ summary_keyword }}"] 
+    keywords: ["{{ summary_keyword }}"]  ## <---- a keyword for this summary project
 benchmark_name: "{{ benchmark_name }}" ## <---- Name of the omnibenchmark to link this project with.
 inputs:
   keywords: [" "] ## <---- Input metric keyword(s) to import. 
-  files: ["metric_res", "metric_info"]
+  files: ["metric_res", "metric_info"]  ## <--- you might have to change this, depending on the 'output' section of your metric project(s).
   prefix:
     metric_res: "_metric_res"
     metric_info: "_info"
