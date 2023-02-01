@@ -1,2 +1,2 @@
-omnibenchmark==0.0.30
+omnibenchmark==0.0.39
 git+https://github.com/ansonrel/omni_sparql@main
