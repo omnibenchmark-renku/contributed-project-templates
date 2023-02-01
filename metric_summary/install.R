@@ -1,4 +1,2 @@
-BiocManager::install('jsonlite')
-install.packages("R.utils")
-install.packages("dplyr")
-install.packages("magrittr")
+pkgs <- c("jsonlite","R.utils","dplyr","magrittr","reticulate")
+BiocManager::install(pkg)
