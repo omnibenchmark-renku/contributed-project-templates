@@ -56,35 +56,38 @@ for NAM in INPUT:
     
     # DATASET: iterate until no results, then get original project 
     query = omni.getSparqlQuery.input_from_file(NAM)
-    orig_file = omni.query_from_sparql(query, URL = ENDPOINT)[0]['out']['value']
+    orig_file = [omni.query_from_sparql(query, URL = ENDPOINT)[0]['out']['value']]
     while True: 
-        query = omni.getSparqlQuery.input_from_file(orig_file)
-        orig_file = omni.query_from_sparql(query, URL = ENDPOINT)
+        query = [omni.getSparqlQuery.input_from_file(x) for x in orig_file]
+        orig_file = [omni.query_from_sparql(x, URL = ENDPOINT) for x in query]
+        orig_file = list(filter(None, orig_file))
+        orig_file = [item for sublist in orig_file for item in sublist]
         if len(orig_file) > 0: 
-            temp_file = orig_file[0]['out']['value']
+            temp_file = [x['out']['value'] for x in orig_file]
             ## ---------------------------------------------------
             # TEMP: problem with processed/meta_ which is imported & placed in the wrong folder.
             # Should be resolved with new tripletore.
-            if temp_file.find("processed/meta_") > 0:
-                ind = 1
-                while True: 
-                    temp_file = orig_file[ind]['out']['value']
-                    if ind > len(orig_file): 
-                        break
-                    if temp_file.find("processed/meta_") > 0: 
-                        ind +=1
-                        continue
-                    else: 
-                        break
+            temp_file[:] =  [x for x in temp_file if "processed/meta" not in x]
+            #if len(temp_file)==0: 
+            #    break
             ## ---------------------------------------------------
             orig_file = temp_file
             raw_file = temp_file
             continue
         else: 
+            ind = 0
+            while True: 
+                if ind == len(raw_file) | ind > len(raw_file): 
+                    break
+                tmp = raw_file[ind]
+                query = omni.getSparqlQuery.project_from_file(tmp)
+                out_query = omni.query_from_sparql(query, URL = ENDPOINT)
+                if len(out_query) == 1: 
+                    DATASET = out_query[0]['project_name']['value'] 
+                    break
+                else: 
+                    ind += 1
             break
-    
-    query = omni.getSparqlQuery.project_from_file(raw_file)
-    DATASET = omni.query_from_sparql(query, URL = ENDPOINT)[0]['project_name']['value']
     
     # PARAMETERS: done on the method_file
     query = omni.getSparqlQuery.parameters_from_file(method_file, params_only = True)

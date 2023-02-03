@@ -28,6 +28,7 @@ renku_save()
 ### Sparql script to get file infos
 res_files = [x["metric_res"] for x in list(omni_obj.inputs.input_files.values())]
 res_json =  "data/metric_result_file_sparql"
+res_files[0:5]
 
 subprocess.call(['python', 'src/generate_json_from_res_files.py', '--output_name' , res_json, '--endpoint', endpoint,  '--input', *res_files])
 
@@ -41,7 +42,8 @@ if not isExist:
     os.makedirs('data/'+omni_obj.name)
 
 args = "--args"+" info_files='" +res_json+"_info.json'"+  " out_path='" + "data/"+omni_obj.name+ "' out_name='" + omni_obj.name+".json'"+ " res_files='" + res_json+".json'"
-os.system('R' + ' CMD' + ' BATCH'+ ' --no-restore'+ ' --no-save "'+ args + '" ' + summary_script + ' log/summarize_metrics.Rout')  
+os.system('R' + ' CMD' + ' BATCH'+ ' --no-restore'+ ' --no-save "'+ args + '" ' + summary_script + ' log/summarize_metrics.Rout') 
+os.system('renku config set check_datadir_files false')
 renku_save()
 
 summary_file = "data/"+omni_obj.name + "/" + omni_obj.name+".json"
