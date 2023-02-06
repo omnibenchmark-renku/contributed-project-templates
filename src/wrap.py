@@ -149,7 +149,7 @@ if __name__ == "__dev__":
     """
 
 # fetches omnibenchmark groups
-groups = get_omni_groups("https://renkulab.io/gitlab/omnibenchmark")
+groups = get_omni_groups("https://renkulab.io/gitlab/omnibenchmark") + get_omni_groups("https://renkulab.io/gitlab/omb_benchmarks")
 groupnames = [p['name'] for p in groups]
 blacklist = ["utils", "bettr-deployer", "metaanalysis-dashboard-v0", 
 "utils-test", "omnibenchmark", "orchestrator", "omni_dashboard", "omnibench-docs", 
