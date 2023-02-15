@@ -1,6 +1,6 @@
-![alt text](https://github.com/ansonrel/contributed-project-templates/blob/main/img/omnibenchmark.png?raw=true)
+![alt text](https://github.com/omnibenchmark/contributed-project-templates/blob/main/img/omnibenchmark.png?raw=true)
 
-<img align="right" width="100" height="100" src="https://github.com/ansonrel/contributed-project-templates/blob/main/img/metric.png?raw=true">
+<img align="right" width="100" height="100" src="https://github.com/omnibenchmark/contributed-project-templates/blob/main/img/metric.png?raw=true">
 
 # {{ name }} 
 

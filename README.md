@@ -4,7 +4,7 @@ This repository holds a collection of renkulab project templates developed for O
 
 ## Templates for users
 
-Create a [new project on Renkulab](https://renkulab.io/projects/new) and select `custom` template source. You can use these templates by using the repo link as URL (https://github.com/ansonrel/contributed-project-templates) and `main` as reference. 
+Create a [new project on Renkulab](https://renkulab.io/projects/new) and select `custom` template source. You can use these templates by using the repo link as URL (https://github.com/omnibenchmark/contributed-project-templates) and `main` as reference. 
 
 ## Templates for developpers
 
