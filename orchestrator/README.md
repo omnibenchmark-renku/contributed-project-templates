@@ -68,7 +68,7 @@ where:
 - `PROJECT_PATH` is the path to the project, relative to (and including) the namespace it is located. 
 
 
-2) In the `.gitlab-ci.yml` file of the project to integrate, remove the current content and replace it with the [YAML for Omnibenchmark projects ](https://github.com/ansonrel/contributed-project-templates/blob/main/omni-data-py/.gitlab-ci.yml) (universal for any Omnibenchmark and project).
+2) In the `.gitlab-ci.yml` file of the project to integrate, remove the current content and replace it with the [YAML for Omnibenchmark projects ](https://github.com/omnibenchmark/contributed-project-templates/blob/main/omni-data-py/.gitlab-ci.yml) (universal for any Omnibenchmark and project).
 
 
 3) [To do only once when setting-up a new orchestrator] Setup the tokens that will give the access to the triggered projects.

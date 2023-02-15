@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import sys as sys
-import omni_sparql as omni
+import omniSparql as omni
 import re
 import json
 import argparse

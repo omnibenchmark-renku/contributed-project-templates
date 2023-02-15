@@ -15,7 +15,7 @@ This template will help you to parse metrics from an omnibenchmark project for t
 
 - that you have a dedicated triplestore instance for this benchmark (populated from the above-mentioned )
 
-- that the pipeline correctly sent the triples to the triplestore (see also the configuration of an [Orchestrator](https://github.com/ansonrel/contributed-project-templates/tree/dev/orchestrator) and particularly the setup of the `OMNI_UPDATE_TOKEN`).
+- that the pipeline correctly sent the triples to the triplestore (see also the configuration of an [Orchestrator](https://github.com/omnibenchmark/contributed-project-templates/tree/dev/orchestrator) and particularly the setup of the `OMNI_UPDATE_TOKEN`).
 
 ### Quick setup
 
@@ -37,7 +37,7 @@ Once the summary project is ready and working, you can contact the development t
 
 The goal of this project is to parse the many metrics of the benchmark to a JSON that can be read and displayed by a `bettr` app instance. 
 
-This project imports all metrics of the benchmark specified by the `config.yaml` and retrieves their lineage information using the [omnisparql](https://github.com/ansonrel/omni_sparql) package. The lineage information is retrieved with SPARQL queries on the Jena triplestore that received triples from all running projects. For example, the queries will be able to identify which method file was used to produce each single metric file. The `geneate_json_from_res_files.py` is a collection of such sparql queries to retrieve mainly the methods, parameters and datasets associated to each metric file. 
+This project imports all metrics of the benchmark specified by the `config.yaml` and retrieves their lineage information using the [omnisparql](https://github.com/omnibenchmark/omniSparql) package. The lineage information is retrieved with SPARQL queries on the Jena triplestore that received triples from all running projects. For example, the queries will be able to identify which method file was used to produce each single metric file. The `geneate_json_from_res_files.py` is a collection of such sparql queries to retrieve mainly the methods, parameters and datasets associated to each metric file. 
 
 The configuration os the project goes through the `config.yaml`. The most important fields are: 
 
@@ -53,6 +53,6 @@ The project can then be run:
 
 `python ~/src/generate_summary.py`
 
-The first part of the section consists of usual `omnibenchmark` calls to import upstream datasets. The second part will call the `generate_json_from_res_files.py` that contains wrappers around the `omni_sparql` module to retrieve lineage information and aggregate all information in `data/metric_result_file_sparql.json`. The last step will parse the aggregated data to a `bettr` format. 
+The first part of the section consists of usual `omnibenchmark` calls to import upstream datasets. The second part will call the `generate_json_from_res_files.py` that contains wrappers around the `omniSparql` module to retrieve lineage information and aggregate all information in `data/metric_result_file_sparql.json`. The last step will parse the aggregated data to a `bettr` format. 
 
 Once the script is successfully run, you can contact the development team to configure a new `bettr` shiny app instance. Please specify in your message the name of the benchmark and the path to the final output file, usually in `{{__sanitized_project_name__}}/{{__sanitized_project_name__}}.json`. 
