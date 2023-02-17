@@ -8,14 +8,16 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - omni-batch-py
-      - omni_clustering
       - iris_example
+      - omni_clustering
+      - spatial-clustering
       type: enum
     project_title:
       description: Long, human readable project title.
     summary_keyword:
       description: Keyword for the summary metric project
-- description: Creates a Omnibenchmark project representing the Orchestrator for a given benchmark. Intended for omnibenchmark developers.
+- description: Creates a Omnibenchmark project representing the Orchestrator for a
+    given benchmark. Intended for omnibenchmark developers.
   folder: orchestrator
   name: Orchestrator
   variables:
@@ -24,8 +26,9 @@
       description: Name of the Omnibenchmark to link this project with.
       enum:
       - omni-batch-py
-      - omni_clustering
       - iris_example
+      - omni_clustering
+      - spatial-clustering
       type: enum
     triplestore_url:
       default_value: http://imlspenticton.uzh.ch/omni_name_here
