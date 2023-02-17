@@ -1,5 +1,5 @@
 #### ---------- Summarize benchmark results----------- ####
-
+## TODO: update opt parase
 ## Summarize result per dataset by using the overall mean
 args <- (commandArgs(trailingOnly = TRUE))
 for (i in seq_len(length(args))) {

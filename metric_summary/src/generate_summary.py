@@ -30,26 +30,39 @@ res_files = [x["metric_res"] for x in list(omni_obj.inputs.input_files.values())
 res_json =  "data/metric_result_file_sparql"
 res_files[0:5]
 
+## For DEVs: do NOT try to put this in a renku workflow. 
+## The list of files may vary which would break renku workflows. 
 subprocess.call(['python', 'src/generate_json_from_res_files.py', '--output_name' , res_json, '--endpoint', endpoint,  '--input', *res_files])
 
-### Run metric summary script 
-summary_script = "src/benchmark_summary.R"
-isExist = os.path.exists('log')
-if not isExist:
-    os.makedirs('log')
-isExist = os.path.exists('data/'+omni_obj.name)
-if not isExist:
-    os.makedirs('data/'+omni_obj.name)
-
-args = "--args"+" info_files='" +res_json+"_info.json'"+  " out_path='" + "data/"+omni_obj.name+ "' out_name='" + omni_obj.name+".json'"+ " res_files='" + res_json+".json'"
-os.system('R' + ' CMD' + ' BATCH'+ ' --no-restore'+ ' --no-save "'+ args + '" ' + summary_script + ' log/summarize_metrics.Rout') 
-os.system('renku config set check_datadir_files false')
+### Run metric summary script  --------------------------
 renku_save()
 
-summary_file = "data/"+omni_obj.name + "/" + omni_obj.name+".json"
-update_dataset_files(urls=summary_file, dataset_name=omni_obj.name)
+## Load config
+omni_obj = get_omni_object_from_yaml('src/config_summary.yaml')
+
+## Update object
+omni_obj.update_object()
 renku_save()
 
-## Update dataset
-renku_dataset_update(names=[omni_obj.name])
+## Check object
+print(
+    f"Object attributes: \n {omni_obj.__dict__}\n"
+)
+print(
+    f"File mapping: \n {omni_obj.outputs.file_mapping}\n"
+)
+print(
+    f"Command line: \n {omni_obj.command.command_line}\n"
+)
+
+## Create output dataset
+omni_obj.create_dataset()
+renku_save()
+
+## Run workflow
+omni_obj.run_renku()
+renku_save()
+
+## Update Output dataset
+omni_obj.update_result_dataset()
 renku_save()
