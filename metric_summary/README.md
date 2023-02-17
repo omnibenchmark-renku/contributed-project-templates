@@ -5,8 +5,6 @@
 
 ## Metrics summary template
 
-## TODO: update to new files
-
 **!Intended for omnibenchmark developers only!**
 
 This template will help you to parse metrics from an omnibenchmark project for the bettr shiny app. Only **one metrics summary repository** is needed per omnibenchmark. 

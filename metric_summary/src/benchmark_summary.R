@@ -1,22 +1,35 @@
 #### ---------- Summarize benchmark results----------- ####
-## TODO: update opt parase
-## Summarize result per dataset by using the overall mean
-args <- (commandArgs(trailingOnly = TRUE))
-for (i in seq_len(length(args))) {
-    eval(parse(text = args[[i]]))
-}
 
-#print(out_path)
-print(info_files)
-print(res_files)
-print(out_path)
-print(out_name)
+suppressPackageStartupMessages({
+    library(dplyr)
+    library(magrittr)
+    library(tidyr)
+    library(optparse)
+    library(stats)
+    library(jsonlite)
+    library(Matrix)
+    library(R.utils)
+})
 
-## Libraries
-library(jsonlite)
-library(dplyr)
-library(magrittr)
-library(tidyr)
+### ------------------------------------------------------------------------------------------ ###
+##  ---------------------------------------- Options ------------------------------------------ ##
+### ------------------------------------------------------------------------------------------ ###
+
+option_list = list(
+  make_option(c("--info_files", type="character", default=NULL, 
+              help="", metavar="character")),
+  make_option(c("--res_files"), type="character", default=NULL, 
+              help="", metavar="character"),
+  make_option(c("--summary_parsed"), type="character", default=NULL, 
+              help="", metavar="character")
+); 
+
+opt_parser = OptionParser(option_list=option_list);
+opt = parse_args(opt_parser);
+
+info_files <- opt$info_files
+res_files <- opt$res_files
+summary_parsed <- opt$summary_parsed
 
 ## Read result files
 file_list <- jsonlite::read_json(res_files)
@@ -107,7 +120,8 @@ bettr_list <- list(
 )
 
 
-jsonlite::write_json(bettr_list, path = paste0(out_path, "/", out_name), pretty = TRUE, na = "string")
+jsonlite::write_json(bettr_list, path = summary_parsed, 
+                     pretty = TRUE, na = "string")
 
 
 # DO NOT REMOVE
