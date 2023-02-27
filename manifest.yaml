@@ -9,8 +9,8 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - omni_clustering
-      - spatial-clustering
       - omni_batch_py
+      - spatial-clustering
       - iris_example
       type: enum
     dataset_keyword:
@@ -38,8 +38,8 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - omni_clustering
-      - spatial-clustering
       - omni_batch_py
+      - spatial-clustering
       - iris_example
       type: enum
     processed_keyword:
@@ -58,8 +58,8 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - omni_clustering
-      - spatial-clustering
       - omni_batch_py
+      - spatial-clustering
       - iris_example
       type: enum
     method_keyword:
@@ -78,8 +78,8 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - omni_clustering
-      - spatial-clustering
       - omni_batch_py
+      - spatial-clustering
       - iris_example
       type: enum
     parameter_keyword:
@@ -98,8 +98,8 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - omni_clustering
-      - spatial-clustering
       - omni_batch_py
+      - spatial-clustering
       - iris_example
       type: enum
     metric_keyword:
