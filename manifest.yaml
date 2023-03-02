@@ -3,6 +3,8 @@
   folder: metric_summary
   name: Metrics summary
   variables:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
       default_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
@@ -21,6 +23,8 @@
   folder: orchestrator
   name: Orchestrator
   variables:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
       default_value: omni-batch-py
       description: Name of the Omnibenchmark to link this project with.
