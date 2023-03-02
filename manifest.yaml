@@ -4,6 +4,8 @@
   icon: img/dataset.png
   name: Omnibenchmark dataset
   variables:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
@@ -33,6 +35,8 @@
   icon: img/processing.png
   name: Omnibenchmark processing
   variables:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
       defaul_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
@@ -53,6 +57,8 @@
   icon: img/method.png
   name: Omnibenchmark method
   variables:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
@@ -73,6 +79,8 @@
   icon: img/parameter.png
   name: Omnibenchmark parameter space
   variables:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
@@ -93,6 +101,8 @@
   icon: img/metric.png
   name: Omnibenchmark metric
   variables:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
