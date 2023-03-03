@@ -1,6 +1,6 @@
 ---
 data:
-    name: "{{__sanitized_project_name__}}"
+    name: "{{ sanitized_project_name }}"
     title: "{{ project_title }}"
     description: "{{ description }}"
     keywords: ["{{ parameter_keyword }}"] ## Parameter keyword to make this dataset reachable for other projects/benchmark components.
@@ -14,6 +14,6 @@ outputs:
     file_mapping:
         mapping1:
             output_files:
-                param_json: "data/{{ __sanitized_project_name__ }}/all_parameter.json"
+                param_json: "data/{{  sanitized_project_name  }}/all_parameter.json"
             input_files: 
             parameter: 
