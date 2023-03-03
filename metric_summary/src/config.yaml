@@ -1,6 +1,6 @@
 ---
 data: 
-    name: "{{__sanitized_project_name__}}_input"
+    name: "{{ sanitized_project_name }}_input"
     title: "{{ project_title }} - input"
     description: "http://imlspenticton.uzh.ch/..." ## <--- define here the triplestore to use
     keywords: ["{{ summary_keyword }}_input"]  ## <---- a keyword for this summary project

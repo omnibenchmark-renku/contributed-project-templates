@@ -29,7 +29,7 @@ This template will help you to parse metrics from an omnibenchmark project for t
 
 `python ~/src/generate_summary.py`
 
-Which will create a summary of all metrics parsed for the `bettr` app, usually in `data/{{__sanitized_project_name__}}`
+Which will create a summary of all metrics parsed for the `bettr` app, usually in `data/{{ sanitized_project_name }}`
 
 Once the summary project is ready and working, you can contact the development team to integrate it in a new `bettr` app and specify the path to the output file to push to the app.
 
@@ -65,4 +65,4 @@ Once the two configuration files completed, the project can then be run:
 
 The first part of the section consists of usual `omnibenchmark` calls to import upstream datasets. The second part will call the `generate_json_from_res_files.py` that contains wrappers around the `omniSparql` module to retrieve lineage information and aggregate all information in `data/metric_result_file_sparql.json`. The last step will parse the aggregated data to a `bettr` format. 
 
-Once the script is successfully run, you can contact the development team to configure a new `bettr` shiny app instance. Please specify in your message the name of the benchmark and the path to the final output file, usually in `{{__sanitized_project_name__}}/{{__sanitized_project_name__}}.json`. 
+Once the script is successfully run, you can contact the development team to configure a new `bettr` shiny app instance. Please specify in your message the name of the benchmark and the path to the final output file, usually in `{{ sanitized_project_name }}/{{ sanitized_project_name }}.json`. 
