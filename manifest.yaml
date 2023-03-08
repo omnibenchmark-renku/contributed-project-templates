@@ -8,11 +8,11 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - iris_example
-      - terraform
+      - omni_clustering
       - omni_batch_py
       - spatial-clustering
-      - omni_clustering
+      - iris_example
+      - terraform
       type: enum
     dataset_keyword:
       description: Dataset keyword to make this dataset reachable for other projects/
@@ -38,11 +38,11 @@
       defaul_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - iris_example
-      - terraform
+      - omni_clustering
       - omni_batch_py
       - spatial-clustering
-      - omni_clustering
+      - iris_example
+      - terraform
       type: enum
     processed_keyword:
       description: Processed data keyword to make this dataset reachable for other
@@ -59,11 +59,11 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - iris_example
-      - terraform
+      - omni_clustering
       - omni_batch_py
       - spatial-clustering
-      - omni_clustering
+      - iris_example
+      - terraform
       type: enum
     method_keyword:
       description: Method keyword to make this dataset reachable for other projects/benchmark
@@ -80,11 +80,11 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - iris_example
-      - terraform
+      - omni_clustering
       - omni_batch_py
       - spatial-clustering
-      - omni_clustering
+      - iris_example
+      - terraform
       type: enum
     parameter_keyword:
       description: Parameter keyword to make this dataset reachable for other projects/benchmark
@@ -101,11 +101,11 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - iris_example
-      - terraform
+      - omni_clustering
       - omni_batch_py
       - spatial-clustering
-      - omni_clustering
+      - iris_example
+      - terraform
       type: enum
     metric_keyword:
       description: Metric keyword to make this dataset reachable for other projects/benchmark
