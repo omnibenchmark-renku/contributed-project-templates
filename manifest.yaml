@@ -7,14 +7,7 @@
     sanitized_project_name: 
       description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
-      default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
-      enum:
-      - omni_batch_py
-      - iris_example
-      - omni_clustering
-      - spatial-clustering
-      type: enum
     dataset_keyword:
       description: Dataset keyword to make this dataset reachable for other projects/
         omnibenchmarks components.
@@ -38,14 +31,7 @@
     sanitized_project_name: 
       description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
-      defaul_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
-      enum:
-      - omni_batch_py
-      - iris_example
-      - omni_clustering
-      - spatial-clustering
-      type: enum
     processed_keyword:
       description: Processed data keyword to make this dataset reachable for other
         projects/benchmark components.
@@ -60,14 +46,7 @@
     sanitized_project_name: 
       description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
-      default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
-      enum:
-      - omni_batch_py
-      - iris_example
-      - omni_clustering
-      - spatial-clustering
-      type: enum
     method_keyword:
       description: Method keyword to make this dataset reachable for other projects/benchmark
         components.
@@ -82,14 +61,7 @@
     sanitized_project_name: 
       description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
-      default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
-      enum:
-      - omni_batch_py
-      - iris_example
-      - omni_clustering
-      - spatial-clustering
-      type: enum
     parameter_keyword:
       description: Parameter keyword to make this dataset reachable for other projects/benchmark
         components.
@@ -104,14 +76,7 @@
     sanitized_project_name: 
       description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
-      default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
-      enum:
-      - omni_batch_py
-      - iris_example
-      - omni_clustering
-      - spatial-clustering
-      type: enum
     metric_keyword:
       description: Metric keyword to make this dataset reachable for other projects/benchmark
         components.
