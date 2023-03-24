@@ -8,8 +8,8 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni_clustering
       - omni_batch_py
+      - omni_clustering
       - spatial-clustering
       - iris_example
       - terraform
@@ -38,8 +38,8 @@
       defaul_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni_clustering
       - omni_batch_py
+      - omni_clustering
       - spatial-clustering
       - iris_example
       - terraform
@@ -59,8 +59,8 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni_clustering
       - omni_batch_py
+      - omni_clustering
       - spatial-clustering
       - iris_example
       - terraform
@@ -80,8 +80,8 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni_clustering
       - omni_batch_py
+      - omni_clustering
       - spatial-clustering
       - iris_example
       - terraform
@@ -101,8 +101,8 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - omni_clustering
       - omni_batch_py
+      - omni_clustering
       - spatial-clustering
       - iris_example
       - terraform
