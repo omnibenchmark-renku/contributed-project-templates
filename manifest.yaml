@@ -8,10 +8,10 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - spatial-clustering
-      - iris_example
       - omni_batch_py
+      - spatial-clustering
       - terraform
+      - iris_example
       - omni_clustering
       type: enum
     dataset_keyword:
@@ -38,10 +38,10 @@
       defaul_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - spatial-clustering
-      - iris_example
       - omni_batch_py
+      - spatial-clustering
       - terraform
+      - iris_example
       - omni_clustering
       type: enum
     processed_keyword:
@@ -59,10 +59,10 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - spatial-clustering
-      - iris_example
       - omni_batch_py
+      - spatial-clustering
       - terraform
+      - iris_example
       - omni_clustering
       type: enum
     method_keyword:
@@ -80,10 +80,10 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - spatial-clustering
-      - iris_example
       - omni_batch_py
+      - spatial-clustering
       - terraform
+      - iris_example
       - omni_clustering
       type: enum
     parameter_keyword:
@@ -101,10 +101,10 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - spatial-clustering
-      - iris_example
       - omni_batch_py
+      - spatial-clustering
       - terraform
+      - iris_example
       - omni_clustering
       type: enum
     metric_keyword:
