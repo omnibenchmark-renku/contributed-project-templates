@@ -24,7 +24,9 @@ This template will help you to add a dataset to an omnibenchmark project. For ea
 
 - `src/config.yaml`, to configure the project and the dataset.
 
-- `requirements.txt` or `install.R` if you need packages or modules isntalled. 
+- `requirements.txt` or `install.R` if you need additional packages or modules installed. 
+
+- (optional) place input files in the `input` folder and process them with your script. **DO NOT MANUALLY UPLOAD FILES TO /data !**
 
 The configuration of a data module is explained in details in the [Omnibenchmark documentation](https://omnibenchmark.readthedocs.io/en/latest/start/modules/01_data_module.html)
 
