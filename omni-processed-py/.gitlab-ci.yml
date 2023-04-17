@@ -13,7 +13,10 @@ image_build:
   stage: build
   image: docker:stable
   rules:
-    - if: '$CI_PIPELINE_SOURCE != "pipeline"' 
+    - changes:
+      - Dockerfile
+      - requirements.txt
+      - install.R
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN http://$CI_REGISTRY
   script: |
@@ -25,14 +28,15 @@ image_build:
 
 run_udpate:
   stage: update
+  retry: 2
   image: 
     name: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
     entrypoint: [""]
   rules:
     - if: '$CI_PIPELINE_SOURCE == "pipeline"' 
   before_script:
-    - git config --global user.name "${GITLAB_USER_NAME}"
-    - git config --global user.email "${GITLAB_USER_EMAIL}"
+    - git config --global user.name ${GITLAB_USER_NAME}
+    - git config --global user.email ${GITLAB_USER_EMAIL}
     - git config --global --add safe.directory /builds/gitlab/${CI_PROJECT_PATH}
     - url_host=`git remote get-url origin | sed -e "s/https:\/\/gitlab-ci-token:.*@//g"`
     - cd /tmp/
@@ -40,7 +44,8 @@ run_udpate:
     - cd ${CI_PROJECT_NAME}
     - chmod +x ./$PROJECT_SCRIPT
     - git lfs install --local
+    - git lfs pull
   script:
     - python $PROJECT_SCRIPT
     - 'renku graph export --full --strict > graph.json'
-    - 'curl -u  "omni_update:${OMNI_UPDATE_TOKEN}" -i -X  POST "${TRIPLESTORE_URL}" -H "Content-Type:application/ld+json" -d "@graph.json"'
+    - 'curl -u  "omni_update:${OMNI_UPDATE_TOKEN}" -i -X  POST "${TRIPLESTORE_URL}" -H "Content-Type:application/ld+json" -d "@graph.json"' 
