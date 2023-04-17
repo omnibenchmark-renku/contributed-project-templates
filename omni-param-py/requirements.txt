@@ -1,1 +1,2 @@
 omnibenchmark==0.0.41
+typeguard==2.13.3
