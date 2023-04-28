@@ -1,24 +1,24 @@
 ### NOTES
 #
-# 1. For further documentation on the orchestrator, see:
-# [SOME-WEBLINK-HERE]
+# 1. For further documentation on the orchestrator, see
+#  the README of this project.
 #
-# 2. The following `trigger` blocks may need to be modified
-#  trigger:
-#    project: omnibenchmark/omni_project/some-project
-#    project: domain/subdomain/module
-# .. according to whether the submitted projects exist
+# 2. The following `trigger` blocks may need to be modified as:
+#  trigger_[PROJECT_NAME]:
+#     stage: [THE_STAGE_FOR_THIS_PROJECT]
+#     trigger:
+#       project: [NAMESPACE_AND_PROJECT_NAME]
 #
-# 3. Some stages may not exist for a given benchmark;
-# these can be commented out or removed from the `stages:` block
+# 3. Some stages may not exist for a given benchmark or some may be added;
+#  these can be removed or added from the `stages:` block. 
+# How the stages are named is flexible but has to correspond to the `stage`
+#  in the trigger blocks. 
 #
 # 4. Some blocks are commented out below, but represent a template 
 # for what can be added and altered 
-#
-# 5. The blocks below _dataset1, _method1, _metric1 should be modified
-# according to the names of existing modules
 
 
+# DO NOT MODIFY
 variables:
   GIT_STRATEGY: fetch
   GIT_SSL_NO_VERIFY: "true"
@@ -29,6 +29,9 @@ variables:
   OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
   CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
 
+
+# This is an example of step in your benchmarking pipeline. 
+# The stages must correspond to the stages in the trigger blocks. 
 stages:
   - build
   - data_run
@@ -38,6 +41,8 @@ stages:
   - metric_run
   - summary_run
 
+
+# DO NOT MODIFY
 image_build:
   stage: build
   image: docker:stable
@@ -49,6 +54,8 @@ image_build:
     docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA_7
 
 
+# Below are example trigger blocks. 
+# You can rename them and specify your projects namespace.
 trigger_dataset1:
   stage: data_run
   only:

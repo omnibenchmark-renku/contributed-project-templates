@@ -40,38 +40,13 @@ be run with the rest of the Omnibenchmark and for its results to be displayed on
 
 Please open an issue on the orchestrator page of the Omnibenchmark that you would like to contribute to. 
 
-### I'm an **Omnibenchmark developper** and would like to add a project to the orchestrator 
+### I'm an **Omnibenchmark developper** and would like to setup the orchestrator 
 
-**Prerequisites**: Make sure that the project was already run once and is functional. 
+Before adding projects to the orchestrator, you can configure the orchestrator as follows: 
 
-**If the project to integrate was set up using an Omnibenchmark template**, you can ignore step 2).  
+1) In the `.gitlab-ci.yml` file of the orchestrator, define the steps of your benchmark under the [`stages`](https://github.com/omnibenchmark/contributed-project-templates/blob/dev/orchestrator/.gitlab-ci.yml#L32) section. This will define the different steps of your benchmark (one or multiple projects will be assigned to a step) and their order of execution. 
 
-1) In the `.gitlab-ci.yml` file of the orchestrator, add: 
-
-```
-trigger_YOUR-NEW-PROJECT:
-  stage: PROJECT-STAGE
-  only:
-    - schedules
-  trigger: 
-    project: PROJECT_PATH
-    strategy: depend
-``` 
-
-where: 
-
-- `YOUR-NEW-PROJECT` is the name of the project that you would like to add. 
-
-- `PROJECT-STAGE` is the stage of the CI. Typically, one of: `data_run`, `process_run`, 
-`parameter_run`, `method_run`, `metric_run` or `summary_run`.
-
-- `PROJECT_PATH` is the path to the project, relative to (and including) the namespace it is located. 
-
-
-2) In the `.gitlab-ci.yml` file of the project to integrate, remove the current content and replace it with the [YAML for Omnibenchmark projects ](https://github.com/omnibenchmark/contributed-project-templates/blob/main/omni-data-py/.gitlab-ci.yml) (universal for any Omnibenchmark and project).
-
-
-3) [To do only once when setting-up a new orchestrator] Setup the tokens that will give the access to the triggered projects.
+2) Setup the tokens that will give the access to the triggered projects.
 
 On the renkulab page of the orchestrator, on the toolbar on the right-hand side, go to `settings` > `CI/CD` > `Variables` 
 and under `Add variable`, add: 
@@ -83,6 +58,47 @@ and under `Add variable`, add:
 [1] If you don't own such token, you can create one by following 
 [these instructions](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) and 
 select at least "api, read api" as scope. 
+
+3) Create a pipeline schedule: 
+
+- on the Renku Gitlab page, go to `CI/CD` > `Schedules`
+
+- Open `New schedule` 
+
+- Give a description and disable the `Active` box (if you want to manually trigger pipelines). 
+
+- Your orchestrator is ready to run! You can activate your pipeline when it's ready by clicking on the `play` button. 
+
+### I'm an **Omnibenchmark developper** and would like to add a project to the orchestrator 
+
+**Prerequisites**: Make sure that the project was already run once and is functional. 
+
+1) In the `.gitlab-ci.yml` file of the orchestrator, add: 
+
+```
+trigger_YOUR-NEW-PROJECT:  # <-- To modify
+  stage: PROJECT-STAGE     # <-- To modify
+  only:
+    - schedules
+  trigger: 
+    project: PROJECT_PATH  # <-- To modify
+    strategy: depend
+``` 
+
+where: 
+
+- `YOUR-NEW-PROJECT` is the name of the project that you would like to add. This will only be used to name this job in the pipeline, it doesn't have to correspond exactly to the project name. 
+
+- `PROJECT-STAGE` is the stage of the CI. Typically, one of: `data_run`, `process_run`, 
+`parameter_run`, `method_run`, `metric_run` or `summary_run`. The order
+
+- `PROJECT_PATH` is the path to the project, relative to (and including) the namespace it is located. 
+
+2) [Only if the project was NOT created from an Omnibenchmark template] 
+In the `.gitlab-ci.yml` file of the project to integrate, remove the current content and replace it with the [YAML for Omnibenchmark projects ](https://github.com/omnibenchmark/contributed-project-templates/blob/main/omni-data-py/.gitlab-ci.yml) (universal for any Omnibenchmark and project).
+
+
+3) Trigger your project using your pipeline schedule (see previous section if you haven't set it up). 
 
 ### How can I activate the orchestrator ? 
 
