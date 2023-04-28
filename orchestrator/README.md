@@ -44,7 +44,7 @@ Please open an issue on the orchestrator page of the Omnibenchmark that you woul
 
 Before adding projects to the orchestrator, you can configure the orchestrator as follows: 
 
-1) In the `.gitlab-ci.yml` file of the orchestrator, define the steps of your benchmark under the [`stages`](https://github.com/omnibenchmark/contributed-project-templates/blob/dev/orchestrator/.gitlab-ci.yml#L32) section. This will define the different steps of your benchmark (one or multiple projects will be assigned to a step) and their order of execution. 
+1) In the `.gitlab-ci.yml` file of the orchestrator, define the steps of your benchmark under the [`stages`](https://github.com/omnibenchmark/contributed-project-templates/blob/dev/orchestrator/.gitlab-ci.yml#L35) section. This will define the different steps of your benchmark (one or multiple projects will be assigned to a step) and their order of execution. 
 
 2) Setup the tokens that will give the access to the triggered projects.
 
