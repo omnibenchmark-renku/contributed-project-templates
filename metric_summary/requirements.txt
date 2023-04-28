@@ -1,2 +1,2 @@
 omnibenchmark==0.0.41
-git+https://github.com/omnibenchmark/omniSparql@main
+omniSparql==0.0.3 
