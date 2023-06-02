@@ -1,2 +1,3 @@
 omnibenchmark==0.0.41
 omniSparql==0.0.3 
+typeguard==2.13.3

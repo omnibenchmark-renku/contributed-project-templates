@@ -2,13 +2,13 @@
 data: 
     name: "{{__sanitized_project_name__}}_input"
     title: "{{ project_title }} - input"
-    description: "http://imlspenticton.uzh.ch/..." ## <--- define here the triplestore to use
+    description: "http://imlspenticton.uzh.ch/{{ benchmark_name }}_sparql" ## <--- define here the triplestore to use
     keywords: ["{{ summary_keyword }}_input"]  ## <---- a keyword for this summary project
 benchmark_name: "{{ benchmark_name }}" ## <---- Name of the omnibenchmark to link this project with.
 inputs:
   keywords: [" "] ## <---- Input metric keyword(s) to import. 
   files: ["metric_res", "metric_info"]  
-  prefix: ## you might have to change this, depending on the 'output' section of your metric project(s).
+  prefix: ## may need to be adapted, depending on the 'output' section of your metric project(s).
     metric_res: "_metric_res"
     metric_info: "_info"
 
