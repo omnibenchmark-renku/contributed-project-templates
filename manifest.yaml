@@ -9,11 +9,11 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - CCC_benchmark
-      - omni_batch_py
-      - iris_example
-      - iris_versioned
-      - omni_clustering
       - spatial-clustering
+      - iris_versioned
+      - iris_example
+      - omni_batch_py
+      - omni_clustering
       - terraform
       type: enum
     dataset_keyword:
@@ -41,11 +41,11 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - CCC_benchmark
-      - omni_batch_py
-      - iris_example
-      - iris_versioned
-      - omni_clustering
       - spatial-clustering
+      - iris_versioned
+      - iris_example
+      - omni_batch_py
+      - omni_clustering
       - terraform
       type: enum
     processed_keyword:
@@ -64,11 +64,11 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - CCC_benchmark
-      - omni_batch_py
-      - iris_example
-      - iris_versioned
-      - omni_clustering
       - spatial-clustering
+      - iris_versioned
+      - iris_example
+      - omni_batch_py
+      - omni_clustering
       - terraform
       type: enum
     method_keyword:
@@ -87,11 +87,11 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - CCC_benchmark
-      - omni_batch_py
-      - iris_example
-      - iris_versioned
-      - omni_clustering
       - spatial-clustering
+      - iris_versioned
+      - iris_example
+      - omni_batch_py
+      - omni_clustering
       - terraform
       type: enum
     parameter_keyword:
@@ -110,11 +110,11 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - CCC_benchmark
-      - omni_batch_py
-      - iris_example
-      - iris_versioned
-      - omni_clustering
       - spatial-clustering
+      - iris_versioned
+      - iris_example
+      - omni_batch_py
+      - omni_clustering
       - terraform
       type: enum
     metric_keyword:
