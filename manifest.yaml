@@ -8,12 +8,12 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - terraform
-      - spatial-clustering
       - iris_example
-      - omni_clustering
       - omni_batch_py
+      - omni_clustering
       - iris_versioned
+      - spatial-clustering
+      - terraform
       - CCC_benchmark
       type: enum
     dataset_keyword:
@@ -40,12 +40,12 @@
       defaul_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - terraform
-      - spatial-clustering
       - iris_example
-      - omni_clustering
       - omni_batch_py
+      - omni_clustering
       - iris_versioned
+      - spatial-clustering
+      - terraform
       - CCC_benchmark
       type: enum
     processed_keyword:
@@ -63,12 +63,12 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - terraform
-      - spatial-clustering
       - iris_example
-      - omni_clustering
       - omni_batch_py
+      - omni_clustering
       - iris_versioned
+      - spatial-clustering
+      - terraform
       - CCC_benchmark
       type: enum
     method_keyword:
@@ -86,12 +86,12 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - terraform
-      - spatial-clustering
       - iris_example
-      - omni_clustering
       - omni_batch_py
+      - omni_clustering
       - iris_versioned
+      - spatial-clustering
+      - terraform
       - CCC_benchmark
       type: enum
     parameter_keyword:
@@ -109,12 +109,12 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - terraform
-      - spatial-clustering
       - iris_example
-      - omni_clustering
       - omni_batch_py
+      - omni_clustering
       - iris_versioned
+      - spatial-clustering
+      - terraform
       - CCC_benchmark
       type: enum
     metric_keyword:
