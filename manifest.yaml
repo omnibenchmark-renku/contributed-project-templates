@@ -10,11 +10,11 @@
       enum:
       - iris_example
       - omni_batch_py
-      - iris_versioned
-      - terraform
       - spatial-clustering
-      - omni_clustering
+      - terraform
       - CCC_benchmark
+      - omni_clustering
+      - iris_versioned
       type: enum
     dataset_keyword:
       description: Dataset keyword to make this dataset reachable for other projects/
@@ -42,11 +42,11 @@
       enum:
       - iris_example
       - omni_batch_py
-      - iris_versioned
-      - terraform
       - spatial-clustering
-      - omni_clustering
+      - terraform
       - CCC_benchmark
+      - omni_clustering
+      - iris_versioned
       type: enum
     processed_keyword:
       description: Processed data keyword to make this dataset reachable for other
@@ -65,11 +65,11 @@
       enum:
       - iris_example
       - omni_batch_py
-      - iris_versioned
-      - terraform
       - spatial-clustering
-      - omni_clustering
+      - terraform
       - CCC_benchmark
+      - omni_clustering
+      - iris_versioned
       type: enum
     method_keyword:
       description: Method keyword to make this dataset reachable for other projects/benchmark
@@ -88,11 +88,11 @@
       enum:
       - iris_example
       - omni_batch_py
-      - iris_versioned
-      - terraform
       - spatial-clustering
-      - omni_clustering
+      - terraform
       - CCC_benchmark
+      - omni_clustering
+      - iris_versioned
       type: enum
     parameter_keyword:
       description: Parameter keyword to make this dataset reachable for other projects/benchmark
@@ -111,11 +111,11 @@
       enum:
       - iris_example
       - omni_batch_py
-      - iris_versioned
-      - terraform
       - spatial-clustering
-      - omni_clustering
+      - terraform
       - CCC_benchmark
+      - omni_clustering
+      - iris_versioned
       type: enum
     metric_keyword:
       description: Metric keyword to make this dataset reachable for other projects/benchmark
