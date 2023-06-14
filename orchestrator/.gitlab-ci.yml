@@ -24,7 +24,7 @@ variables:
   GIT_SSL_NO_VERIFY: "true"
   GIT_LFS_SKIP_SMUDGE: 1
   OMNIBENCHMARK_NAME: {{benchmark_name}}
-  TRIPLESTORE_URL: {{triplestore_url}}
+  TRIPLESTORE_URL: https://omnibenchmark.org/{{triplestore_url}}_data
   CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
   OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
   CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}

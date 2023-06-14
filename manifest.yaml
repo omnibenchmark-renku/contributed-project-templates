@@ -30,6 +30,4 @@
       - omni_clustering
       - spatial-clustering
       type: enum
-    triplestore_url:
-      default_value: http://imlspenticton.uzh.ch/omni_name_here
-      description: URL of the triplestore to link this Orchestrator with.
+
