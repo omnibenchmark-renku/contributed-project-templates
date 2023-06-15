@@ -1,2 +1,2 @@
-omnibenchmark==0.0.42
+omnibenchmark==0.0.43
 omniValidator==0.0.15
