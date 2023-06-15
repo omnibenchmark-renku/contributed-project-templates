@@ -5,16 +5,7 @@
   name: Omnibenchmark dataset
   variables:
     benchmark_name:
-      default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
-      enum:
-      - iris_example
-      - spatial-clustering
-      - terraform
-      - omni_batch_py
-      - omni_clustering
-      - CCC_benchmark
-      type: enum
     dataset_keyword:
       description: Dataset keyword to make this dataset reachable for other projects/
         omnibenchmarks components.
@@ -36,16 +27,7 @@
   name: Omnibenchmark processing
   variables:
     benchmark_name:
-      defaul_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
-      enum:
-      - iris_example
-      - spatial-clustering
-      - terraform
-      - omni_batch_py
-      - omni_clustering
-      - CCC_benchmark
-      type: enum
     processed_keyword:
       description: Processed data keyword to make this dataset reachable for other
         projects/benchmark components.
@@ -58,16 +40,7 @@
   name: Omnibenchmark method
   variables:
     benchmark_name:
-      default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
-      enum:
-      - iris_example
-      - spatial-clustering
-      - terraform
-      - omni_batch_py
-      - omni_clustering
-      - CCC_benchmark
-      type: enum
     method_keyword:
       description: Method keyword to make this dataset reachable for other projects/benchmark
         components.
@@ -80,16 +53,7 @@
   name: Omnibenchmark parameter space
   variables:
     benchmark_name:
-      default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
-      enum:
-      - iris_example
-      - spatial-clustering
-      - terraform
-      - omni_batch_py
-      - omni_clustering
-      - CCC_benchmark
-      type: enum
     parameter_keyword:
       description: Parameter keyword to make this dataset reachable for other projects/benchmark
         components.
@@ -102,16 +66,7 @@
   name: Omnibenchmark metric
   variables:
     benchmark_name:
-      default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
-      enum:
-      - iris_example
-      - spatial-clustering
-      - terraform
-      - omni_batch_py
-      - omni_clustering
-      - CCC_benchmark
-      type: enum
     metric_keyword:
       description: Metric keyword to make this dataset reachable for other projects/benchmark
         components.
