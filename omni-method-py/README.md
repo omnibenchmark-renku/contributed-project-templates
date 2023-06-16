@@ -15,8 +15,8 @@ The configuration of a method module is explained in details in the [Omnibenchma
 
 **To configure** the project, please modify: 
 
-- `src/{{__sanitized_project_name__}}.py` (if working with python) or 
-`src/{{__sanitized_project_name__}}.R` (if working with R) with your wrapper of a method to benchmark
+- `src/{{ sanitized_project_name }}.py` (if working with python) or 
+`src/{{ sanitized_project_name }}.R` (if working with R) with your wrapper of a method to benchmark
 
 - `src/config.yaml`, to configure the project and the dataset.
 

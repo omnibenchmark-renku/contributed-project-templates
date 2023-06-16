@@ -14,8 +14,8 @@ The configuration of a metric module is explained in details in the [Omnibenchma
 
 **To configure** the project, please modify: 
 
-- `src/{{__sanitized_project_name__}}.py` (if working with python) or 
-`src/{{__sanitized_project_name__}}.R` (if working with R) with a metric to evaluate methods of an omnibenchmark
+- `src/{{ sanitized_project_name }}.py` (if working with python) or 
+`src/{{ sanitized_project_name }}.R` (if working with R) with a metric to evaluate methods of an omnibenchmark
 
 - `src/config.yaml`, to configure the project and the dataset.
 

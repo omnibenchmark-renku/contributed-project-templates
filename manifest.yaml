@@ -4,6 +4,8 @@
   icon: img/dataset.png
   name: Omnibenchmark dataset
   variables:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
       description: Name of the omnibenchmark to link this project with.
     dataset_keyword:
@@ -26,6 +28,8 @@
   icon: img/processing.png
   name: Omnibenchmark processing
   variables:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
       description: Name of the omnibenchmark to link this project with.
     processed_keyword:
@@ -39,6 +43,8 @@
   icon: img/method.png
   name: Omnibenchmark method
   variables:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
       description: Name of the omnibenchmark to link this project with.
     method_keyword:
@@ -52,6 +58,8 @@
   icon: img/parameter.png
   name: Omnibenchmark parameter space
   variables:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
       description: Name of the omnibenchmark to link this project with.
     parameter_keyword:
@@ -65,6 +73,8 @@
   icon: img/metric.png
   name: Omnibenchmark metric
   variables:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
       description: Name of the omnibenchmark to link this project with.
     metric_keyword:
