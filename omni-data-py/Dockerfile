@@ -10,16 +10,37 @@ FROM ${RENKU_BASE_IMAGE}
 # e.g. the following installs apt-utils and vim; each pkg on its own line, all lines
 # except for the last end with backslash '\' to continue the RUN line
 #
-# USER root
-# RUN apt-get update && \
-#    apt-get install -y --no-install-recommends \
-#    apt-utils \
-#    vim
-# USER ${NB_USER}
+
+USER root
+
+COPY install_r.sh /tmp/
+
+RUN rm -f /usr/local/lib/R/bin/R
+RUN rm -f /usr/local/bin/R
+RUN rm -f /usr/local/bin/Rscript
+
+RUN rm -rf /usr/local/lib/R/library
+RUN rm -rf /usr/lib/R/library
+
+RUN chmod +x /tmp/install_r.sh
+RUN /tmp/install_r.sh
+
+
+RUN mkdir -p /usr/lib/R/library /usr/local/lib/R/library
+
+# RUN chown -R ${NB_USER}:${NB_USER} /usr/lib/R/library
 
 # install the R dependencies
 COPY install.R /tmp/
-RUN R -f /tmp/install.R
+RUN set -e
+
+RUN /usr/local/bin/R -f /tmp/install.R
+RUN set +e
+
+
+USER ${NB_USER}
+
+
 
 # install the python dependencies
 COPY requirements.txt environment.yml /tmp/

@@ -16,6 +16,7 @@ image_build:
       - Dockerfile
       - requirements.txt
       - install.R
+      - install_r.sh
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN http://$CI_REGISTRY
   script: |
