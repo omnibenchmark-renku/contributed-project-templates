@@ -25,10 +25,10 @@ print("no ds:", NO_DS_IN_PARAMS)
 print("out:", OUT_JSON)
 print("int:", INPUT[0:4], "...[truncated]")
 
-
 json_out = dict()
 val_nam = []
 dir_names = []
+
 for NAM in INPUT:
     
     print("Getting summary info for:", NAM)
@@ -57,6 +57,7 @@ for NAM in INPUT:
     # DATASET: iterate until no results, then get original project 
     query = omni.getSparqlQuery.input_from_file(NAM)
     orig_file = [omni.query_from_sparql(query, URL = ENDPOINT)[0]['out']['value']]
+    lineage = list()
     while True: 
         query = [omni.getSparqlQuery.input_from_file(x) for x in orig_file]
         orig_file = [omni.query_from_sparql(x, URL = ENDPOINT) for x in query]
@@ -64,6 +65,7 @@ for NAM in INPUT:
         orig_file = [item for sublist in orig_file for item in sublist]
         if len(orig_file) > 0: 
             temp_file = [x['out']['value'] for x in orig_file]
+            lineage.append(temp_file)
             ## ---------------------------------------------------
             # TEMP: problem with processed/meta_ which is imported & placed in the wrong folder.
             # Should be resolved with new tripletore.
@@ -88,6 +90,12 @@ for NAM in INPUT:
                 else: 
                     ind += 1
             break
+            
+    # PROCESS: get the project from the forelast file in the lineage
+    # takes by default first element
+    query = omni.getSparqlQuery.project_from_file(lineage[len(lineage)-2][0])
+    out_query = omni.query_from_sparql(query, URL = ENDPOINT)
+    PROCESS = out_query[0]['project_name']['value'] 
     
     # PARAMETERS: done on the method_file
     query = omni.getSparqlQuery.parameters_from_file(method_file, params_only = True)
@@ -110,11 +118,18 @@ for NAM in INPUT:
     end = datetime.strptime(end,"%Y-%m-%dT%H:%M:%SZ" )
     RUNTIME = (end-start).total_seconds()
     
+    # METRIC VALUE
+    f = open(NAM)
+    MET_VAL = json.load(f)
+    
     # CREATE JSON
     json_out[NAM] = {
     "dataset": [
         DATASET
     ], 
+    "preprocessing": [
+        PROCESS
+    ],
     "method": [
         METH
     ], 
@@ -125,6 +140,9 @@ for NAM in INPUT:
     ],
     "runtime": [
         RUNTIME
+    ],
+    "metric_value": [
+        MET_VAL
     ]
     }
     
@@ -134,7 +152,6 @@ json_out = json.dumps(json_out, indent = 3)
 with open(OUT_JSON+".json", "w") as outfile:
     outfile.write(json_out)
     
-
 # check if we have 1 info file per directory
 for i in dir_names:
     ifile = glob.glob(i + "/*_info.json")
@@ -144,7 +161,23 @@ for i in dir_names:
 info_json = dict()
 info_json["info_file"] = [glob.glob(x + "/*_info.json") for x in dir_names]
 info_json["info_file"] = [''.join(x) for x in info_json["info_file"] ]
-info_json = json.dumps(info_json, indent = 3)
-with open(OUT_JSON+"_info.json", "w") as outfile:
-    outfile.write(info_json)
 
+def create_json_dictionary(file_list):
+    json_dict = {}
+    
+    for file_name in file_list:
+        with open(file_name, 'r') as file:
+            try:
+                data = json.load(file)
+                json_dict[file_name] = data
+            except json.JSONDecodeError:
+                print(f"Error decoding JSON in file: {file_name}")
+    
+    return json_dict
+
+# Call the function to create the dictionary
+json_dictionary = create_json_dictionary(info_json["info_file"])
+
+json_dictionary = json.dumps(json_dictionary, indent = 3)
+with open(OUT_JSON+"_info.json", "w") as outfile:
+    outfile.write(json_dictionary)

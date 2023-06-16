@@ -8,7 +8,6 @@ renku_save()
 
 ## Load config
 omni_obj = get_omni_object_from_yaml('src/config.yaml')
-
 # endpoint from description
 endpoint = omni_obj.description
 
@@ -30,10 +29,11 @@ res_files = [x["metric_res"] for x in list(omni_obj.inputs.input_files.values())
 res_json =  "data/metric_result_file_sparql"
 res_files[0:5]
 
-## For DEVs: do NOT try to put this in a renku workflow. 
-## The list of files may vary which would break renku workflows. 
-subprocess.call(['python', 'src/generate_json_from_res_files.py', '--output_name' , res_json, '--endpoint', endpoint,  '--input', *res_files])
-
+## IMPORTANT: do NOT try to put this in a renku workflow. 
+## The list of files may vary through time, which would break renku workflow
+with open('output.log', 'w') as f:
+    subprocess.call(['python', 'src/generate_json_from_res_files.py', '--output_name' , res_json, '--endpoint', endpoint,  '--input', *res_files], stdout=f, stderr=f)
+    
 ### Run metric summary script  --------------------------
 renku_save()
 
@@ -54,7 +54,7 @@ print(
 print(
     f"Command line: \n {omni_obj.command.command_line}\n"
 )
-
+    
 ## Create output dataset
 omni_obj.create_dataset()
 renku_save()

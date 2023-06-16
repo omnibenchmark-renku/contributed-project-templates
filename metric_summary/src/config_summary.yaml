@@ -6,7 +6,7 @@ data:
     keywords: ["{{ summary_keyword }}"]  ## <---- a keyword for this summary project
 benchmark_name: "{{ benchmark_name }}" ## <---- Name of the omnibenchmark to link this project with.
 script: "src/benchmark_summary.R"
-inputs: ## Leave everything below as it is
+inputs: ## Leave everything below as it is --------------------------------------------------------
     input_files:
         import_this_dataset:
             res_files: "data/metric_result_file_sparql.json"
