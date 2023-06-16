@@ -3,15 +3,10 @@
   folder: metric_summary
   name: Metrics summary
   variables:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
-      default_value: omni-batch-py
       description: Name of the omnibenchmark to link this project with.
-      enum:
-      - omni-batch-py
-      - iris_example
-      - omni_clustering
-      - spatial-clustering
-      type: enum
     project_title:
       description: Long, human readable project title.
     summary_keyword:
@@ -21,13 +16,7 @@
   folder: orchestrator
   name: Orchestrator
   variables:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
     benchmark_name:
-      default_value: omni-batch-py
       description: Name of the Omnibenchmark to link this project with.
-      enum:
-      - omni-batch-py
-      - iris_example
-      - omni_clustering
-      - spatial-clustering
-      type: enum
-

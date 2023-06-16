@@ -1,6 +1,6 @@
 ---
 data:
-    name: "{{__sanitized_project_name__}}"
+    name: "{{ sanitized_project_name }}"
     title: "{{ project_title }}"
     description: "Parsed summary of metric files for {{ benchmark_name }} "
     keywords: ["{{ summary_keyword }}"]  ## <---- a keyword for this summary project
