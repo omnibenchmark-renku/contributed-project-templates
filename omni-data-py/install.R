@@ -22,13 +22,9 @@ install.packages("https://cran.r-project.org/src/contrib/Archive/locfit/locfit_1
 
 remotes::install_version("RcppAnnoy", version = "0.0.16")
 
-bioconductor_packages <- c("BiocParallel", "BiocGenerics",
-                           "SingleCellExperiment", "GenomeInfoDb", 
-                           "GenomeInfoDbData", "BiocNeighbors")
-BiocManager::install(bioconductor_packages)
 
-## BiocManager::install('https://code.bioconductor.org/browse/scran/tarball/RELEASE_3_8/scran_release_3_8.tar')
-BiocManager::install('scran')
+
+
 
 install.packages("R.utils")
-install.packages("optparse")
+
