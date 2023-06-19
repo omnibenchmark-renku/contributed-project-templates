@@ -11,12 +11,6 @@ stages:
 image_build:
   stage: build
   image: docker:stable
-  rules:
-    - changes:
-      - Dockerfile
-      - requirements.txt
-      - install.R
-      - install_r.sh
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN http://$CI_REGISTRY
   script: |
