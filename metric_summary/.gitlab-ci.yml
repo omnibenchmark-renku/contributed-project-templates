@@ -27,7 +27,7 @@ image_build:
     docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA_7 $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
     docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA 
 
-run_udpate:
+run_update:
   stage: update
   retry: 2
   image: 
