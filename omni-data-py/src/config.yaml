@@ -16,4 +16,4 @@ outputs:
         # data_file2:
         #     end: "FILE2_END"
         #...
-sanitized_project_name: "{{ sanitized_project_name }}" ## Name of the omnibenchmark to link this project with.
+benchmark_name: "{{ benchmark_name }}" ## Name of the omnibenchmark to link this project with.
