@@ -10,13 +10,8 @@ stages:
 
 image_build:
   stage: build
-  image: docker:stable
-  rules:
-    - changes:
-      - Dockerfile
-      - requirements.txt
-      - install.R
-  before_script:
+  image: docker:stable  
+  before_script:    
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN http://$CI_REGISTRY
   script: |
     CI_COMMIT_SHA_7=$(echo $CI_COMMIT_SHA | cut -c1-7)
