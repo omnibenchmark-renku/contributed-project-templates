@@ -1,10 +1,10 @@
 ---
 data:
-    name: "{{__sanitized_project_name__}}"
+    name: "{{ sanitized_project_name }}"
     title: "{{ project_title }}"
     description: "{{ description }}"
     keywords: ["{{ processed_keyword }}"] ## Processed data keyword to make this dataset reachable for other projects/benchmark components.
-script: "src/{{__sanitized_project_name__}}.R" ## Change this to .py if you are using a py script
+script: "src/{{ sanitized_project_name }}.R" ## Change this to .py if you are using a py script
 inputs:
     keywords: [" "] ## Input dataset keyword(s) to import. 
     files: [" "] ## Input file type(s). Should correspond to next section, e.g. "input_file1"

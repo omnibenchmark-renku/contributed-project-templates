@@ -1,6 +1,6 @@
 ---
 data:
-    name: "{{__sanitized_project_name__}}"
+    name: "{{ sanitized_project_name }}"
     title: "{{ project_title }}"
     description: "{{ description }}"
     keywords: ["{{ dataset_keyword }}"]

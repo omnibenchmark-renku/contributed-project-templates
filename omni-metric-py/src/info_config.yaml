@@ -1,6 +1,6 @@
 ---
 data:
-    name: "{{__sanitized_project_name__}}"
+    name: "{{ sanitized_project_name }}"
     title: "{{ project_title }}"
     description: "{{ description }}"
     keywords: ["{{ metric_keyword }}"]
@@ -13,4 +13,4 @@ outputs:
     file_mapping:
         mapping1:
           output_files:
-            metric_info: "data/{{__sanitized_project_name__}}/{{__sanitized_project_name__}}_info.json"
+            metric_info: "data/{{ sanitized_project_name }}/{{ sanitized_project_name }}_info.json"

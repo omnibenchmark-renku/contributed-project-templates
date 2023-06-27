@@ -4,7 +4,9 @@
   icon: img/dataset.png
   name: Omnibenchmark dataset
   variables:
-    sanitized_project_name:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
+    benchmark_name:
       description: Name of the omnibenchmark to link this project with.
     dataset_keyword:
       description: Dataset keyword to make this dataset reachable for other projects/
@@ -26,7 +28,9 @@
   icon: img/processing.png
   name: Omnibenchmark processing
   variables:
-    sanitized_project_name:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
+    benchmark_name:
       description: Name of the omnibenchmark to link this project with.
     processed_keyword:
       description: Processed data keyword to make this dataset reachable for other
@@ -39,7 +43,9 @@
   icon: img/method.png
   name: Omnibenchmark method
   variables:
-    sanitized_project_name:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
+    benchmark_name:
       description: Name of the omnibenchmark to link this project with.
     method_keyword:
       description: Method keyword to make this dataset reachable for other projects/benchmark
@@ -52,7 +58,9 @@
   icon: img/parameter.png
   name: Omnibenchmark parameter space
   variables:
-    sanitized_project_name:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
+    benchmark_name:
       description: Name of the omnibenchmark to link this project with.
     parameter_keyword:
       description: Parameter keyword to make this dataset reachable for other projects/benchmark
@@ -65,7 +73,9 @@
   icon: img/metric.png
   name: Omnibenchmark metric
   variables:
-    sanitized_project_name:
+    sanitized_project_name: 
+      description: formatted name project, i.e. without spaces and special characters. 
+    benchmark_name:
       description: Name of the omnibenchmark to link this project with.
     metric_keyword:
       description: Metric keyword to make this dataset reachable for other projects/benchmark

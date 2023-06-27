@@ -1,11 +1,11 @@
 ---
 data:
-    name: "{{__sanitized_project_name__}}" 
+    name: "{{ sanitized_project_name }}" 
     title: "{{ project_title }}"
     description: "{{ description }}" 
     keywords: ["{{ metric_keyword }}"]  ## Metric keyword to make this dataset reachable for other projects/benchmark components.
-script: "src/run_{{__sanitized_project_name__}}.R" ## change for .py if you are using a py script
-sanitized_project_name: "{{ sanitized_project_name }}" ## Name of the omnibenchmark to link this project with.
+script: "src/run_{{ sanitized_project_name }}.R" ## change for .py if you are using a py script
+benchmark_name: "{{ benchmark_name }}" ## Name of the omnibenchmark to link this project with.
 inputs:
   keywords: [" "] ## Keyword(s) of the methods output to import for evaluation. 
   ## File types and patterns to use for automatic detection. 

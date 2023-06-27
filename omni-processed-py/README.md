@@ -16,8 +16,8 @@ The configuration of a processing module is similar to the one of a method modul
 
 **To configure** the project, please modify: 
 
-- `src/{{__sanitized_project_name__}}.py` (if working with python) or 
-`src/{{__sanitized_project_name__}}.R` (if working with R) with your code to process a dataset
+- `src/{{ sanitized_project_name }}.py` (if working with python) or 
+`src/{{ sanitized_project_name }}.R` (if working with R) with your code to process a dataset
 
 - `src/config.yaml`, to configure the project and the dataset.
 

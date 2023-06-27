@@ -1,10 +1,10 @@
 ---
 data:
-    name: "{{__sanitized_project_name__}}"
+    name: "{{ sanitized_project_name }}"
     title: "{{ project_title }}"
     description: "{{ description }}"
     keywords: ["{{ dataset_keyword }}"] ## Dataset keyword to make this dataset reachable for other projects/ benchmarks components.
-script: "src/{{__sanitized_project_name__}}.R"
+script: "src/{{ sanitized_project_name }}.R"
 outputs:
     template: "data/${name}/${name}_${out_name}.${out_end}"
     files:

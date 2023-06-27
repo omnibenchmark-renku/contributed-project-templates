@@ -19,7 +19,7 @@ metric_info = {
     # prefix to recognize the required input files from the methods results for the metric
     'input': "PREFIX", 
     # do not modify. 
-    'name': "̣{{__sanitized_project_name__}}"
+    'name': "̣{{ sanitized_project_name }}"
 }
 
 with open(args.metric_info, "w") as fp:
