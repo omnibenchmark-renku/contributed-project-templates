@@ -1,3 +1,2 @@
-omnibenchmark==0.0.41
-git+https://github.com/omnibenchmark/omniValidator@main
-typeguard==2.13.3
+omnibenchmark==0.0.44
+omniValidator==0.0.19
