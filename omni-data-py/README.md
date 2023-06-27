@@ -35,7 +35,7 @@ You can **check the requirements** for this module by running:
 ```
 import omniValidator as ov
 ov.display_requirements(
-    benchmark = "{{benchmark_name}}", # <-- the name of this Omnibenchmark
+    benchmark = "{{sanitized_project_name}}", # <-- the name of this Omnibenchmark
     keyword="{{dataset_keyword}}" # <-- the keyword of this module
 )
 ```

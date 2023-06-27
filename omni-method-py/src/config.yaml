@@ -5,7 +5,7 @@ data:
     description: "{{ description }}"
     keywords: ["{{ method_keyword }}"]
 script: "src/{{__sanitized_project_name__}}.R"
-benchmark_name: "{{ benchmark_name }}"
+sanitized_project_name: "{{ sanitized_project_name }}"
 inputs:
     keywords: [" "] ## Keyword(s) for the input processed dataset to import. 
     files: [" "]  ## Input file type(s). Should correspond to next section, e.g. "input_file1"

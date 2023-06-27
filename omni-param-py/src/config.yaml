@@ -5,7 +5,7 @@ data:
     description: "{{ description }}"
     keywords: ["{{ parameter_keyword }}"] ## Parameter keyword to make this dataset reachable for other projects/benchmark components.
 script: "src/generate_parameter_file.py" ## Default.
-benchmark_name: "{{ benchmark_name }}" ## Name of the omnibenchmark to link this project with.
+sanitized_project_name: "{{ sanitized_project_name }}" ## Name of the omnibenchmark to link this project with.
 outputs:
     ## This section defines the parameter space. It normally doesn't need any modification. 
     files:

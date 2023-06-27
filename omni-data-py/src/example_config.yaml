@@ -16,4 +16,4 @@ outputs:
             end: "json"
         feature:
             end: "json"
-benchmark_name: "{{ benchmark_name }}"
+sanitized_project_name: "{{ sanitized_project_name }}"

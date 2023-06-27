@@ -5,7 +5,7 @@ data:
     description: "{{ description }}"
     keywords: ["{{ metric_keyword }}"]
 script: "src/generate_metric_info.py"
-benchmark_name: "{{ benchmark_name }}"
+sanitized_project_name: "{{ sanitized_project_name }}"
 outputs:
     files:
         metric_info: 
