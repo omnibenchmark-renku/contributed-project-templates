@@ -3,7 +3,7 @@ variables:
   GIT_STRATEGY: fetch
   GIT_SSL_NO_VERIFY: "true"
   GIT_LFS_SKIP_SMUDGE: 1
-  PROJECT_SCRIPT: src/generate_summary.py
+  PROJECT_SCRIPT: src/run_workflow.py
 
 stages:
   - build

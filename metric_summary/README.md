@@ -27,7 +27,7 @@ This template will help you to parse metrics from an omnibenchmark project for t
 
 **To run the project**, please run
 
-`python ~/src/generate_summary.py`
+`python ~/src/run_workflow.py`
 
 Which will create a summary of all metrics parsed for the `bettr` app, usually in `data/{{ sanitized_project_name }}`
 
@@ -74,7 +74,7 @@ The **naming scheme** of the benchmark components can be modified (for the bettr
 
 Finally, the project can be run with: 
 
-`python ~/src/generate_summary.py`
+`python ~/src/run_workflow.py`
 
 The first part of the section consists of usual `omnibenchmark` calls to import upstream datasets. The second part will call the `generate_json_from_res_files.py` that contains wrappers around the `omniSparql` module to retrieve lineage information and aggregate all information in `data/metric_result_file_sparql.json`. The last step will parse the aggregated data to a `bettr` format. 
 
