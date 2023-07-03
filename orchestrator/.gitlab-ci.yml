@@ -17,7 +17,7 @@
 # 4. Some blocks are commented out below, but represent a template 
 # for what can be added and altered 
 
-
+# ----------------------------------------
 # DO NOT MODIFY
 variables:
   GIT_STRATEGY: fetch
@@ -28,7 +28,7 @@ variables:
   CI_UPSTREAM_PROJECT: ${CI_PROJECT_PATH}
   OMNI_UPDATE_TOKEN: ${OMNI_UPDATE_TOKEN}
   CI_PUSH_TOKEN: ${CI_PUSH_TOKEN}
-
+# ------------------------------------------
 
 # This is an example of step in your benchmarking pipeline. 
 # The stages must correspond to the stages in the trigger blocks. 
