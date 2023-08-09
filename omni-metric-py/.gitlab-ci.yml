@@ -31,7 +31,7 @@ run_update:
   before_script:
     - git config --global user.name ${GITLAB_USER_NAME}
     - git config --global user.email ${GITLAB_USER_EMAIL}
-    - git config --global --add safe.directory /builds/gitlab/${CI_PROJECT_PATH}
+    - git config --global --add safe.directory /builds/${CI_PROJECT_PATH}
     - url_host=`git remote get-url origin | sed -e "s/https:\/\/gitlab-ci-token:.*@//g"`
     - cd /tmp/
     - git clone "https://oauth2:${CI_PUSH_TOKEN}@${url_host}"
