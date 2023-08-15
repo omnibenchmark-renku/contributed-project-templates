@@ -44,7 +44,7 @@ Please open an issue on the orchestrator page of the Omnibenchmark that you woul
 
 Before adding projects to the orchestrator, you can configure the orchestrator as follows: 
 
-1) Ask the development team to setup a triplestore instance for: https://omnibenchmark.org/{{triplestore_url}}_data 
+1) Ask the development team to setup a triplestore instance for: https://omnibenchmark.org/{{benchmark_name}}_data
 
 If a triplestore instance was already set using a different name, please modify the `TRIPLESTORE_URL` of your `gitlab-ci.yml`.
 
