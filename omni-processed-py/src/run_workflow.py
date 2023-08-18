@@ -31,8 +31,6 @@ omni_obj.run_renku(all=False)
 renku_save()
 
 ## Update Output dataset
-meta_files = [files["meta_file"] for files in omni_obj.inputs.input_files.values()]
-update_dataset_files(urls=meta_files, dataset_name=omni_obj.name)
 omni_obj.update_result_dataset()
 
 renku_save()
