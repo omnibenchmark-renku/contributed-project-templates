@@ -15,5 +15,4 @@ outputs:
         mapping1:
             output_files:
                 param_json: "data/{{ __sanitized_project_name__ }}/all_parameter.json"
-            input_files: 
-            parameter: 
+
