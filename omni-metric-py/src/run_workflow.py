@@ -36,7 +36,7 @@ renku_save()
 ###################### Generate info file ######################
 
 omni_info = get_omni_object_from_yaml('src/info_config.yaml')
-omni_info.wflow_name = "lisi_info"
+omni_info.wflow_name = "{{__sanitized_project_name__}}_info"
 
 ## Check object
 print(
