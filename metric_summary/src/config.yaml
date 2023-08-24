@@ -2,7 +2,7 @@
 data: 
     name: "{{ sanitized_project_name }}_input"
     title: "{{ project_title }} - input"
-    description: "http://imlspenticton.uzh.ch/{{ benchmark_name }}_sparql" ## <--- define here the triplestore to use
+    description: "http://omnibenchmark.org/{{benchmark_name}}_sparql" ## <--- define here the triplestore to use
     keywords: ["{{ summary_keyword }}_input"]  ## <---- a keyword for this summary project
 benchmark_name: "{{ benchmark_name }}" ## <---- Name of the omnibenchmark to link this project with.
 inputs:
