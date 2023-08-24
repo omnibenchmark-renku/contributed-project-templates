@@ -1,3 +1,7 @@
+![alt text](https://github.com/omnibenchmark/contributed-project-templates/blob/main/img/omnibenchmark.png?raw=true)
+
+<img align="right" width="100" height="100" src="https://github.com/omnibenchmark/contributed-project-templates/blob/main/img/dataset.png?raw=true">
+
 # {{ name }}
 {% if description %}
 {{ description }}
