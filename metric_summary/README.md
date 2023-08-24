@@ -15,9 +15,9 @@ This template will help you to parse metrics from an omnibenchmark project for t
 
 **Before** using this template, make sure that your benchmark: 
 
-- ran at least 1 successful pipeline with dataset(s), method(s), metric(s)
+- ran at least 1 successful pipeline with dataset(s), method(s), metric(s);
 
-- that you have a dedicated triplestore instance for this benchmark
+- that you have a dedicated triplestore instance for this benchmark (see you 'Orchestrator' readme);
 
 - that the pipeline correctly sent the triples to the triplestore (see also the configuration of an [Orchestrator](https://github.com/omnibenchmark/contributed-project-templates/tree/dev/orchestrator) and particularly the setup of the `OMNI_UPDATE_TOKEN`).
 
@@ -27,7 +27,7 @@ This template will help you to parse metrics from an omnibenchmark project for t
 
 - `src/config.yaml`, to configure the data to import. The important fields to look at are `description` (triplestore URL), `benchmark_name`, `input:keywords` and `files`/`prefix` (if now already set during project creation). 
 
-- `src/config.yaml`, to configure the workflow to parse the metrics. The important fields to look at are `benchmark_name` and `keywords` (if now already set during project creation).
+- `src/config_summary.yaml`, to configure the workflow to parse the metrics. The important fields to look at are `benchmark_name` and `keywords` (if now already set during project creation).
 
 **To run the project**, please run
 
