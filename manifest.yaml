@@ -9,13 +9,13 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - CCC_benchmark
-      - iris_versioned
-      - omniclustering
-      - iris_example
       - omni_batch_py
-      - spatial-clustering
-      - omni_clustering
       - terraform
+      - omni_clustering
+      - omniclustering
+      - spatial-clustering
+      - iris_versioned
+      - iris_example
       - omniclustering_pinned
       type: enum
     dataset_keyword:
@@ -43,13 +43,13 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - CCC_benchmark
-      - iris_versioned
-      - omniclustering
-      - iris_example
       - omni_batch_py
-      - spatial-clustering
-      - omni_clustering
       - terraform
+      - omni_clustering
+      - omniclustering
+      - spatial-clustering
+      - iris_versioned
+      - iris_example
       - omniclustering_pinned
       type: enum
     processed_keyword:
@@ -68,13 +68,13 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - CCC_benchmark
-      - iris_versioned
-      - omniclustering
-      - iris_example
       - omni_batch_py
-      - spatial-clustering
-      - omni_clustering
       - terraform
+      - omni_clustering
+      - omniclustering
+      - spatial-clustering
+      - iris_versioned
+      - iris_example
       - omniclustering_pinned
       type: enum
     method_keyword:
@@ -93,13 +93,13 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - CCC_benchmark
-      - iris_versioned
-      - omniclustering
-      - iris_example
       - omni_batch_py
-      - spatial-clustering
-      - omni_clustering
       - terraform
+      - omni_clustering
+      - omniclustering
+      - spatial-clustering
+      - iris_versioned
+      - iris_example
       - omniclustering_pinned
       type: enum
     parameter_keyword:
@@ -118,13 +118,13 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - CCC_benchmark
-      - iris_versioned
-      - omniclustering
-      - iris_example
       - omni_batch_py
-      - spatial-clustering
-      - omni_clustering
       - terraform
+      - omni_clustering
+      - omniclustering
+      - spatial-clustering
+      - iris_versioned
+      - iris_example
       - omniclustering_pinned
       type: enum
     metric_keyword:
