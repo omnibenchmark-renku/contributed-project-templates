@@ -37,4 +37,4 @@ ov.display_requirements(
 
 `python ~/src/run_workflow.py`
 
-Once your module is completed and tested, you can integrate it in your Omnibenchmark by submitting it (open an issue) on the corresponding orchestrator page of your benchmark ([link to the existing orchestrators](https://omnibenchmark.pages.uzh.ch/omb-site/p/benchmarks/)). 
+Once your module is completed and tested, you can integrate it in your Omnibenchmark by submitting it (open an issue) on the corresponding orchestrator page of your benchmark ([link to the existing orchestrators](https://omnibenchmark.github.io/documentation/01_getting_started/01_module_contr/setup_module/04_submit/)). 
