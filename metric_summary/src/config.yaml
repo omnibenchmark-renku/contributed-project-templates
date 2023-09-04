@@ -1,6 +1,6 @@
 ---
 data: 
-    name: "{{ sanitized_project_name }}_input"
+    "{{ __sanitized_project_name__ | replace('-', '_') }}_input"
     title: "{{ project_title }} - input"
     description: "http://omnibenchmark.org/{{benchmark_name}}_sparql" ## <--- define here the triplestore to use
     keywords: ["{{ summary_keyword }}_input"]  ## <---- a keyword for this summary project
