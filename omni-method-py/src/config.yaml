@@ -1,6 +1,6 @@
 ---
 data:
-    name: "{{ __sanitized_project_name__|replace('-', '_' }}"
+    name: "{{ __sanitized_project_name__ | replace('-', '_') }}"
     title: "{{ project_title }}"
     description: "{{ description }}"
     keywords: ["{{ method_keyword }}"]
