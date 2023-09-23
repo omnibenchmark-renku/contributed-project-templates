@@ -9,15 +9,15 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - omni_batch_py
-      - spatial-clustering
-      - iris_example
-      - omniclustering
       - bc2_2023
-      - iris_versioned
-      - omniclustering_pinned
-      - omni_clustering
-      - CCC_benchmark
       - terraform
+      - spatial-clustering
+      - omni_clustering
+      - iris_example
+      - CCC_benchmark
+      - omniclustering
+      - omniclustering_pinned
+      - iris_versioned
       type: enum
     dataset_keyword:
       description: Dataset keyword to make this dataset reachable for other projects/
@@ -44,15 +44,15 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - omni_batch_py
-      - spatial-clustering
-      - iris_example
-      - omniclustering
       - bc2_2023
-      - iris_versioned
-      - omniclustering_pinned
-      - omni_clustering
-      - CCC_benchmark
       - terraform
+      - spatial-clustering
+      - omni_clustering
+      - iris_example
+      - CCC_benchmark
+      - omniclustering
+      - omniclustering_pinned
+      - iris_versioned
       type: enum
     processed_keyword:
       description: Processed data keyword to make this dataset reachable for other
@@ -70,15 +70,15 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - omni_batch_py
-      - spatial-clustering
-      - iris_example
-      - omniclustering
       - bc2_2023
-      - iris_versioned
-      - omniclustering_pinned
-      - omni_clustering
-      - CCC_benchmark
       - terraform
+      - spatial-clustering
+      - omni_clustering
+      - iris_example
+      - CCC_benchmark
+      - omniclustering
+      - omniclustering_pinned
+      - iris_versioned
       type: enum
     method_keyword:
       description: Method keyword to make this dataset reachable for other projects/benchmark
@@ -96,15 +96,15 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - omni_batch_py
-      - spatial-clustering
-      - iris_example
-      - omniclustering
       - bc2_2023
-      - iris_versioned
-      - omniclustering_pinned
-      - omni_clustering
-      - CCC_benchmark
       - terraform
+      - spatial-clustering
+      - omni_clustering
+      - iris_example
+      - CCC_benchmark
+      - omniclustering
+      - omniclustering_pinned
+      - iris_versioned
       type: enum
     parameter_keyword:
       description: Parameter keyword to make this dataset reachable for other projects/benchmark
@@ -122,15 +122,15 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - omni_batch_py
-      - spatial-clustering
-      - iris_example
-      - omniclustering
       - bc2_2023
-      - iris_versioned
-      - omniclustering_pinned
-      - omni_clustering
-      - CCC_benchmark
       - terraform
+      - spatial-clustering
+      - omni_clustering
+      - iris_example
+      - CCC_benchmark
+      - omniclustering
+      - omniclustering_pinned
+      - iris_versioned
       type: enum
     metric_keyword:
       description: Metric keyword to make this dataset reachable for other projects/benchmark
