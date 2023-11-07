@@ -9,14 +9,14 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - spatial-clustering
-      - omniclustering
-      - terraform
       - bc2_2023
-      - iris_example
       - iris_versioned
       - CCC_benchmark
-      - omni_clustering
+      - iris_example
       - omni_batch_py
+      - omni_clustering
+      - terraform
+      - omniclustering
       - omniclustering_pinned
       type: enum
     dataset_keyword:
@@ -44,14 +44,14 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - spatial-clustering
-      - omniclustering
-      - terraform
       - bc2_2023
-      - iris_example
       - iris_versioned
       - CCC_benchmark
-      - omni_clustering
+      - iris_example
       - omni_batch_py
+      - omni_clustering
+      - terraform
+      - omniclustering
       - omniclustering_pinned
       type: enum
     processed_keyword:
@@ -70,14 +70,14 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - spatial-clustering
-      - omniclustering
-      - terraform
       - bc2_2023
-      - iris_example
       - iris_versioned
       - CCC_benchmark
-      - omni_clustering
+      - iris_example
       - omni_batch_py
+      - omni_clustering
+      - terraform
+      - omniclustering
       - omniclustering_pinned
       type: enum
     method_keyword:
@@ -96,14 +96,14 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - spatial-clustering
-      - omniclustering
-      - terraform
       - bc2_2023
-      - iris_example
       - iris_versioned
       - CCC_benchmark
-      - omni_clustering
+      - iris_example
       - omni_batch_py
+      - omni_clustering
+      - terraform
+      - omniclustering
       - omniclustering_pinned
       type: enum
     parameter_keyword:
@@ -122,14 +122,14 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - spatial-clustering
-      - omniclustering
-      - terraform
       - bc2_2023
-      - iris_example
       - iris_versioned
       - CCC_benchmark
-      - omni_clustering
+      - iris_example
       - omni_batch_py
+      - omni_clustering
+      - terraform
+      - omniclustering
       - omniclustering_pinned
       type: enum
     metric_keyword:
