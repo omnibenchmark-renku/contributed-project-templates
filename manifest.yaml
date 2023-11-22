@@ -8,14 +8,14 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
+      - iris_versioned
+      - terraform
+      - CCC_benchmark
+      - bc2_2023
       - iris_example
       - omniclustering_pinned
-      - CCC_benchmark
-      - iris_versioned
       - omniclustering
       - omni_clustering
-      - terraform
-      - bc2_2023
       - spatial-clustering
       - omni_batch_py
       type: enum
@@ -43,14 +43,14 @@
       defaul_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
+      - iris_versioned
+      - terraform
+      - CCC_benchmark
+      - bc2_2023
       - iris_example
       - omniclustering_pinned
-      - CCC_benchmark
-      - iris_versioned
       - omniclustering
       - omni_clustering
-      - terraform
-      - bc2_2023
       - spatial-clustering
       - omni_batch_py
       type: enum
@@ -69,14 +69,14 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
+      - iris_versioned
+      - terraform
+      - CCC_benchmark
+      - bc2_2023
       - iris_example
       - omniclustering_pinned
-      - CCC_benchmark
-      - iris_versioned
       - omniclustering
       - omni_clustering
-      - terraform
-      - bc2_2023
       - spatial-clustering
       - omni_batch_py
       type: enum
@@ -95,14 +95,14 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
+      - iris_versioned
+      - terraform
+      - CCC_benchmark
+      - bc2_2023
       - iris_example
       - omniclustering_pinned
-      - CCC_benchmark
-      - iris_versioned
       - omniclustering
       - omni_clustering
-      - terraform
-      - bc2_2023
       - spatial-clustering
       - omni_batch_py
       type: enum
@@ -121,14 +121,14 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
+      - iris_versioned
+      - terraform
+      - CCC_benchmark
+      - bc2_2023
       - iris_example
       - omniclustering_pinned
-      - CCC_benchmark
-      - iris_versioned
       - omniclustering
       - omni_clustering
-      - terraform
-      - bc2_2023
       - spatial-clustering
       - omni_batch_py
       type: enum
