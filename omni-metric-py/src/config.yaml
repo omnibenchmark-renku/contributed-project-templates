@@ -1,6 +1,6 @@
 ---
 data:
-    "{{ __sanitized_project_name__ | replace('-', '_') }}" 
+    name: "{{ __sanitized_project_name__ | replace('-', '_') }}" 
     title: "{{ project_title }}"
     description: "{{ description }}" 
     keywords: ["{{ metric_keyword }}"]  ## Metric keyword to make this dataset reachable for other projects/benchmark components.
