@@ -8,15 +8,15 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - bc2_2023
-      - omni_batch_py
+      - omniclustering
       - spatial-clustering
+      - iris_example
       - omni_clustering
       - iris_versioned
-      - iris_example
-      - omniclustering
       - terraform
+      - omni_batch_py
       - semantic_iris
+      - bc2_2023
       - omniclustering_pinned
       - CCC_benchmark
       type: enum
@@ -44,15 +44,15 @@
       defaul_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - bc2_2023
-      - omni_batch_py
+      - omniclustering
       - spatial-clustering
+      - iris_example
       - omni_clustering
       - iris_versioned
-      - iris_example
-      - omniclustering
       - terraform
+      - omni_batch_py
       - semantic_iris
+      - bc2_2023
       - omniclustering_pinned
       - CCC_benchmark
       type: enum
@@ -71,15 +71,15 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - bc2_2023
-      - omni_batch_py
+      - omniclustering
       - spatial-clustering
+      - iris_example
       - omni_clustering
       - iris_versioned
-      - iris_example
-      - omniclustering
       - terraform
+      - omni_batch_py
       - semantic_iris
+      - bc2_2023
       - omniclustering_pinned
       - CCC_benchmark
       type: enum
@@ -98,15 +98,15 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - bc2_2023
-      - omni_batch_py
+      - omniclustering
       - spatial-clustering
+      - iris_example
       - omni_clustering
       - iris_versioned
-      - iris_example
-      - omniclustering
       - terraform
+      - omni_batch_py
       - semantic_iris
+      - bc2_2023
       - omniclustering_pinned
       - CCC_benchmark
       type: enum
@@ -125,15 +125,15 @@
       default_value: omni_batch_py
       description: Name of the omnibenchmark to link this project with.
       enum:
-      - bc2_2023
-      - omni_batch_py
+      - omniclustering
       - spatial-clustering
+      - iris_example
       - omni_clustering
       - iris_versioned
-      - iris_example
-      - omniclustering
       - terraform
+      - omni_batch_py
       - semantic_iris
+      - bc2_2023
       - omniclustering_pinned
       - CCC_benchmark
       type: enum
