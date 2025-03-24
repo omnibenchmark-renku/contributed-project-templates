@@ -9,15 +9,15 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - terraform
-      - omniclustering_pinned
+      - omni_batch_py
       - CCC_benchmark
       - iris_versioned
       - spatial-clustering
       - omniclustering
-      - iris_example
       - omni_clustering
-      - omni_batch_py
       - bc2_2023
+      - iris_example
+      - omniclustering_pinned
       - semantic_iris
       type: enum
     dataset_keyword:
@@ -45,15 +45,15 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - terraform
-      - omniclustering_pinned
+      - omni_batch_py
       - CCC_benchmark
       - iris_versioned
       - spatial-clustering
       - omniclustering
-      - iris_example
       - omni_clustering
-      - omni_batch_py
       - bc2_2023
+      - iris_example
+      - omniclustering_pinned
       - semantic_iris
       type: enum
     processed_keyword:
@@ -72,15 +72,15 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - terraform
-      - omniclustering_pinned
+      - omni_batch_py
       - CCC_benchmark
       - iris_versioned
       - spatial-clustering
       - omniclustering
-      - iris_example
       - omni_clustering
-      - omni_batch_py
       - bc2_2023
+      - iris_example
+      - omniclustering_pinned
       - semantic_iris
       type: enum
     method_keyword:
@@ -99,15 +99,15 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - terraform
-      - omniclustering_pinned
+      - omni_batch_py
       - CCC_benchmark
       - iris_versioned
       - spatial-clustering
       - omniclustering
-      - iris_example
       - omni_clustering
-      - omni_batch_py
       - bc2_2023
+      - iris_example
+      - omniclustering_pinned
       - semantic_iris
       type: enum
     parameter_keyword:
@@ -126,15 +126,15 @@
       description: Name of the omnibenchmark to link this project with.
       enum:
       - terraform
-      - omniclustering_pinned
+      - omni_batch_py
       - CCC_benchmark
       - iris_versioned
       - spatial-clustering
       - omniclustering
-      - iris_example
       - omni_clustering
-      - omni_batch_py
       - bc2_2023
+      - iris_example
+      - omniclustering_pinned
       - semantic_iris
       type: enum
     metric_keyword:
