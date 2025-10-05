@@ -10,13 +10,13 @@
       enum:
       - CCC_benchmark
       - omni_clustering
-      - iris_example
-      - iris_versioned
-      - semantic_iris
       - omniclustering_pinned
       - bc2_2023
+      - semantic_iris
       - omni_batch_py
       - terraform
+      - iris_example
+      - iris_versioned
       - spatial-clustering
       - omniclustering
       type: enum
@@ -46,13 +46,13 @@
       enum:
       - CCC_benchmark
       - omni_clustering
-      - iris_example
-      - iris_versioned
-      - semantic_iris
       - omniclustering_pinned
       - bc2_2023
+      - semantic_iris
       - omni_batch_py
       - terraform
+      - iris_example
+      - iris_versioned
       - spatial-clustering
       - omniclustering
       type: enum
@@ -73,13 +73,13 @@
       enum:
       - CCC_benchmark
       - omni_clustering
-      - iris_example
-      - iris_versioned
-      - semantic_iris
       - omniclustering_pinned
       - bc2_2023
+      - semantic_iris
       - omni_batch_py
       - terraform
+      - iris_example
+      - iris_versioned
       - spatial-clustering
       - omniclustering
       type: enum
@@ -100,13 +100,13 @@
       enum:
       - CCC_benchmark
       - omni_clustering
-      - iris_example
-      - iris_versioned
-      - semantic_iris
       - omniclustering_pinned
       - bc2_2023
+      - semantic_iris
       - omni_batch_py
       - terraform
+      - iris_example
+      - iris_versioned
       - spatial-clustering
       - omniclustering
       type: enum
@@ -127,13 +127,13 @@
       enum:
       - CCC_benchmark
       - omni_clustering
-      - iris_example
-      - iris_versioned
-      - semantic_iris
       - omniclustering_pinned
       - bc2_2023
+      - semantic_iris
       - omni_batch_py
       - terraform
+      - iris_example
+      - iris_versioned
       - spatial-clustering
       - omniclustering
       type: enum
